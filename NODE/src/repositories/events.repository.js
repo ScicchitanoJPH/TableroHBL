@@ -1,5 +1,5 @@
 const { EventDto } = require("../dto/eventDto")
-const { eventModel } = require("../dao/event.model")
+const { eventModel } = require("../dao/models/event.model")
 
 // capa de servicio
 class EventRepository {

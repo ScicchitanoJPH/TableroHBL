@@ -1,7 +1,9 @@
-import { Router } from "express";
-import jwt from "jsonwebtoken";
-import bcrypt from "bcrypt"
-import User from "../dao/models/user.model.js";
+const express = require('express');
+const Router = express.Router;  // Destructuring assignment for brevity
+const jwt = require('jsonwebtoken');
+const bcrypt = require('bcrypt');
+const User = require('../dao/models/users.model.js');
+
 
 
 const router = Router()
@@ -11,7 +13,7 @@ router.get("/",showLogin)
 router.post("/",userLogin);
 
 
-export async function userLogin(req,res){
+async function userLogin(req,res){
     const {email,password} = req.body;
     console.log(email,password)
     try{
@@ -67,10 +69,10 @@ export async function userLogin(req,res){
     }
 }
 
-export function showLogin(req,res){
+function showLogin(req,res){
 
     
     return res.render('login')
 }
 
-export default router
+module.exports = router

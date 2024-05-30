@@ -1,5 +1,5 @@
 const { DeviceDto } = require("../dto/deviceDto")
-const { deviceModel } = require("../dao/device.model")
+const { deviceModel } = require("../dao/models/device.model")
 
 // capa de servicio
 class DeviceRepository {

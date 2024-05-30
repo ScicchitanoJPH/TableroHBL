@@ -115,7 +115,7 @@ static void websocket_app_start(void)
 {
     // Define the websocket connection
     esp_websocket_client_config_t websocket_cfg = {};
-    websocket_cfg.uri = "ws://172.30.2.140:8080";
+    websocket_cfg.uri = "ws://172.30.6.3:8080";
     ESP_LOGI(TAG, "Connecting to %s ...", websocket_cfg.uri);
 
     // Connect to Websocket Server

@@ -1,13 +1,14 @@
-import { Router }     from "express";
+const express = require('express');
+const Router = express.Router;  // Destructuring assignment for brevity
 
-import userRouter from "./login.routes.js"
-import registerRouter from "./register.routes.js"
-//import {userLogin, signUp,showLogin,showRegister} from "../controllers/auth.controller.js"
-import tableroRouter from "./tablero.routes.js"
+const userRouter = require('./login.routes.js');
+const registerRouter = require('./register.routes.js');
 
-import deviceRouter from "./device.router.js"
+// Assuming auth.controller.js is in the same directory:
+// const { userLogin, signUp, showLogin, showRegister } = require('../controllers/auth.controller.js');
 
-import eventsRouter from "./event.router.js"
+const deviceRouter = require('./device.router.js');
+const eventsRouter = require('./event.router.js');
 
 const router = Router();
 
@@ -19,6 +20,5 @@ router.use("/devices",deviceRouter)
 
 router.use("/events",eventsRouter)
 
-router.use("/tableros",tableroRouter);
 
-export default router;
+module.exports = router

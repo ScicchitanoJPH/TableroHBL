@@ -19,4 +19,5 @@ router.post('/',       createDevice)
 router.put('/:uid',    updateDevice) 
 router.delete('/:uid', deleteDevice)
 
+
 module.exports = router

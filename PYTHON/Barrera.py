@@ -5,7 +5,7 @@ import requests
 import json
 
 MODE = 'ACCESS_CONTROL'
-URI = "ws://172.30.2.140:8080"
+URI = "ws://172.30.6.3:8080"
 ID_RPI = "RPI_BARRERA"
 
 async def add_device2BBDD():

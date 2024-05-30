@@ -8,6 +8,8 @@ const deviceRouter = require('./routers/device.router');
 const cookieParser = require('cookie-parser'); // Importa el middleware cookie-parser
 // const dotenv = require('dotenv')
 const cors = require('cors');
+const { engine } = require('handlebars'); // Destructuring for brevity
+
 
 const dotenv = require('dotenv')
 const { program } = require("./enviroment/commander")
@@ -21,10 +23,11 @@ dotenv.config({
 
 
 exports.configObject = {
-    port: process.env.PORT || 8080
+    port: process.env.PORT || 8080,
+    url_mongo : process.env.MONGO_URL
 }
 
-console.log('exports.configObject.port = ' + exports.configObject.port)
+console.log('process.env.port = ' + process.env.port)
 
 
 const app = express();
@@ -38,7 +41,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser())
 
 app.use(function(req, res, next) {
-    
+
     res.locals.success = req.app.get('success');
     res.locals.error = req.app.get("error");
 
@@ -48,9 +51,8 @@ app.use(function(req, res, next) {
 })
 
 //seteo handlebars
-app.engine('hbs', engine({defaultLayout:'index' ,extname:'.hbs'}));
-app.set('view engine', 'hbs');
-app.set('views', viewPath);
+// 
+
 
 
 app.use("/api",router);
@@ -75,7 +77,7 @@ async function saveDB(eventData) {
     redirect: 'follow'
     };
 
-    fetch(`http://172.30.2.140:${exports.configObject.port}/api/events/`, requestOptions)
+    fetch(`http://172.30.6.3:${exports.configObject.port}/api/events/`, requestOptions)
     .then(response => response.text())
     .then(result => console.log(result))
     .catch(error => console.log('error', error));
@@ -99,13 +101,13 @@ wss.on('connection', (ws) => {
         // Reenviar el mensaje a todos los clientes, excepto al que envió el mensaje original
         // console.log(`Mensaje a enviar: ${data.message}`)
         broadcast(JSON.stringify(data), ws);
-        saveDB(data)    
+        saveDB(data)
     });
 
     // Manejar cierre de conexión
     ws.on('close', () => {
         console.log('Cliente desconectado');
-        
+
         // Eliminar la conexión del cliente del conjunto al cerrar la conexión
         clients.delete(ws);
     });
@@ -121,5 +123,5 @@ function broadcast(message, sender) {
 }
 const port = exports.configObject.port || 8080
 server.listen(port, () => {
-    console.log(`Servidor escuchando en http://172.30.2.140:${port}`);
+    console.log(`Servidor escuchando en http://172.30.6.3:${port}`);
 });

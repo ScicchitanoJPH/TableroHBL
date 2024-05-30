@@ -1,8 +1,9 @@
 //user schema mongodb
 //define que es un usuario en la base de datos
 
-import mongoose from "mongoose";
-import validator from "validator";
+const mongoose = require('mongoose');
+const validator = require('validator');
+
 
 function isEmail(value){
     return validator.isEmail(value)
@@ -20,4 +21,4 @@ const userSchema = new mongoose.Schema(
 
 const User = mongoose.model("User", userSchema);
 
-export default User;
+module.exports = User

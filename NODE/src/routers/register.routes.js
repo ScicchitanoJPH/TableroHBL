@@ -1,6 +1,7 @@
-import { Router } from "express";
-import User from "../dao/models/user.model.js";
-import bcrypt from "bcrypt"
+const express = require('express');
+const Router = express.Router;  // Destructuring assignment for brevity
+const User = require('../dao/models/users.model.js');
+const bcrypt = require('bcrypt');
 
 
 
@@ -8,7 +9,7 @@ const router = Router()
 router.post("/", signUp);
 router.get("/", showRegister);
 
-export async function signUp(req,res){
+async function signUp(req,res){
     const {name, email, password,role} = req.body;
     if (!name || !email || !password ){
         req.app.set('error',)
@@ -61,7 +62,7 @@ export async function signUp(req,res){
     }
 }
 
-export function showRegister(req,res){
+function showRegister(req,res){
 
     
     return res.render('register')
@@ -69,4 +70,4 @@ export function showRegister(req,res){
 
 
 
-export default router
+module.exports = router
