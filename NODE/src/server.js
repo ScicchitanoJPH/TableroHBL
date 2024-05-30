@@ -2,6 +2,7 @@ const express = require('express');
 const http = require('http');
 const WebSocket = require('ws');
 const { connectDB } = require('./configDB/connectDB.js');
+const router = require('./routers/index.js');
 const eventRouter = require('./routers/event.router');
 const deviceRouter = require('./routers/device.router');
 const cookieParser = require('cookie-parser'); // Importa el middleware cookie-parser
@@ -36,8 +37,23 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser())
 
-app.use('/api/events', eventRouter);
-app.use('/api/devices', deviceRouter);
+app.use(function(req, res, next) {
+    
+    res.locals.success = req.app.get('success');
+    res.locals.error = req.app.get("error");
+
+    req.app.set('success',undefined)
+    req.app.set('error',undefined)
+    next();
+})
+
+//seteo handlebars
+app.engine('hbs', engine({defaultLayout:'index' ,extname:'.hbs'}));
+app.set('view engine', 'hbs');
+app.set('views', viewPath);
+
+
+app.use("/api",router);
 
 connectDB();
 

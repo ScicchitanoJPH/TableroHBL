@@ -1,4 +1,4 @@
-const { configObject, connectDB } = require("../configDB/connectDB");
+const { configObject, connectDB } = require("../../configDB/connectDB");
 
 
 let EventDao
