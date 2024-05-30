@@ -3,31 +3,31 @@ const http = require('http');
 const WebSocket = require('ws');
 const { connectDB } = require('./configDB/connectDB.js');
 const router = require('./routers/index.js');
-const eventRouter = require('./routers/event.router');
-const deviceRouter = require('./routers/device.router');
+
 const cookieParser = require('cookie-parser'); // Importa el middleware cookie-parser
-// const dotenv = require('dotenv')
+
 const cors = require('cors');
-const { engine } = require('handlebars'); // Destructuring for brevity
+const  {engine}  = require('express-handlebars'); // Destructuring for brevity
 
-
+const path = require('path');
 const dotenv = require('dotenv')
 const { program } = require("./enviroment/commander")
 
 const { mode } = program.opts()
 
 
-dotenv.config({
-    path: mode === 'development' ? './enviroment/.env.development' : './enviroment/.env.production'
-})
 
+dotenv.config({
+    path: mode === 'development' ? path.resolve(__dirname, './enviroment/.env.development') : path.resolve(__dirname, './enviroment/.env.production')
+    
+})
 
 exports.configObject = {
     port: process.env.PORT || 8080,
     url_mongo : process.env.MONGO_URL
 }
 
-console.log('process.env.port = ' + process.env.port)
+console.log('process.env.port = ' + process.env.PORT)
 
 
 const app = express();
@@ -51,7 +51,10 @@ app.use(function(req, res, next) {
 })
 
 //seteo handlebars
-// 
+app.use(express.static('public'));
+app.engine('hbs', engine({defaultLayout:'index' ,extname:'.hbs'}));
+app.set('view engine', 'hbs');
+app.set('views', __dirname + '/views');
 
 
 
