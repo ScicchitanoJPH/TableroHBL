@@ -1,0 +1,100 @@
+/* Estilos personalizados */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #fff;
+    color: #343a40;
+    padding: 20px;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .card {
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card h2 {
+    margin-top: 0;
+  }
+  
+  .response-container {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-height: 200px;
+    overflow-y: auto;
+    background-color: #f1f1f1;
+  }
+  
+  .history-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .history-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .form-check-input[type="checkbox"] {
+    display: none;
+  }
+  
+  .form-check-input[type="checkbox"] + label {
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    background-color: #adb5bd;
+    border-radius: 20px;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .form-check-input[type="checkbox"]:checked + label:before {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background-color: #28a745;
+    border-radius: 50%;
+    top: 50%;
+    left: calc(100% - 20px);
+    transform: translateY(-50%);
+    transition: left 0.3s;
+  }
+  
+  .form-check-input:focus {
+    box-shadow: none;
+  }
+  
+  /* Asegurar que todas las tarjetas tengan el mismo ancho */
+  #cards-container .card {
+    width: calc(100% / 2 - 40px); /* Calcula el ancho para que haya 3 tarjetas por fila */
+    margin-right: 20px; /* Espacio entre las tarjetas */
+  }
+  
+  @media (max-width: 992px) {
+    #cards-container .card {
+      width: calc(100% / 2 - 40px); /* Calcula el ancho para que haya 2 tarjetas por fila en pantallas medianas */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    #cards-container .card {
+      width: calc(100% - 40px); /* Tarjeta de ancho completo en pantallas pequeñas */
+      margin-right: 0;
+      margin-bottom: 20px; /* Espacio entre las tarjetas en pantallas pequeñas */
+    }
+  }
+  

@@ -1,0 +1,206 @@
+.div {
+    border-radius: 10px;
+    border-color: rgba(197, 197, 197, 1);
+    border-style: solid;
+    border-width: 1px;
+    background-color: #fbfbfb;
+    display: flex;
+    width: 100%;
+    flex-grow: 1;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 15px;
+  }
+  @media (max-width: 991px) {
+    .div {
+      margin-top: 15px;
+    }
+  }
+  .div-2 {
+    display: flex;
+    width: 100%;
+    gap: 20px;
+    justify-content: space-between;
+    padding: 0 1px;
+  }
+  .div-3 {
+    display: flex;
+    gap: 20px;
+    font-size: 16px;
+    color: #000;
+    padding: 6px 10px;
+  }
+  .div-4 {
+    font-family: Poppins, sans-serif;
+    font-weight: 700;
+  }
+  .div-5 {
+    font-family: Montserrat, sans-serif;
+    font-weight: 400;
+  }
+  .div-6 {
+    display: flex;
+    gap: 14px;
+  }
+  .div-7 {
+    stroke-width: 1px;
+    border-color: rgba(75, 147, 29, 1);
+    border-style: solid;
+    border-width: 1px;
+    background-color: #67bf2b;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    margin: auto 0;
+  }
+  .div-8 {
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background-color: #369fff;
+    display: flex;
+    width: 32px;
+    height: 32px;
+    padding: 0 8px;
+  }
+  .img {
+    aspect-ratio: 1;
+    object-fit: auto;
+    object-position: center;
+    width: 16px;
+  }
+  .div-9 {
+    display: flex;
+    margin-top: 19px;
+    width: 100%;
+    gap: 20px;
+    justify-content: space-between;
+  }
+  .div-10 {
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    border-color: rgba(54, 159, 255, 1);
+    border-style: solid;
+    border-width: 1px;
+    background-color: var(--White, #fbfbfb);
+    display: flex;
+    padding: 8px 13px;
+  }
+  @media (max-width: 991px) {
+    .div-10 {
+      padding: 0 20px;
+    }
+  }
+  .img-2 {
+    aspect-ratio: 0.93;
+    object-fit: auto;
+    object-position: center;
+    width: 15px;
+  }
+  .div-11 {
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    border-color: rgba(54, 159, 255, 1);
+    border-style: solid;
+    border-width: 1px;
+    background-color: var(--White, #fbfbfb);
+    display: flex;
+    padding: 8px 13px;
+  }
+  @media (max-width: 991px) {
+    .div-11 {
+      padding: 0 20px;
+    }
+  }
+  .img-3 {
+    aspect-ratio: 0.93;
+    object-fit: auto;
+    object-position: center;
+    width: 15px;
+  }
+  .div-12 {
+    justify-content: center;
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+  }
+  .div-13 {
+    color: #4d4d4d;
+    margin: auto 0;
+    font: 400 14px/143% Montserrat, sans-serif;
+  }
+  .div-14 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 7px 8px;
+  }
+  .div-15 {
+    border-radius: 5px;
+    background-color: var(--Primary-Primary-grey, #ccc);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .div-16 {
+    border-radius: 8px;
+    border: 0px solid var(--Secondary-Secondary, #4d9fff);
+    box-shadow: 0px 0px 4px 0px rgba(39, 39, 39, 0.35);
+    background-color: var(--Primary-Primary-light, #f9f9f9);
+    z-index: 10;
+    height: 14px;
+  }
+  .div-17 {
+    display: flex;
+    margin-top: 19px;
+    gap: 5px;
+    font-size: 14px;
+    line-height: 143%;
+  }
+  .div-18 {
+    border-radius: 5px;
+    border-color: rgba(197, 197, 197, 1);
+    border-style: solid;
+    border-width: 1px;
+    background-color: #eee;
+    display: flex;
+    gap: 20px;
+    color: #4d4d4d;
+    padding: 10px;
+  }
+  .div-19 {
+    font-family: Poppins, sans-serif;
+    font-weight: 700;
+  }
+  .div-20 {
+    font-family: Montserrat, sans-serif;
+    font-weight: 500;
+  }
+  .div-21 {
+    justify-content: center;
+    border-radius: 4px;
+    background-color: var(--Blue-500, #369fff);
+    display: flex;
+    gap: 8px;
+    color: var(--White, #fbfbfb);
+    font-weight: 700;
+    white-space: nowrap;
+    padding: 8px 12px;
+  }
+  @media (max-width: 991px) {
+    .div-21 {
+      white-space: initial;
+    }
+  }
+  .img-4 {
+    aspect-ratio: 0.93;
+    object-fit: auto;
+    object-position: center;
+    width: 15px;
+    margin: auto 0;
+  }
+  .div-22 {
+    font-family: Lexend, sans-serif;
+  }

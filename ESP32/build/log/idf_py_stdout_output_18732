@@ -1,0 +1,1708 @@
+)r�ets Jun  8 2016 00:22:57
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7080
+load:0x40078000,len:15584
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3876
+entry 0x4008064c
+[0;32mI (30) boot: ESP-IDF v5.1.1 2nd stage bootloader[0m
+[0;32mI (30) boot: compile time Mar  8 2024 12:14:19[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v1.0[0m
+[0;32mI (38) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (43) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (52) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (61) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (68) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (76) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (83) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (91) boot: End of partition table[0m
+[0;32mI (95) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=24bech (150508) map[0m
+[0;32mI (158) esp_image: segment 1: paddr=00034c14 vaddr=3ffb0000 size=03738h ( 14136) load[0m
+[0;32mI (164) esp_image: segment 2: paddr=00038354 vaddr=40080000 size=07cc4h ( 31940) load[0m
+[0;32mI (177) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=955f8h (611832) map[0m
+[0;32mI (398) esp_image: segment 4: paddr=000d5620 vaddr=40087cc4 size=0da1ch ( 55836) load[0m
+[0;32mI (433) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (433) boot: Disabling RNG early entropy source...[0m
+[0;32mI (444) cpu_start: Multicore app[0m
+[0;32mI (445) cpu_start: Pro cpu up.[0m
+[0;32mI (445) cpu_start: Starting app cpu, entry point is 0x4008137c[0m
+[0;32mI (0) cpu_start: App cpu up.[0m
+[0;32mI (462) cpu_start: Pro cpu start user code[0m
+[0;32mI (462) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (463) cpu_start: Application information:[0m
+[0;32mI (467) cpu_start: Project name:     MQTT_example[0m
+[0;32mI (473) cpu_start: App version:      1[0m
+[0;32mI (477) cpu_start: Compile time:     Mar  8 2024 12:14:08[0m
+[0;32mI (483) cpu_start: ELF file SHA256:  4c3b9ee5ff683155...[0m
+[0;32mI (489) cpu_start: ESP-IDF:          v5.1.1[0m
+[0;32mI (494) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (499) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (503) cpu_start: Chip rev:         v1.0[0m
+[0;32mI (508) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (516) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (522) heap_init: At 3FFB7DF8 len 00028208 (160 KiB): DRAM[0m
+[0;32mI (528) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (534) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (541) heap_init: At 400956E0 len 0000A920 (42 KiB): IRAM[0m
+[0;32mI (548) spi_flash: detected chip: generic[0m
+[0;32mI (551) spi_flash: flash io: dio[0m
+[0;33mW (555) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (569) app_start: Starting scheduler on CPU0[0m
+[0;32mI (574) app_start: Starting scheduler on CPU1[0m
+[0;32mI (574) main_task: Started on CPU0[0m
+[0;32mI (584) main_task: Calling app_main()[0m
+[0;32mI (584) WEBSOCKET: [APP] Startup..[0m
+[0;32mI (584) WEBSOCKET: [APP] Free memory: 279384 bytes[0m
+[0;32mI (594) WEBSOCKET: [APP] IDF version: v5.1.1[0m
+[0;32mI (634) example_connect: Start example_connect.[0m
+I (644) wifi:wifi driver task: 3ffbfa30, prio:23, stack:6656, core=0
+I (654) wifi:wifi firmware version: ce9244d
+I (664) wifi:wifi certification version: v7.0
+I (664) wifi:config NVS flash: enabled
+I (664) wifi:config nano formating: disabled
+I (664) wifi:Init data frame dynamic rx buffer num: 32
+I (664) wifi:Init management frame dynamic rx buffer num: 32
+I (674) wifi:Init management short buffer num: 32
+I (674) wifi:Init dynamic tx buffer num: 32
+I (684) wifi:Init static rx buffer size: 1600
+I (684) wifi:Init static rx buffer num: 10
+I (694) wifi:Init dynamic rx buffer num: 32
+[0;32mI (694) wifi_init: rx ba win: 6[0m
+[0;32mI (694) wifi_init: tcpip mbox: 32[0m
+[0;32mI (704) wifi_init: udp mbox: 6[0m
+[0;32mI (704) wifi_init: tcp mbox: 6[0m
+[0;32mI (714) wifi_init: tcp tx win: 5744[0m
+[0;32mI (714) wifi_init: tcp rx win: 5744[0m
+[0;32mI (714) wifi_init: tcp mss: 1440[0m
+[0;32mI (724) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (724) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (734) phy_init: phy_version 4670,719f9f6,Feb 18 2021,17:07:07[0m
+I (834) wifi:mode : sta (ec:94:cb:6a:fb:58)
+I (834) wifi:enable tsf
+[0;32mI (844) example_connect: Connecting to WIFI1...[0m
+[0;32mI (844) example_connect: Waiting for IP(s)[0m
+[0;32mI (3254) example_connect: Wi-Fi disconnected, trying to reconnect...[0m
+[0;32mI (5664) example_connect: Wi-Fi disconnected, trying to reconnect...[0m
+[0;32mI (8084) example_connect: Wi-Fi disconnected, trying to reconnect...[0m
+[0;32mI (10494) example_connect: Wi-Fi disconnected, trying to reconnect...[0m
+[0;32mI (12904) example_connect: Wi-Fi disconnected, trying to reconnect...[0m
+[0;32mI (15314) example_connect: Wi-Fi disconnected, trying to reconnect...[0m
+[0;32mI (17724) example_connect: WiFi Connect failed 7 times, stop reconnect.[0m
+ESP_ERROR_CHECK failed: esp_err_t 0xffffffff (ESP_FAIL) at 0x400d693e
+file: "./main/app_main.c" line 121
+func: app_main
+expression: example_connect()
+
+abort() was called at PC 0x40088c5f on core 0
+
+
+Backtrace: 0x400819e2:0x3ffb9fe0 0x40088c69:0x3ffba000 0x4008fd12:0x3ffba020 0x40088c5f:0x3ffba090 0x400d693e:0x3ffba0c0 0x401637bf:0x3ffba0f0 0x4008b649:0x3ffba120
+
+
+
+
+ELF file SHA256: 4c3b9ee5ff683155
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7080
+load:0x40078000,len:15584
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3876
+entry 0x4008064c
+[0;32mI (30) boot: ESP-IDF v5.1.1 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Mar  8 2024 12:14:19[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v1.0[0m
+[0;32mI (39) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (76) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (91) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=24bech (150508) map[0m
+[0;32mI (158) esp_image: segment 1: paddr=00034c14 vaddr=3ffb0000 size=03738h ( 14136) load[0m
+[0;32mI (164) esp_image: segment 2: paddr=00038354 vaddr=40080000 size=07cc4h ( 31940) load[0m
+[0;32mI (178) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=955f8h (611832) map[0m
+[0;32mI (399) esp_image: segment 4: paddr=000d5620 vaddr=40087cc4 size=0da1ch ( 55836) load[0m
+[0;32mI (433) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (433) boot: Disabling RNG early entropy source...[0m
+[0;32mI (445) cpu_start: Multicore app[0m
+[0;32mI (445) cpu_start: Pro cpu up.[0m
+[0;32mI (445) cpu_start: Starting app cpu, entry point is 0x4008137c[0m
+[0;32mI (432) cpu_start: App cpu up.[0m
+[0;32mI (463) cpu_start: Pro cpu start user code[0m
+[0;32mI (463) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (463) cpu_start: Application information:[0m
+[0;32mI (468) cpu_start: Project name:     MQTT_example[0m
+[0;32mI (473) cpu_start: App version:      1[0m
+[0;32mI (478) cpu_start: Compile time:     Mar  8 2024 12:14:08[0m
+[0;32mI (484) cpu_start: ELF file SHA256:  4c3b9ee5ff683155...[0m
+[0;32mI (490) cpu_start: ESP-IDF:          v5.1.1[0m
+[0;32mI (495) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (499) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (504) cpu_start: Chip rev:         v1.0[0m
+[0;32mI (509) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (516) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (522) heap_init: At 3FFB7DF8 len 00028208 (160 KiB): DRAM[0m
+[0;32mI (528) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (535) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (541) heap_init: At 400956E0 len 0000A920 (42 KiB): IRAM[0m
+[0;32mI (549) spi_flash: detected chip: generic[0m
+[0;32mI (552) spi_flash: flash io: dio[0m
+[0;33mW (556) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (570) app_start: Starting scheduler on CPU0[0m
+[0;32mI (574) app_start: Starting scheduler on CPU1[0m
+[0;32mI (574) main_task: Started on CPU0[0m
+[0;32mI (584) main_task: Calling app_main()[0m
+[0;32mI (584) WEBSOCKET: [APP] Startup..[0m
+[0;32mI (584) WEBSOCKET: [APP] Free memory: 279384 bytes[0m
+[0;32mI (594) WEBSOCKET: [APP] IDF version: v5.1.1[0m
+[0;32mI (634) example_connect: Start example_connect.[0m
+I (644) wifi:wifi driver task: 3ffbfa30, prio:23, stack:6656, core=0
+I (654) wifi:wifi firmware version: ce9244d
+I (664) wifi:wifi certification version: v7.0
+I (664) wifi:config NVS flash: enabled
+I (664) wifi:config nano formating: disabled
+I (664) wifi:Init data frame dynamic rx buffer num: 32
+I (664) wifi:Init management frame dynamic rx buffer num: 32
+I (674) wifi:Init management short buffer num: 32
+I (674) wifi:Init dynamic tx buffer num: 32
+I (684) wifi:Init static rx buffer size: 1600
+I (684) wifi:Init static rx buffer num: 10
+I (694) wifi:Init dynamic rx buffer num: 32
+[0;32mI (694) wifi_init: rx ba win: 6[0m
+[0;32mI (694) wifi_init: tcpip mbox: 32[0m
+[0;32mI (704) wifi_init: udp mbox: 6[0m
+[0;32mI (704) wifi_init: tcp mbox: 6[0m
+[0;32mI (714) wifi_init: tcp tx win: 5744[0m
+[0;32mI (714) wifi_init: tcp rx win: 5744[0m
+[0;32mI (714) wifi_init: tcp mss: 1440[0m
+[0;32mI (724) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (724) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (734) phy_init: phy_version 4670,719f9f6,Feb 18 2021,17:07:07[0m
+I (834) wifi:mode : sta (ec:94:cb:6a:fb:58)
+I (844) wifi:enable tsf
+[0;32mI (844) example_connect: Connecting to WIFI1...[0m
+[0;32mI (844) example_connect: Waiting for IP(s)[0m
+I (3254) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1
+I (4404) wifi:state: init -> auth (b0)
+I (4424) wifi:state: auth -> assoc (0)
+I (4454) wifi:state: assoc -> run (10)
+I (4504) wifi:connected with WIFI1, aid = 1, channel 11, BW20, bssid = 82:e9:3a:ed:b8:55
+I (4504) wifi:security: WPA2-PSK, phy: bgn, rssi: -53
+I (4504) wifi:pm start, type: 1
+
+I (4564) wifi:AP's beacon interval = 102400 us, DTIM period = 1
+[0;32mI (5514) esp_netif_handlers: example_netif_sta ip: 192.168.137.225, mask: 255.255.255.0, gw: 192.168.137.1[0m
+[0;32mI (5514) example_connect: Got IPv4 event: Interface "example_netif_sta" address: 192.168.137.225[0m
+[0;32mI (5624) example_connect: Got IPv6 event: Interface "example_netif_sta" address: fe80:0000:0000:0000:ee94:cbff:fe6a:fb58, type: ESP_IP6_ADDR_IS_LINK_LOCAL[0m
+[0;32mI (5624) example_common: Connected to example_netif_sta[0m
+[0;32mI (5634) example_common: - IPv4 address: 192.168.137.225,[0m
+[0;32mI (5634) example_common: - IPv6 address: fe80:0000:0000:0000:ee94:cbff:fe6a:fb58, type: ESP_IP6_ADDR_IS_LINK_LOCAL[0m
+[0;32mI (5644) WEBSOCKET: Connecting to ws://172.30.2.140:8080 ...[0m
+I (5684) wifi:<ba-add>idx:0 (ifx:0, 82:e9:3a:ed:b8:55), tid:0, ssn:4, winSize:64
+[0;32mI (5704) WEBSOCKET: WEBSOCKET_EVENT_CONNECTED[0m
+[0;32mI (6664) WEBSOCKET: Connection established[0m
+[0;32mI (7664) WEBSOCKET: 0[0m
+[0;32mI (13664) WEBSOCKET: 1[0m
+[0;32mI (19664) WEBSOCKET: 2[0m
+[0;32mI (25664) WEBSOCKET: 3[0m
+[0;32mI (31664) WEBSOCKET: 4[0m
+[0;32mI (37664) WEBSOCKET: 5[0m
+[0;32mI (43664) WEBSOCKET: 6[0m
+[0;32mI (49674) WEBSOCKET: 7[0m
+[0;32mI (55674) WEBSOCKET: 8[0m
+[0;32mI (61674) WEBSOCKET: 9[0m
+[0;32mI (67674) WEBSOCKET: 10[0m
+[0;32mI (73684) WEBSOCKET: 11[0m
+[0;32mI (79694) WEBSOCKET: 12[0m
+[0;32mI (85694) WEBSOCKET: 13[0m
+[0;32mI (91694) WEBSOCKET: 14[0m
+[0;32mI (97694) WEBSOCKET: 0[0m
+[0;31mE (100624) transport_base: poll_read select error 104, errno = Connection reset by peer, fd = 54[0m
+[0;31mE (100624) WEBSOCKET_CLIENT: Network error: esp_transport_poll_read() returned -1, errno=119[0m
+[0;32mI (100634) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (103704) WEBSOCKET: 1[0m
+[0;32mI (109704) WEBSOCKET: 2[0m
+[0;32mI (115664) WEBSOCKET: WEBSOCKET_EVENT_CONNECTED[0m
+[0;32mI (115704) WEBSOCKET: 3[0m
+[0;32mI (121704) WEBSOCKET: 4[0m
+[0;32mI (127704) WEBSOCKET: 5[0m
+[0;32mI (133704) WEBSOCKET: 6[0m
+[0;32mI (139704) WEBSOCKET: 7[0m
+[0;32mI (145704) WEBSOCKET: 8[0m
+[0;32mI (151704) WEBSOCKET: 9[0m
+[0;32mI (157704) WEBSOCKET: 10[0m
+[0;32mI (163704) WEBSOCKET: 11[0m
+[0;32mI (169704) WEBSOCKET: 12[0m
+[0;32mI (175704) WEBSOCKET: 13[0m
+[0;32mI (181704) WEBSOCKET: 14[0m
+[0;32mI (187704) WEBSOCKET: 0[0m
+[0;32mI (193704) WEBSOCKET: 1[0m
+[0;32mI (199714) WEBSOCKET: 2[0m
+[0;32mI (205724) WEBSOCKET: 3[0m
+[0;32mI (211734) WEBSOCKET: 4[0m
+[0;32mI (217734) WEBSOCKET: 5[0m
+[0;32mI (223744) WEBSOCKET: 6[0m
+[0;32mI (229744) WEBSOCKET: 7[0m
+[0;32mI (235744) WEBSOCKET: 8[0m
+[0;32mI (241744) WEBSOCKET: 9[0m
+[0;32mI (247744) WEBSOCKET: 10[0m
+[0;32mI (253744) WEBSOCKET: 11[0m
+[0;32mI (259744) WEBSOCKET: 12[0m
+[0;32mI (265744) WEBSOCKET: 13[0m
+[0;32mI (271744) WEBSOCKET: 14[0m
+[0;32mI (277744) WEBSOCKET: 0[0m
+[0;32mI (283744) WEBSOCKET: 1[0m
+[0;32mI (289744) WEBSOCKET: 2[0m
+[0;32mI (295744) WEBSOCKET: 3[0m
+[0;32mI (301744) WEBSOCKET: 4[0m
+[0;32mI (307744) WEBSOCKET: 5[0m
+[0;32mI (313744) WEBSOCKET: 6[0m
+[0;32mI (319744) WEBSOCKET: 7[0m
+[0;32mI (325744) WEBSOCKET: 8[0m
+[0;32mI (331744) WEBSOCKET: 9[0m
+[0;32mI (337744) WEBSOCKET: 10[0m
+[0;32mI (343744) WEBSOCKET: 11[0m
+[0;32mI (349744) WEBSOCKET: 12[0m
+[0;32mI (355744) WEBSOCKET: 13[0m
+[0;32mI (361744) WEBSOCKET: 14[0m
+[0;32mI (367754) WEBSOCKET: 0[0m
+[0;32mI (373754) WEBSOCKET: 1[0m
+[0;32mI (379764) WEBSOCKET: 2[0m
+[0;32mI (385774) WEBSOCKET: 3[0m
+[0;32mI (391774) WEBSOCKET: 4[0m
+[0;32mI (397774) WEBSOCKET: 5[0m
+[0;32mI (403774) WEBSOCKET: 6[0m
+[0;32mI (409774) WEBSOCKET: 7[0m
+[0;32mI (415774) WEBSOCKET: 8[0m
+[0;32mI (421774) WEBSOCKET: 9[0m
+[0;32mI (427774) WEBSOCKET: 10[0m
+[0;32mI (433774) WEBSOCKET: 11[0m
+[0;32mI (439774) WEBSOCKET: 12[0m
+[0;32mI (445774) WEBSOCKET: 13[0m
+[0;32mI (451774) WEBSOCKET: 14[0m
+[0;32mI (457774) WEBSOCKET: 0[0m
+[0;32mI (463774) WEBSOCKET: 1[0m
+[0;32mI (469774) WEBSOCKET: 2[0m
+[0;32mI (475774) WEBSOCKET: 3[0m
+[0;32mI (481774) WEBSOCKET: 4[0m
+[0;32mI (487784) WEBSOCKET: 5[0m
+[0;32mI (493794) WEBSOCKET: 6[0m
+[0;32mI (499794) WEBSOCKET: 7[0m
+[0;32mI (505794) WEBSOCKET: 8[0m
+[0;32mI (511794) WEBSOCKET: 9[0m
+[0;32mI (517794) WEBSOCKET: 10[0m
+[0;32mI (523804) WEBSOCKET: 11[0m
+[0;32mI (529804) WEBSOCKET: 12[0m
+[0;32mI (535804) WEBSOCKET: 13[0m
+[0;32mI (541814) WEBSOCKET: 14[0m
+[0;32mI (547814) WEBSOCKET: 0[0m
+[0;32mI (553814) WEBSOCKET: 1[0m
+[0;32mI (559814) WEBSOCKET: 2[0m
+[0;32mI (565814) WEBSOCKET: 3[0m
+[0;32mI (571814) WEBSOCKET: 4[0m
+[0;32mI (577814) WEBSOCKET: 5[0m
+[0;32mI (583824) WEBSOCKET: 6[0m
+[0;32mI (589824) WEBSOCKET: 7[0m
+[0;32mI (595824) WEBSOCKET: 8[0m
+[0;32mI (601834) WEBSOCKET: 9[0m
+[0;32mI (607834) WEBSOCKET: 10[0m
+[0;32mI (613834) WEBSOCKET: 11[0m
+[0;32mI (619834) WEBSOCKET: 12[0m
+[0;32mI (625834) WEBSOCKET: 13[0m
+[0;32mI (631834) WEBSOCKET: 14[0m
+[0;32mI (637834) WEBSOCKET: 0[0m
+[0;32mI (643834) WEBSOCKET: 1[0m
+[0;32mI (649834) WEBSOCKET: 2[0m
+[0;32mI (655834) WEBSOCKET: 3[0m
+[0;32mI (661834) WEBSOCKET: 4[0m
+[0;32mI (667834) WEBSOCKET: 5[0m
+[0;32mI (673834) WEBSOCKET: 6[0m
+[0;32mI (679834) WEBSOCKET: 7[0m
+[0;32mI (685834) WEBSOCKET: 8[0m
+[0;32mI (691834) WEBSOCKET: 9[0m
+[0;32mI (697834) WEBSOCKET: 10[0m
+[0;32mI (703834) WEBSOCKET: 11[0m
+[0;32mI (709834) WEBSOCKET: 12[0m
+[0;32mI (715834) WEBSOCKET: 13[0m
+[0;32mI (721834) WEBSOCKET: 14[0m
+[0;32mI (727834) WEBSOCKET: 0[0m
+[0;32mI (733844) WEBSOCKET: 1[0m
+[0;32mI (739844) WEBSOCKET: 2[0m
+[0;32mI (745844) WEBSOCKET: 3[0m
+[0;32mI (751844) WEBSOCKET: 4[0m
+[0;32mI (757844) WEBSOCKET: 5[0m
+[0;32mI (763844) WEBSOCKET: 6[0m
+[0;32mI (769844) WEBSOCKET: 7[0m
+[0;32mI (775844) WEBSOCKET: 8[0m
+[0;32mI (781844) WEBSOCKET: 9[0m
+[0;32mI (787844) WEBSOCKET: 10[0m
+[0;32mI (793844) WEBSOCKET: 11[0m
+[0;32mI (799844) WEBSOCKET: 12[0m
+[0;32mI (805844) WEBSOCKET: 13[0m
+[0;32mI (811844) WEBSOCKET: 14[0m
+[0;32mI (817844) WEBSOCKET: 0[0m
+[0;32mI (823844) WEBSOCKET: 1[0m
+[0;32mI (829844) WEBSOCKET: 2[0m
+[0;32mI (835844) WEBSOCKET: 3[0m
+[0;32mI (841844) WEBSOCKET: 4[0m
+[0;32mI (847854) WEBSOCKET: 5[0m
+[0;32mI (853854) WEBSOCKET: 6[0m
+[0;32mI (859854) WEBSOCKET: 7[0m
+[0;32mI (865854) WEBSOCKET: 8[0m
+[0;32mI (871854) WEBSOCKET: 9[0m
+[0;32mI (877854) WEBSOCKET: 10[0m
+[0;32mI (883864) WEBSOCKET: 11[0m
+[0;32mI (889864) WEBSOCKET: 12[0m
+[0;32mI (895864) WEBSOCKET: 13[0m
+[0;32mI (901864) WEBSOCKET: 14[0m
+[0;32mI (907864) WEBSOCKET: 0[0m
+[0;32mI (913864) WEBSOCKET: 1[0m
+[0;32mI (919864) WEBSOCKET: 2[0m
+[0;32mI (925874) WEBSOCKET: 3[0m
+[0;32mI (931874) WEBSOCKET: 4[0m
+[0;32mI (937884) WEBSOCKET: 5[0m
+[0;32mI (943884) WEBSOCKET: 6[0m
+[0;32mI (949884) WEBSOCKET: 7[0m
+[0;32mI (955884) WEBSOCKET: 8[0m
+[0;32mI (961894) WEBSOCKET: 9[0m
+[0;32mI (967894) WEBSOCKET: 10[0m
+[0;32mI (973894) WEBSOCKET: 11[0m
+[0;32mI (979894) WEBSOCKET: 12[0m
+[0;32mI (985894) WEBSOCKET: 13[0m
+[0;32mI (991894) WEBSOCKET: 14[0m
+[0;32mI (997894) WEBSOCKET: 0[0m
+[0;32mI (1003894) WEBSOCKET: 1[0m
+[0;32mI (1009894) WEBSOCKET: 2[0m
+[0;32mI (1015894) WEBSOCKET: 3[0m
+[0;32mI (1021894) WEBSOCKET: 4[0m
+[0;32mI (1027894) WEBSOCKET: 5[0m
+[0;32mI (1033894) WEBSOCKET: 6[0m
+[0;32mI (1039894) WEBSOCKET: 7[0m
+[0;32mI (1045894) WEBSOCKET: 8[0m
+[0;32mI (1051894) WEBSOCKET: 9[0m
+[0;32mI (1057894) WEBSOCKET: 10[0m
+[0;32mI (1063894) WEBSOCKET: 11[0m
+[0;32mI (1069894) WEBSOCKET: 12[0m
+[0;32mI (1075894) WEBSOCKET: 13[0m
+[0;32mI (1081894) WEBSOCKET: 14[0m
+[0;32mI (1087894) WEBSOCKET: 0[0m
+[0;32mI (1093894) WEBSOCKET: 1[0m
+[0;32mI (1099894) WEBSOCKET: 2[0m
+[0;32mI (1105894) WEBSOCKET: 3[0m
+[0;32mI (1111894) WEBSOCKET: 4[0m
+[0;32mI (1117894) WEBSOCKET: 5[0m
+[0;32mI (1123904) WEBSOCKET: 6[0m
+[0;32mI (1129904) WEBSOCKET: 7[0m
+[0;32mI (1135904) WEBSOCKET: 8[0m
+[0;32mI (1141904) WEBSOCKET: 9[0m
+[0;32mI (1147904) WEBSOCKET: 10[0m
+[0;32mI (1153904) WEBSOCKET: 11[0m
+[0;32mI (1159904) WEBSOCKET: 12[0m
+[0;32mI (1165904) WEBSOCKET: 13[0m
+[0;32mI (1171904) WEBSOCKET: 14[0m
+[0;32mI (1177904) WEBSOCKET: 0[0m
+[0;32mI (1183904) WEBSOCKET: 1[0m
+[0;32mI (1189904) WEBSOCKET: 2[0m
+[0;32mI (1195904) WEBSOCKET: 3[0m
+[0;32mI (1201904) WEBSOCKET: 4[0m
+[0;32mI (1207904) WEBSOCKET: 5[0m
+[0;32mI (1213904) WEBSOCKET: 6[0m
+[0;32mI (1219904) WEBSOCKET: 7[0m
+[0;32mI (1225904) WEBSOCKET: 8[0m
+[0;32mI (1231904) WEBSOCKET: 9[0m
+[0;32mI (1237904) WEBSOCKET: 10[0m
+[0;32mI (1243904) WEBSOCKET: 11[0m
+[0;32mI (1249904) WEBSOCKET: 12[0m
+[0;32mI (1255904) WEBSOCKET: 13[0m
+[0;32mI (1261904) WEBSOCKET: 14[0m
+[0;32mI (1267904) WEBSOCKET: 0[0m
+[0;32mI (1273914) WEBSOCKET: 1[0m
+[0;32mI (1279914) WEBSOCKET: 2[0m
+[0;32mI (1285914) WEBSOCKET: 3[0m
+[0;32mI (1291924) WEBSOCKET: 4[0m
+[0;32mI (1297934) WEBSOCKET: 5[0m
+[0;32mI (1303934) WEBSOCKET: 6[0m
+[0;32mI (1309944) WEBSOCKET: 7[0m
+[0;32mI (1315944) WEBSOCKET: 8[0m
+[0;32mI (1321944) WEBSOCKET: 9[0m
+[0;32mI (1327944) WEBSOCKET: 10[0m
+[0;32mI (1333944) WEBSOCKET: 11[0m
+[0;32mI (1339944) WEBSOCKET: 12[0m
+[0;32mI (1345944) WEBSOCKET: 13[0m
+[0;32mI (1351944) WEBSOCKET: 14[0m
+[0;32mI (1357944) WEBSOCKET: 0[0m
+[0;32mI (1363944) WEBSOCKET: 1[0m
+[0;32mI (1369944) WEBSOCKET: 2[0m
+[0;32mI (1375944) WEBSOCKET: 3[0m
+[0;32mI (1381944) WEBSOCKET: 4[0m
+[0;32mI (1387944) WEBSOCKET: 5[0m
+[0;32mI (1393944) WEBSOCKET: 6[0m
+[0;32mI (1399954) WEBSOCKET: 7[0m
+[0;32mI (1405954) WEBSOCKET: 8[0m
+[0;32mI (1411954) WEBSOCKET: 9[0m
+[0;32mI (1417954) WEBSOCKET: 10[0m
+[0;32mI (1423964) WEBSOCKET: 11[0m
+[0;32mI (1429964) WEBSOCKET: 12[0m
+[0;32mI (1435964) WEBSOCKET: 13[0m
+[0;32mI (1441964) WEBSOCKET: 14[0m
+[0;32mI (1447964) WEBSOCKET: 0[0m
+[0;32mI (1453974) WEBSOCKET: 1[0m
+[0;32mI (1459974) WEBSOCKET: 2[0m
+[0;32mI (1465974) WEBSOCKET: 3[0m
+[0;32mI (1471974) WEBSOCKET: 4[0m
+[0;32mI (1477974) WEBSOCKET: 5[0m
+[0;32mI (1483974) WEBSOCKET: 6[0m
+[0;32mI (1489984) WEBSOCKET: 7[0m
+[0;32mI (1495984) WEBSOCKET: 8[0m
+[0;32mI (1501984) WEBSOCKET: 9[0m
+[0;32mI (1507984) WEBSOCKET: 10[0m
+[0;32mI (1513984) WEBSOCKET: 11[0m
+[0;32mI (1519984) WEBSOCKET: 12[0m
+[0;32mI (1525984) WEBSOCKET: 13[0m
+[0;32mI (1531984) WEBSOCKET: 14[0m
+[0;32mI (1537984) WEBSOCKET: 0[0m
+[0;32mI (1543994) WEBSOCKET: 1[0m
+[0;32mI (1549994) WEBSOCKET: 2[0m
+[0;32mI (1555994) WEBSOCKET: 3[0m
+[0;32mI (1561994) WEBSOCKET: 4[0m
+[0;32mI (1567994) WEBSOCKET: 5[0m
+[0;32mI (1573994) WEBSOCKET: 6[0m
+[0;32mI (1579994) WEBSOCKET: 7[0m
+[0;32mI (1586004) WEBSOCKET: 8[0m
+[0;32mI (1592014) WEBSOCKET: 9[0m
+[0;32mI (1598014) WEBSOCKET: 10[0m
+[0;32mI (1604014) WEBSOCKET: 11[0m
+[0;32mI (1610014) WEBSOCKET: 12[0m
+[0;32mI (1616014) WEBSOCKET: 13[0m
+[0;32mI (1622024) WEBSOCKET: 14[0m
+[0;32mI (1628024) WEBSOCKET: 0[0m
+[0;32mI (1634024) WEBSOCKET: 1[0m
+[0;32mI (1640024) WEBSOCKET: 2[0m
+I (1641024) wifi:bcn_timeout,ap_probe_send_start
+I (1643524) wifi:ap_probe_send over, resett wifi status to disassoc
+I (1643534) wifi:state: run -> init (c800)
+I (1643534) wifi:pm stop, total sleep time: 1095992077 us / 1639019375 us
+
+I (1643534) wifi:<ba-del>idx:0, tid:0
+I (1643534) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1
+[0;32mI (1643544) example_connect: Wi-Fi disconnected, trying to reconnect...[0m
+[0;31mE (1643554) transport_base: poll_read select error 113, errno = Software caused connection abort, fd = 54[0m
+[0;31mE (1643564) WEBSOCKET_CLIENT: Network error: esp_transport_poll_read() returned -1, errno=119[0m
+[0;32mI (1643574) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (1645964) example_connect: Wi-Fi disconnected, trying to reconnect...[0m
+[0;32mI (1646024) WEBSOCKET: 3[0m
+[0;32mI (1648374) example_connect: Wi-Fi disconnected, trying to reconnect...[0m
+[0;32mI (1650784) example_connect: Wi-Fi disconnected, trying to reconnect...[0m
+[0;32mI (1652024) WEBSOCKET: 4[0m
+[0;32mI (1653194) example_connect: Wi-Fi disconnected, trying to reconnect...[0m
+[0;32mI (1655614) example_connect: Wi-Fi disconnected, trying to reconnect...[0m
+[0;32mI (1658024) WEBSOCKET: 5[0m
+[0;32mI (1658024) example_connect: WiFi Connect failed 7 times, stop reconnect.[0m
+[0;31mE (1658574) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1658574) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1658574) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (1658584) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (1658584) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (1664024) WEBSOCKET: 6[0m
+[0;31mE (1668594) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1668594) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1668594) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (1668604) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (1668604) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (1670024) WEBSOCKET: 7[0m
+[0;32mI (1676024) WEBSOCKET: 8[0m
+[0;31mE (1678614) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1678614) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1678614) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (1678624) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (1678624) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (1682024) WEBSOCKET: 9[0m
+[0;32mI (1688024) WEBSOCKET: 10[0m
+[0;31mE (1688634) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1688634) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1688634) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (1688644) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (1688644) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (1694024) WEBSOCKET: 11[0m
+[0;31mE (1698654) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1698654) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1698654) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (1698664) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (1698664) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (1700024) WEBSOCKET: 12[0m
+[0;32mI (1706024) WEBSOCKET: 13[0m
+[0;31mE (1708674) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1708674) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1708674) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (1708684) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (1708684) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (1712024) WEBSOCKET: 14[0m
+[0;32mI (1718024) WEBSOCKET: 0[0m
+[0;31mE (1718694) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1718694) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1718694) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (1718704) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (1718704) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (1724024) WEBSOCKET: 1[0m
+[0;31mE (1728714) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1728714) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1728714) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (1728724) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (1728724) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (1730024) WEBSOCKET: 2[0m
+[0;32mI (1736024) WEBSOCKET: 3[0m
+[0;31mE (1738734) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1738734) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1738734) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (1738744) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (1738744) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (1742024) WEBSOCKET: 4[0m
+[0;32mI (1748024) WEBSOCKET: 5[0m
+[0;31mE (1748754) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1748754) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1748754) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (1748764) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (1748764) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (1754024) WEBSOCKET: 6[0m
+[0;31mE (1758774) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1758774) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1758774) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (1758784) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (1758784) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (1760024) WEBSOCKET: 7[0m
+[0;32mI (1766024) WEBSOCKET: 8[0m
+[0;31mE (1768794) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1768794) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1768794) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (1768804) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (1768804) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (1772024) WEBSOCKET: 9[0m
+[0;32mI (1778024) WEBSOCKET: 10[0m
+[0;31mE (1778814) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1778814) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1778814) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (1778824) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (1778824) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (1784024) WEBSOCKET: 11[0m
+[0;31mE (1788834) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1788834) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1788834) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (1788844) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (1788844) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (1790024) WEBSOCKET: 12[0m
+[0;32mI (1796024) WEBSOCKET: 13[0m
+[0;31mE (1798854) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1798854) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1798854) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (1798864) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (1798864) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (1802024) WEBSOCKET: 14[0m
+[0;32mI (1808024) WEBSOCKET: 0[0m
+[0;31mE (1808874) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1808874) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1808874) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (1808884) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (1808884) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (1814024) WEBSOCKET: 1[0m
+[0;31mE (1818894) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1818894) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1818894) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (1818904) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (1818904) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (1820024) WEBSOCKET: 2[0m
+[0;32mI (1826024) WEBSOCKET: 3[0m
+[0;31mE (1828914) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1828914) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1828914) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (1828924) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (1828924) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (1832024) WEBSOCKET: 4[0m
+[0;32mI (1838024) WEBSOCKET: 5[0m
+[0;31mE (1838934) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1838934) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1838934) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (1838944) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (1838944) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (1844024) WEBSOCKET: 6[0m
+[0;31mE (1848954) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1848954) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1848954) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (1848964) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (1848964) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (1850024) WEBSOCKET: 7[0m
+[0;32mI (1856024) WEBSOCKET: 8[0m
+[0;31mE (1858974) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1858974) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1858974) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (1858984) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (1858984) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (1862024) WEBSOCKET: 9[0m
+[0;32mI (1868024) WEBSOCKET: 10[0m
+[0;31mE (1868994) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1868994) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1868994) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (1869004) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (1869004) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (1874024) WEBSOCKET: 11[0m
+[0;31mE (1879014) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1879014) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1879014) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (1879024) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (1879024) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (1880024) WEBSOCKET: 12[0m
+[0;32mI (1886024) WEBSOCKET: 13[0m
+[0;31mE (1889034) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1889034) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1889034) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (1889044) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (1889044) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (1892024) WEBSOCKET: 14[0m
+[0;32mI (1898024) WEBSOCKET: 0[0m
+[0;31mE (1899054) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1899054) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1899054) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (1899064) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (1899064) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (1904024) WEBSOCKET: 1[0m
+[0;31mE (1909074) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1909074) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1909074) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (1909084) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (1909084) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (1910024) WEBSOCKET: 2[0m
+[0;32mI (1916024) WEBSOCKET: 3[0m
+[0;31mE (1919094) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1919094) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1919094) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (1919104) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (1919104) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (1922024) WEBSOCKET: 4[0m
+[0;32mI (1928024) WEBSOCKET: 5[0m
+[0;31mE (1929114) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1929114) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1929114) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (1929124) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (1929124) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (1934024) WEBSOCKET: 6[0m
+[0;31mE (1939134) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1939134) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1939134) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (1939144) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (1939144) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (1940024) WEBSOCKET: 7[0m
+[0;32mI (1946024) WEBSOCKET: 8[0m
+[0;31mE (1949154) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1949154) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1949154) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (1949164) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (1949164) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (1952024) WEBSOCKET: 9[0m
+[0;32mI (1958024) WEBSOCKET: 10[0m
+[0;31mE (1959174) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1959174) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1959174) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (1959184) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (1959184) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (1964024) WEBSOCKET: 11[0m
+[0;31mE (1969194) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1969194) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1969194) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (1969204) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (1969204) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (1970024) WEBSOCKET: 12[0m
+[0;32mI (1976024) WEBSOCKET: 13[0m
+[0;31mE (1979214) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1979214) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1979214) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (1979224) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (1979224) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (1982024) WEBSOCKET: 14[0m
+[0;32mI (1988024) WEBSOCKET: 0[0m
+[0;31mE (1989234) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1989234) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1989234) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (1989244) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (1989244) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (1994024) WEBSOCKET: 1[0m
+[0;31mE (1999254) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1999254) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1999254) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (1999264) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (1999264) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2000024) WEBSOCKET: 2[0m
+[0;32mI (2006024) WEBSOCKET: 3[0m
+[0;31mE (2009274) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2009274) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2009274) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2009284) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2009284) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2012024) WEBSOCKET: 4[0m
+[0;32mI (2018024) WEBSOCKET: 5[0m
+[0;31mE (2019294) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2019294) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2019294) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2019304) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2019304) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2024024) WEBSOCKET: 6[0m
+[0;31mE (2029314) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2029314) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2029314) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2029324) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2029324) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2030024) WEBSOCKET: 7[0m
+[0;32mI (2036024) WEBSOCKET: 8[0m
+[0;31mE (2039334) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2039334) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2039334) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2039344) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2039344) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2042024) WEBSOCKET: 9[0m
+[0;32mI (2048024) WEBSOCKET: 10[0m
+[0;31mE (2049354) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2049354) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2049354) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2049364) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2049364) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2054024) WEBSOCKET: 11[0m
+[0;31mE (2059374) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2059374) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2059374) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2059384) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2059384) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2060024) WEBSOCKET: 12[0m
+[0;32mI (2066024) WEBSOCKET: 13[0m
+[0;31mE (2069394) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2069394) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2069394) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2069404) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2069404) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2072024) WEBSOCKET: 14[0m
+[0;32mI (2078024) WEBSOCKET: 0[0m
+[0;31mE (2079414) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2079414) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2079414) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2079424) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2079424) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2084024) WEBSOCKET: 1[0m
+[0;31mE (2089434) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2089434) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2089434) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2089444) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2089444) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2090024) WEBSOCKET: 2[0m
+[0;32mI (2096024) WEBSOCKET: 3[0m
+[0;31mE (2099454) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2099454) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2099454) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2099464) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2099464) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2102024) WEBSOCKET: 4[0m
+[0;32mI (2108024) WEBSOCKET: 5[0m
+[0;31mE (2109474) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2109474) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2109474) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2109484) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2109484) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2114024) WEBSOCKET: 6[0m
+[0;31mE (2119494) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2119494) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2119494) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2119504) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2119504) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2120024) WEBSOCKET: 7[0m
+[0;32mI (2126024) WEBSOCKET: 8[0m
+[0;31mE (2129514) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2129514) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2129514) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2129524) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2129524) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2132024) WEBSOCKET: 9[0m
+[0;32mI (2138024) WEBSOCKET: 10[0m
+[0;31mE (2139534) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2139534) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2139534) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2139544) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2139544) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2144024) WEBSOCKET: 11[0m
+[0;31mE (2149554) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2149554) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2149554) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2149564) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2149564) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2150024) WEBSOCKET: 12[0m
+[0;32mI (2156024) WEBSOCKET: 13[0m
+[0;31mE (2159574) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2159574) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2159574) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2159584) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2159584) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2162024) WEBSOCKET: 14[0m
+[0;32mI (2168024) WEBSOCKET: 0[0m
+[0;31mE (2169594) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2169594) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2169594) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2169604) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2169604) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2174024) WEBSOCKET: 1[0m
+[0;31mE (2179614) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2179614) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2179614) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2179624) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2179624) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2180024) WEBSOCKET: 2[0m
+[0;32mI (2186024) WEBSOCKET: 3[0m
+[0;31mE (2189634) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2189634) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2189634) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2189644) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2189644) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2192024) WEBSOCKET: 4[0m
+[0;32mI (2198024) WEBSOCKET: 5[0m
+[0;31mE (2199654) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2199654) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2199654) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2199664) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2199664) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2204024) WEBSOCKET: 6[0m
+[0;31mE (2209674) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2209674) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2209674) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2209684) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2209684) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2210024) WEBSOCKET: 7[0m
+[0;32mI (2216024) WEBSOCKET: 8[0m
+[0;31mE (2219694) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2219694) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2219694) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2219704) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2219704) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2222024) WEBSOCKET: 9[0m
+[0;32mI (2228024) WEBSOCKET: 10[0m
+[0;31mE (2229714) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2229714) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2229714) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2229724) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2229724) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2234024) WEBSOCKET: 11[0m
+[0;31mE (2239734) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2239734) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2239734) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2239744) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2239744) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2240024) WEBSOCKET: 12[0m
+[0;32mI (2246024) WEBSOCKET: 13[0m
+[0;31mE (2249754) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2249754) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2249754) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2249764) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2249764) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2252024) WEBSOCKET: 14[0m
+[0;32mI (2258024) WEBSOCKET: 0[0m
+[0;31mE (2259774) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2259774) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2259774) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2259784) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2259784) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2264024) WEBSOCKET: 1[0m
+[0;31mE (2269794) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2269794) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2269794) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2269804) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2269804) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2270024) WEBSOCKET: 2[0m
+[0;32mI (2276024) WEBSOCKET: 3[0m
+[0;31mE (2279814) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2279814) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2279814) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2279824) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2279824) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2282024) WEBSOCKET: 4[0m
+[0;32mI (2288024) WEBSOCKET: 5[0m
+[0;31mE (2289834) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2289834) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2289834) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2289844) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2289844) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2294024) WEBSOCKET: 6[0m
+[0;31mE (2299854) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2299854) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2299854) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2299864) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2299864) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2300024) WEBSOCKET: 7[0m
+[0;32mI (2306024) WEBSOCKET: 8[0m
+[0;31mE (2309874) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2309874) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2309874) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2309884) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2309884) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2312024) WEBSOCKET: 9[0m
+[0;32mI (2318024) WEBSOCKET: 10[0m
+[0;31mE (2319894) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2319894) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2319894) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2319904) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2319904) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2324024) WEBSOCKET: 11[0m
+[0;31mE (2329914) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2329914) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2329914) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2329924) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2329924) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2330024) WEBSOCKET: 12[0m
+[0;32mI (2336024) WEBSOCKET: 13[0m
+[0;31mE (2339934) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2339934) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2339934) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2339944) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2339944) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2342024) WEBSOCKET: 14[0m
+[0;32mI (2348024) WEBSOCKET: 0[0m
+[0;31mE (2349954) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2349954) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2349954) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2349964) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2349964) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2354024) WEBSOCKET: 1[0m
+[0;31mE (2359974) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2359974) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2359974) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2359984) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2359984) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2360024) WEBSOCKET: 2[0m
+[0;32mI (2366024) WEBSOCKET: 3[0m
+[0;31mE (2369994) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2369994) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2369994) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2370004) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2370004) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2372024) WEBSOCKET: 4[0m
+[0;32mI (2378024) WEBSOCKET: 5[0m
+[0;31mE (2380014) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2380014) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2380014) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2380024) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2380024) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2384024) WEBSOCKET: 6[0m
+[0;32mI (2390024) WEBSOCKET: 7[0m
+[0;31mE (2390034) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2390034) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2390034) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2390044) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2390044) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2396024) WEBSOCKET: 8[0m
+[0;31mE (2400054) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2400054) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2400054) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2400064) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2400064) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2402024) WEBSOCKET: 9[0m
+[0;32mI (2408024) WEBSOCKET: 10[0m
+[0;31mE (2410074) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2410074) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2410074) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2410084) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2410084) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2414024) WEBSOCKET: 11[0m
+[0;32mI (2420024) WEBSOCKET: 12[0m
+[0;31mE (2420094) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2420094) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2420094) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2420104) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2420104) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2426024) WEBSOCKET: 13[0m
+[0;31mE (2430114) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2430114) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2430114) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2430124) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2430124) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2432024) WEBSOCKET: 14[0m
+[0;32mI (2438024) WEBSOCKET: 0[0m
+[0;31mE (2440134) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2440134) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2440134) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2440144) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2440144) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2444024) WEBSOCKET: 1[0m
+[0;32mI (2450024) WEBSOCKET: 2[0m
+[0;31mE (2450154) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2450154) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2450154) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2450164) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2450164) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2456024) WEBSOCKET: 3[0m
+[0;31mE (2460174) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2460174) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2460174) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2460184) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2460184) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2462024) WEBSOCKET: 4[0m
+[0;32mI (2468024) WEBSOCKET: 5[0m
+[0;31mE (2470194) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2470194) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2470194) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2470204) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2470204) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2474024) WEBSOCKET: 6[0m
+[0;32mI (2480024) WEBSOCKET: 7[0m
+[0;31mE (2480214) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2480214) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2480214) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2480224) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2480224) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2486024) WEBSOCKET: 8[0m
+[0;31mE (2490234) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2490234) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2490234) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2490244) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2490244) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2492024) WEBSOCKET: 9[0m
+[0;32mI (2498024) WEBSOCKET: 10[0m
+[0;31mE (2500254) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2500254) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2500254) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2500264) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2500264) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2504024) WEBSOCKET: 11[0m
+[0;32mI (2510024) WEBSOCKET: 12[0m
+[0;31mE (2510274) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2510274) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2510274) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2510284) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2510284) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2516024) WEBSOCKET: 13[0m
+[0;31mE (2520294) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2520294) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2520294) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2520304) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2520304) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2522024) WEBSOCKET: 14[0m
+[0;32mI (2528024) WEBSOCKET: 0[0m
+[0;31mE (2530314) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2530314) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2530314) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2530324) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2530324) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2534024) WEBSOCKET: 1[0m
+[0;32mI (2540024) WEBSOCKET: 2[0m
+[0;31mE (2540334) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2540334) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2540334) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2540344) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2540344) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2546024) WEBSOCKET: 3[0m
+[0;31mE (2550354) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2550354) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2550354) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2550364) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2550364) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2552024) WEBSOCKET: 4[0m
+[0;32mI (2558024) WEBSOCKET: 5[0m
+[0;31mE (2560374) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2560374) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2560374) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2560384) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2560384) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2564024) WEBSOCKET: 6[0m
+[0;32mI (2570024) WEBSOCKET: 7[0m
+[0;31mE (2570394) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2570394) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2570394) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2570404) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2570404) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2576024) WEBSOCKET: 8[0m
+[0;31mE (2580414) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2580414) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2580414) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2580424) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2580424) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2582024) WEBSOCKET: 9[0m
+[0;32mI (2588024) WEBSOCKET: 10[0m
+[0;31mE (2590434) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2590434) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2590434) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2590444) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2590444) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2594024) WEBSOCKET: 11[0m
+[0;32mI (2600024) WEBSOCKET: 12[0m
+[0;31mE (2600454) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2600454) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2600454) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2600464) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2600464) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2606024) WEBSOCKET: 13[0m
+[0;31mE (2610474) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2610474) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2610474) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2610484) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2610484) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2612024) WEBSOCKET: 14[0m
+[0;32mI (2618024) WEBSOCKET: 0[0m
+[0;31mE (2620494) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2620494) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2620494) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2620504) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2620504) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2624024) WEBSOCKET: 1[0m
+[0;32mI (2630024) WEBSOCKET: 2[0m
+[0;31mE (2630514) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2630514) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2630514) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2630524) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2630524) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2636024) WEBSOCKET: 3[0m
+[0;31mE (2640534) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2640534) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2640534) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2640544) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2640544) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2642024) WEBSOCKET: 4[0m
+[0;32mI (2648024) WEBSOCKET: 5[0m
+[0;31mE (2650554) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2650554) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2650554) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2650564) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2650564) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2654024) WEBSOCKET: 6[0m
+[0;32mI (2660024) WEBSOCKET: 7[0m
+[0;31mE (2660574) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2660574) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2660574) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2660584) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2660584) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2666024) WEBSOCKET: 8[0m
+[0;31mE (2670594) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2670594) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2670594) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2670604) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2670604) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2672024) WEBSOCKET: 9[0m
+[0;32mI (2678024) WEBSOCKET: 10[0m
+[0;31mE (2680614) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2680614) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2680614) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2680624) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2680624) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2684024) WEBSOCKET: 11[0m
+[0;32mI (2690024) WEBSOCKET: 12[0m
+[0;31mE (2690634) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2690634) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2690634) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2690644) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2690644) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2696024) WEBSOCKET: 13[0m
+[0;31mE (2700654) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2700654) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2700654) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2700664) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2700664) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2702024) WEBSOCKET: 14[0m
+[0;32mI (2708024) WEBSOCKET: 0[0m
+[0;31mE (2710674) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2710674) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2710674) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2710684) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2710684) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2714024) WEBSOCKET: 1[0m
+[0;32mI (2720024) WEBSOCKET: 2[0m
+[0;31mE (2720694) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2720694) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2720694) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2720704) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2720704) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2726024) WEBSOCKET: 3[0m
+[0;31mE (2730714) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2730714) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2730714) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2730724) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2730724) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2732024) WEBSOCKET: 4[0m
+[0;32mI (2738024) WEBSOCKET: 5[0m
+[0;31mE (2740734) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2740734) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2740734) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2740744) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2740744) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2744024) WEBSOCKET: 6[0m
+[0;32mI (2750024) WEBSOCKET: 7[0m
+[0;31mE (2750754) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2750754) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2750754) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2750764) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2750764) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2756024) WEBSOCKET: 8[0m
+[0;31mE (2760774) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2760774) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2760774) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2760784) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2760784) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2762024) WEBSOCKET: 9[0m
+[0;32mI (2768024) WEBSOCKET: 10[0m
+[0;31mE (2770794) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2770794) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2770794) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2770804) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2770804) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2774024) WEBSOCKET: 11[0m
+[0;32mI (2780024) WEBSOCKET: 12[0m
+[0;31mE (2780814) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2780814) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2780814) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2780824) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2780824) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2786024) WEBSOCKET: 13[0m
+[0;31mE (2790834) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2790834) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2790834) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2790844) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2790844) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2792024) WEBSOCKET: 14[0m
+[0;32mI (2798024) WEBSOCKET: 0[0m
+[0;31mE (2800854) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2800854) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2800854) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2800864) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2800864) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2804024) WEBSOCKET: 1[0m
+[0;32mI (2810024) WEBSOCKET: 2[0m
+[0;31mE (2810874) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2810874) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2810874) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2810884) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2810884) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2816024) WEBSOCKET: 3[0m
+[0;31mE (2820894) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2820894) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2820894) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2820904) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2820904) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2822024) WEBSOCKET: 4[0m
+[0;32mI (2828024) WEBSOCKET: 5[0m
+[0;31mE (2830914) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2830914) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2830914) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2830924) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2830924) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2834024) WEBSOCKET: 6[0m
+[0;32mI (2840024) WEBSOCKET: 7[0m
+[0;31mE (2840934) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2840934) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2840934) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2840944) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2840944) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2846024) WEBSOCKET: 8[0m
+[0;31mE (2850954) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2850954) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2850954) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2850964) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2850964) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2852024) WEBSOCKET: 9[0m
+[0;32mI (2858024) WEBSOCKET: 10[0m
+[0;31mE (2860974) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2860974) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2860974) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2860984) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2860984) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2864024) WEBSOCKET: 11[0m
+[0;32mI (2870024) WEBSOCKET: 12[0m
+[0;31mE (2870994) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2870994) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2870994) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2871004) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2871004) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2876024) WEBSOCKET: 13[0m
+[0;31mE (2881014) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2881014) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2881014) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2881024) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2881024) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2882024) WEBSOCKET: 14[0m
+[0;32mI (2888024) WEBSOCKET: 0[0m
+[0;31mE (2891034) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2891034) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2891034) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2891044) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2891044) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2894024) WEBSOCKET: 1[0m
+[0;32mI (2900024) WEBSOCKET: 2[0m
+[0;31mE (2901054) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2901054) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2901054) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2901064) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2901064) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2906024) WEBSOCKET: 3[0m
+[0;31mE (2911074) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2911074) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2911074) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2911084) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2911084) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2912024) WEBSOCKET: 4[0m
+[0;32mI (2918024) WEBSOCKET: 5[0m
+[0;31mE (2921094) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2921094) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2921094) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2921104) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2921104) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2924024) WEBSOCKET: 6[0m
+[0;32mI (2930024) WEBSOCKET: 7[0m
+[0;31mE (2931114) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2931114) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2931114) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2931124) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2931124) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2936024) WEBSOCKET: 8[0m
+[0;31mE (2941134) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2941134) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2941134) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2941144) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2941144) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2942024) WEBSOCKET: 9[0m
+[0;32mI (2948024) WEBSOCKET: 10[0m
+[0;31mE (2951154) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2951154) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2951154) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2951164) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2951164) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2954024) WEBSOCKET: 11[0m
+[0;32mI (2960024) WEBSOCKET: 12[0m
+[0;31mE (2961174) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2961174) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2961174) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2961184) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2961184) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2966024) WEBSOCKET: 13[0m
+[0;31mE (2971194) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2971194) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2971194) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2971204) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2971204) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2972024) WEBSOCKET: 14[0m
+[0;32mI (2978024) WEBSOCKET: 0[0m
+[0;31mE (2981214) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2981214) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2981214) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2981224) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2981224) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2984024) WEBSOCKET: 1[0m
+[0;32mI (2990024) WEBSOCKET: 2[0m
+[0;31mE (2991234) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2991234) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2991234) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (2991244) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (2991244) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (2996024) WEBSOCKET: 3[0m
+[0;31mE (3001254) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (3001254) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (3001254) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (3001264) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (3001264) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (3002024) WEBSOCKET: 4[0m
+[0;32mI (3008024) WEBSOCKET: 5[0m
+[0;31mE (3011274) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (3011274) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (3011274) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (3011284) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (3011284) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (3014024) WEBSOCKET: 6[0m
+[0;32mI (3020024) WEBSOCKET: 7[0m
+[0;31mE (3021294) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (3021294) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (3021294) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (3021304) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (3021304) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (3026024) WEBSOCKET: 8[0m
+[0;31mE (3031314) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (3031314) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (3031314) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (3031324) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (3031324) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (3032024) WEBSOCKET: 9[0m
+[0;32mI (3038024) WEBSOCKET: 10[0m
+[0;31mE (3041334) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (3041334) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (3041334) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (3041344) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (3041344) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (3044024) WEBSOCKET: 11[0m
+[0;32mI (3050024) WEBSOCKET: 12[0m
+[0;31mE (3051354) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (3051354) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (3051354) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (3051364) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (3051364) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (3056024) WEBSOCKET: 13[0m
+[0;31mE (3061374) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (3061374) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (3061374) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (3061384) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (3061384) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (3062024) WEBSOCKET: 14[0m
+[0;32mI (3068024) WEBSOCKET: 0[0m
+[0;31mE (3071394) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (3071394) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (3071394) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (3071404) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (3071404) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (3074024) WEBSOCKET: 1[0m
+[0;32mI (3080024) WEBSOCKET: 2[0m
+[0;31mE (3081414) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (3081414) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (3081414) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (3081424) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (3081424) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (3086024) WEBSOCKET: 3[0m
+[0;31mE (3091434) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (3091434) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (3091434) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (3091444) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (3091444) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (3092024) WEBSOCKET: 4[0m
+[0;32mI (3098024) WEBSOCKET: 5[0m
+[0;31mE (3101454) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (3101454) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (3101454) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (3101464) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (3101464) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (3104024) WEBSOCKET: 6[0m
+[0;32mI (3110024) WEBSOCKET: 7[0m
+[0;31mE (3111474) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (3111474) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (3111474) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (3111484) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (3111484) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (3116024) WEBSOCKET: 8[0m
+[0;31mE (3121494) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (3121494) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (3121494) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (3121504) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (3121504) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (3122024) WEBSOCKET: 9[0m
+[0;32mI (3128024) WEBSOCKET: 10[0m
+[0;31mE (3131514) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (3131514) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (3131514) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (3131524) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (3131524) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (3134024) WEBSOCKET: 11[0m
+[0;32mI (3140024) WEBSOCKET: 12[0m
+[0;31mE (3141534) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (3141534) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (3141534) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (3141544) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (3141544) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (3146024) WEBSOCKET: 13[0m
+[0;31mE (3151554) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (3151554) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (3151554) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (3151564) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (3151564) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (3152024) WEBSOCKET: 14[0m
+[0;32mI (3158024) WEBSOCKET: 0[0m
+[0;31mE (3161574) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (3161574) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (3161574) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (3161584) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (3161584) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (3164024) WEBSOCKET: 1[0m
+[0;32mI (3170024) WEBSOCKET: 2[0m
+[0;31mE (3171594) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (3171594) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (3171594) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (3171604) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (3171604) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (3176024) WEBSOCKET: 3[0m
+[0;31mE (3181614) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (3181614) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (3181614) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (3181624) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (3181624) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (3182024) WEBSOCKET: 4[0m
+[0;32mI (3188024) WEBSOCKET: 5[0m
+[0;31mE (3191634) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (3191634) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (3191634) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (3191644) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (3191644) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (3194024) WEBSOCKET: 6[0m
+[0;32mI (3200024) WEBSOCKET: 7[0m
+[0;31mE (3201654) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (3201654) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (3201654) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (3201664) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (3201664) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (3206024) WEBSOCKET: 8[0m
+[0;31mE (3211674) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (3211674) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (3211674) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (3211684) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (3211684) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (3212024) WEBSOCKET: 9[0m
+[0;32mI (3218024) WEBSOCKET: 10[0m
+[0;31mE (3221694) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (3221694) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (3221694) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (3221704) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (3221704) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (3224024) WEBSOCKET: 11[0m
+[0;32mI (3230024) WEBSOCKET: 12[0m
+[0;31mE (3231714) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (3231714) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (3231714) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (3231724) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (3231724) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (3236024) WEBSOCKET: 13[0m
+[0;31mE (3241734) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (3241734) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (3241734) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (3241744) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (3241744) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (3242024) WEBSOCKET: 14[0m
+[0;32mI (3248024) WEBSOCKET: 0[0m
+[0;31mE (3251754) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (3251754) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (3251754) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (3251764) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (3251764) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (3254024) WEBSOCKET: 1[0m
+[0;32mI (3260024) WEBSOCKET: 2[0m
+[0;31mE (3261774) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (3261774) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (3261774) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (3261784) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (3261784) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (3266024) WEBSOCKET: 3[0m
+[0;31mE (3271794) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (3271794) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (3271794) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (3271804) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (3271804) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (3272024) WEBSOCKET: 4[0m
+[0;32mI (3278024) WEBSOCKET: 5[0m
+[0;31mE (3281814) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (3281814) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (3281814) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (3281824) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (3281824) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (3284024) WEBSOCKET: 6[0m
+[0;32mI (3290024) WEBSOCKET: 7[0m
+[0;31mE (3291834) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (3291834) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (3291834) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (3291844) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (3291844) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (3296024) WEBSOCKET: 8[0m
+[0;31mE (3301854) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (3301854) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (3301854) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (3301864) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (3301864) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (3302024) WEBSOCKET: 9[0m
+[0;32mI (3308024) WEBSOCKET: 10[0m
+[0;31mE (3311874) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (3311874) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (3311874) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (3311884) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (3311884) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (3314024) WEBSOCKET: 11[0m
+[0;32mI (3320024) WEBSOCKET: 12[0m
+[0;31mE (3321894) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (3321894) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (3321894) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (3321904) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (3321904) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (3326024) WEBSOCKET: 13[0m
+[0;31mE (3331914) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (3331914) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (3331914) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (3331924) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (3331924) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (3332024) WEBSOCKET: 14[0m
+[0;32mI (3338024) WEBSOCKET: 0[0m
+[0;31mE (3341934) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (3341934) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (3341934) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (3341944) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (3341944) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (3344024) WEBSOCKET: 1[0m
+[0;32mI (3350024) WEBSOCKET: 2[0m
+[0;31mE (3351954) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (3351954) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (3351954) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (3351964) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (3351964) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (3356024) WEBSOCKET: 3[0m
+[0;31mE (3361974) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (3361974) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (3361974) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (3361984) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (3361984) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (3362024) WEBSOCKET: 4[0m
+[0;32mI (3368024) WEBSOCKET: 5[0m
+[0;31mE (3371994) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (3371994) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (3371994) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (3372004) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (3372004) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (3374024) WEBSOCKET: 6[0m
+[0;32mI (3380024) WEBSOCKET: 7[0m
+[0;31mE (3382014) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (3382014) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (3382014) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (3382024) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (3382024) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (3386024) WEBSOCKET: 8[0m
+[0;32mI (3392024) WEBSOCKET: 9[0m
+[0;31mE (3392034) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (3392034) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (3392034) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (3392044) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (3392044) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (3398024) WEBSOCKET: 10[0m
+[0;31mE (3402054) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (3402054) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (3402054) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (3402064) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (3402064) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (3404024) WEBSOCKET: 11[0m
+[0;32mI (3410024) WEBSOCKET: 12[0m
+[0;31mE (3412074) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (3412074) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (3412074) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (3412084) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (3412084) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (3416024) WEBSOCKET: 13[0m
+[0;32mI (3422024) WEBSOCKET: 14[0m
+[0;31mE (3422094) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (3422094) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (3422094) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (3422104) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (3422104) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (3428024) WEBSOCKET: 0[0m
+[0;31mE (3432114) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (3432114) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (3432114) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (3432124) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (3432124) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (3434024) WEBSOCKET: 1[0m
+[0;32mI (3440024) WEBSOCKET: 2[0m

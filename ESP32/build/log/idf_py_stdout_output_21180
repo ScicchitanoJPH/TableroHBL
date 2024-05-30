@@ -1,0 +1,2255 @@
+ets Jun  8 2016 00:22:57
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7080
+load:0x40078000,len:15584
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3876
+entry 0x4008064c
+[0;32mI (31) boot: ESP-IDF v5.1.1 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Mar  8 2024 12:14:19[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v1.0[0m
+[0;32mI (39) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (43) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (52) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (61) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (76) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (91) boot: End of partition table[0m
+[0;32mI (95) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=24c54h (150612) map[0m
+[0;32mI (158) esp_image: segment 1: paddr=00034c7c vaddr=3ffb0000 size=03738h ( 14136) load[0m
+[0;32mI (164) esp_image: segment 2: paddr=000383bc vaddr=40080000 size=07c5ch ( 31836) load[0m
+[0;32mI (177) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=9563ch (611900) map[0m
+[0;32mI (399) esp_image: segment 4: paddr=000d5664 vaddr=40087c5c size=0da84h ( 55940) load[0m
+[0;32mI (433) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (433) boot: Disabling RNG early entropy source...[0m
+[0;32mI (444) cpu_start: Multicore app[0m
+[0;32mI (445) cpu_start: Pro cpu up.[0m
+[0;32mI (445) cpu_start: Starting app cpu, entry point is 0x4008137c[0m
+[0;32mI (0) cpu_start: App cpu up.[0m
+[0;32mI (463) cpu_start: Pro cpu start user code[0m
+[0;32mI (463) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (463) cpu_start: Application information:[0m
+[0;32mI (467) cpu_start: Project name:     MQTT_example[0m
+[0;32mI (473) cpu_start: App version:      1[0m
+[0;32mI (477) cpu_start: Compile time:     Mar  8 2024 12:14:08[0m
+[0;32mI (483) cpu_start: ELF file SHA256:  8ac3685b34810dd1...[0m
+[0;32mI (489) cpu_start: ESP-IDF:          v5.1.1[0m
+[0;32mI (494) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (499) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (504) cpu_start: Chip rev:         v1.0[0m
+[0;32mI (509) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (516) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (522) heap_init: At 3FFB7DF8 len 00028208 (160 KiB): DRAM[0m
+[0;32mI (528) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (534) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (541) heap_init: At 400956E0 len 0000A920 (42 KiB): IRAM[0m
+[0;32mI (548) spi_flash: detected chip: generic[0m
+[0;32mI (552) spi_flash: flash io: dio[0m
+[0;33mW (556) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (570) app_start: Starting scheduler on CPU0[0m
+[0;32mI (574) app_start: Starting scheduler on CPU1[0m
+[0;32mI (574) main_task: Started on CPU0[0m
+[0;32mI (584) main_task: Calling app_main()[0m
+[0;32mI (584) WEBSOCKET: [APP] Startup..[0m
+[0;32mI (584) WEBSOCKET: [APP] Free memory: 279384 bytes[0m
+[0;32mI (594) WEBSOCKET: [APP] IDF version: v5.1.1[0m
+[0;32mI (634) example_connect: Start example_connect.[0m
+I (644) wifi:wifi driver task: 3ffbfa30, prio:23, stack:6656, core=0
+I (654) wifi:wifi firmware version: ce9244d
+I (654) wifi:wifi certification version: v7.0
+I (654) wifi:config NVS flash: enabled
+I (664) wifi:config nano formating: disabled
+I (664) wifi:Init data frame dynamic rx buffer num: 32
+I (664) wifi:Init management frame dynamic rx buffer num: 32
+I (674) wifi:Init management short buffer num: 32
+I (674) wifi:Init dynamic tx buffer num: 32
+I (684) wifi:Init static rx buffer size: 1600
+I (684) wifi:Init static rx buffer num: 10
+I (694) wifi:Init dynamic rx buffer num: 32
+[0;32mI (694) wifi_init: rx ba win: 6[0m
+[0;32mI (694) wifi_init: tcpip mbox: 32[0m
+[0;32mI (704) wifi_init: udp mbox: 6[0m
+[0;32mI (704) wifi_init: tcp mbox: 6[0m
+[0;32mI (704) wifi_init: tcp tx win: 5744[0m
+[0;32mI (714) wifi_init: tcp rx win: 5744[0m
+[0;32mI (714) wifi_init: tcp mss: 1440[0m
+[0;32mI (724) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (724) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (734) phy_init: phy_version 4670,719f9f6,Feb 18 2021,17:07:07[0m
+I (834) wifi:mode : sta (ec:94:cb:6a:fb:58)
+I (834) wifi:enable tsf
+[0;32mI (844) example_connect: Connecting to WIFI1...[0m
+[0;32mI (844) example_connect: Waiting for IP(s)[0m
+I (3254) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1
+I (4404) wifi:state: init -> auth (b0)
+I (4414) wifi:state: auth -> assoc (0)
+I (4424) wifi:state: assoc -> run (10)
+I (4944) wifi:connected with WIFI1, aid = 1, channel 11, BW20, bssid = 82:e9:3a:ed:b8:55
+I (4954) wifi:security: WPA2-PSK, phy: bgn, rssi: -42
+I (4954) wifi:pm start, type: 1
+
+I (5084) wifi:AP's beacon interval = 102400 us, DTIM period = 1
+[0;32mI (5954) esp_netif_handlers: example_netif_sta ip: 192.168.137.55, mask: 255.255.255.0, gw: 192.168.137.1[0m
+[0;32mI (5954) example_connect: Got IPv4 event: Interface "example_netif_sta" address: 192.168.137.55[0m
+[0;32mI (6624) example_connect: Got IPv6 event: Interface "example_netif_sta" address: fe80:0000:0000:0000:ee94:cbff:fe6a:fb58, type: ESP_IP6_ADDR_IS_LINK_LOCAL[0m
+[0;32mI (6624) example_common: Connected to example_netif_sta[0m
+[0;32mI (6634) example_common: - IPv4 address: 192.168.137.55,[0m
+[0;32mI (6634) example_common: - IPv6 address: fe80:0000:0000:0000:ee94:cbff:fe6a:fb58, type: ESP_IP6_ADDR_IS_LINK_LOCAL[0m
+[0;32mI (6654) WEBSOCKET: Connecting to ws://172.30.2.140:8080 ...[0m
+I (6694) wifi:<ba-add>idx:0 (ifx:0, 82:e9:3a:ed:b8:55), tid:0, ssn:4, winSize:64
+[0;32mI (6834) WEBSOCKET: WEBSOCKET_EVENT_CONNECTED[0m
+[0;32mI (7664) WEBSOCKET: Sending Hello 0000[0m
+[0;32mI (8664) WEBSOCKET: Connection established[0m
+[0;32mI (8664) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (8664) WEBSOCKET: Connection ON[0m
+[0;32mI (8664) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (10674) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (10674) WEBSOCKET: Connection ON[0m
+[0;32mI (10674) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (12684) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (12684) WEBSOCKET: Connection ON[0m
+[0;32mI (12684) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (14694) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (14694) WEBSOCKET: Connection ON[0m
+[0;32mI (14694) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (16704) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (16704) WEBSOCKET: Connection ON[0m
+[0;32mI (16704) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (16944) WEBSOCKET: Received=
+[0m
+[0;32mI (18714) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (18714) WEBSOCKET: Connection ON[0m
+[0;32mI (18714) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (20724) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (20724) WEBSOCKET: Connection ON[0m
+[0;32mI (20724) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (22734) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (22734) WEBSOCKET: Connection ON[0m
+[0;32mI (22734) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (24744) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (24744) WEBSOCKET: Connection ON[0m
+[0;32mI (24744) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (26754) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (26754) WEBSOCKET: Connection ON[0m
+[0;32mI (26754) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (27064) WEBSOCKET: Received=
+[0m
+[0;32mI (28764) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (28764) WEBSOCKET: Connection ON[0m
+[0;32mI (28764) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (30774) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (30774) WEBSOCKET: Connection ON[0m
+[0;32mI (30774) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (32784) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (32784) WEBSOCKET: Connection ON[0m
+[0;32mI (32784) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (34794) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (34794) WEBSOCKET: Connection ON[0m
+[0;32mI (34794) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (36804) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (36804) WEBSOCKET: Connection ON[0m
+[0;32mI (36804) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (37174) WEBSOCKET: Received=
+[0m
+[0;32mI (38814) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (38814) WEBSOCKET: Connection ON[0m
+[0;32mI (38814) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (40824) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (40824) WEBSOCKET: Connection ON[0m
+[0;32mI (40824) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (42834) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (42834) WEBSOCKET: Connection ON[0m
+[0;32mI (42834) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (44844) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (44844) WEBSOCKET: Connection ON[0m
+[0;32mI (44844) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (46854) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (46854) WEBSOCKET: Connection ON[0m
+[0;32mI (46854) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (47284) WEBSOCKET: Received=
+[0m
+[0;32mI (48864) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (48864) WEBSOCKET: Connection ON[0m
+[0;32mI (48864) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (50874) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (50874) WEBSOCKET: Connection ON[0m
+[0;32mI (50874) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (52884) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (52884) WEBSOCKET: Connection ON[0m
+[0;32mI (52884) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (54894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (54894) WEBSOCKET: Connection ON[0m
+[0;32mI (54894) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (56904) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (56904) WEBSOCKET: Connection ON[0m
+[0;32mI (56904) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (57394) WEBSOCKET: Received=
+[0m
+[0;32mI (58914) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (58914) WEBSOCKET: Connection ON[0m
+[0;32mI (58914) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (60924) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (60924) WEBSOCKET: Connection ON[0m
+[0;32mI (60924) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (62934) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (62934) WEBSOCKET: Connection ON[0m
+[0;32mI (62934) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;31mE (64284) transport_base: poll_read select error 104, errno = Connection reset by peer, fd = 54[0m
+[0;31mE (64284) WEBSOCKET_CLIENT: Network error: esp_transport_poll_read() returned -1, errno=119[0m
+[0;32mI (64294) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (64944) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (66944) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (68944) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (70944) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (72944) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (74944) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (76944) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (78944) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (79304) WEBSOCKET: WEBSOCKET_EVENT_CONNECTED[0m
+[0;33mW (80324) WEBSOCKET: Received=
+[0m
+[0;32mI (80944) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (80944) WEBSOCKET: Connection ON[0m
+[0;32mI (80944) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (82954) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (82954) WEBSOCKET: Connection ON[0m
+[0;32mI (82954) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (84964) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (84964) WEBSOCKET: Connection ON[0m
+[0;32mI (84964) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (86974) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (86974) WEBSOCKET: Connection ON[0m
+[0;32mI (86974) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (88984) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (88984) WEBSOCKET: Connection ON[0m
+[0;32mI (88984) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (90434) WEBSOCKET: Received=
+[0m
+[0;32mI (90994) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (90994) WEBSOCKET: Connection ON[0m
+[0;32mI (90994) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (93004) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (93004) WEBSOCKET: Connection ON[0m
+[0;32mI (93004) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (95014) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (95014) WEBSOCKET: Connection ON[0m
+[0;32mI (95014) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (97024) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (97024) WEBSOCKET: Connection ON[0m
+[0;32mI (97024) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (99034) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (99034) WEBSOCKET: Connection ON[0m
+[0;32mI (99034) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (100544) WEBSOCKET: Received=
+[0m
+[0;32mI (101044) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (101044) WEBSOCKET: Connection ON[0m
+[0;32mI (101044) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (103054) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (103054) WEBSOCKET: Connection ON[0m
+[0;32mI (103054) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (105064) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (105064) WEBSOCKET: Connection ON[0m
+[0;32mI (105064) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (107074) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (107074) WEBSOCKET: Connection ON[0m
+[0;32mI (107074) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (109084) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (109084) WEBSOCKET: Connection ON[0m
+[0;32mI (109084) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (110654) WEBSOCKET: Received=
+[0m
+[0;32mI (111094) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (111094) WEBSOCKET: Connection ON[0m
+[0;32mI (111094) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (113104) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (113104) WEBSOCKET: Connection ON[0m
+[0;32mI (113104) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (115114) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (115114) WEBSOCKET: Connection ON[0m
+[0;32mI (115114) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (117124) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (117124) WEBSOCKET: Connection ON[0m
+[0;32mI (117124) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (119134) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (119134) WEBSOCKET: Connection ON[0m
+[0;32mI (119134) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (120764) WEBSOCKET: Received=
+[0m
+[0;32mI (121144) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (121144) WEBSOCKET: Connection ON[0m
+[0;32mI (121144) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (123154) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (123154) WEBSOCKET: Connection ON[0m
+[0;32mI (123154) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (125164) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (125164) WEBSOCKET: Connection ON[0m
+[0;32mI (125164) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (127174) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (127174) WEBSOCKET: Connection ON[0m
+[0;32mI (127174) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (129184) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (129184) WEBSOCKET: Connection ON[0m
+[0;32mI (129184) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (130904) WEBSOCKET: Received=
+[0m
+[0;32mI (131194) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (131194) WEBSOCKET: Connection ON[0m
+[0;32mI (131194) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (133204) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (133204) WEBSOCKET: Connection ON[0m
+[0;32mI (133204) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (135214) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (135214) WEBSOCKET: Connection ON[0m
+[0;32mI (135214) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (137224) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (137224) WEBSOCKET: Connection ON[0m
+[0;32mI (137224) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (139234) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (139234) WEBSOCKET: Connection ON[0m
+[0;32mI (139234) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (141014) WEBSOCKET: Received=
+[0m
+[0;32mI (141244) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (141244) WEBSOCKET: Connection ON[0m
+[0;32mI (141244) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (143254) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (143254) WEBSOCKET: Connection ON[0m
+[0;32mI (143254) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (145264) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (145264) WEBSOCKET: Connection ON[0m
+[0;32mI (145264) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (147274) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (147274) WEBSOCKET: Connection ON[0m
+[0;32mI (147274) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (149284) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (149284) WEBSOCKET: Connection ON[0m
+[0;32mI (149284) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (151124) WEBSOCKET: Received=
+[0m
+[0;32mI (151294) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (151294) WEBSOCKET: Connection ON[0m
+[0;32mI (151294) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (153304) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (153304) WEBSOCKET: Connection ON[0m
+[0;32mI (153304) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (155314) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (155314) WEBSOCKET: Connection ON[0m
+[0;32mI (155314) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (157324) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (157324) WEBSOCKET: Connection ON[0m
+[0;32mI (157324) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;31mE (157874) transport_base: poll_read select error 104, errno = Connection reset by peer, fd = 54[0m
+[0;31mE (157874) WEBSOCKET_CLIENT: Network error: esp_transport_poll_read() returned -1, errno=119[0m
+[0;32mI (157884) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (159334) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (161334) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (163334) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (165334) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (167334) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (167924) WEBSOCKET: WEBSOCKET_EVENT_CONNECTED[0m
+[0;33mW (168944) WEBSOCKET: Received=
+[0m
+[0;32mI (169334) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (169334) WEBSOCKET: Connection ON[0m
+[0;32mI (169334) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (171344) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (171344) WEBSOCKET: Connection ON[0m
+[0;32mI (171344) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (173354) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (173354) WEBSOCKET: Connection ON[0m
+[0;32mI (173354) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (175364) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (175364) WEBSOCKET: Connection ON[0m
+[0;32mI (175364) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (177374) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (177374) WEBSOCKET: Connection ON[0m
+[0;32mI (177374) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (179054) WEBSOCKET: Received=
+[0m
+[0;32mI (179384) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (179384) WEBSOCKET: Connection ON[0m
+[0;32mI (179384) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (181394) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (181394) WEBSOCKET: Connection ON[0m
+[0;32mI (181394) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (183404) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (183404) WEBSOCKET: Connection ON[0m
+[0;32mI (183404) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (185414) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (185414) WEBSOCKET: Connection ON[0m
+[0;32mI (185414) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (187424) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (187424) WEBSOCKET: Connection ON[0m
+[0;32mI (187424) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (189154) WEBSOCKET: Received=
+[0m
+[0;32mI (189434) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (189434) WEBSOCKET: Connection ON[0m
+[0;32mI (189434) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (191444) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (191444) WEBSOCKET: Connection ON[0m
+[0;32mI (191444) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (193454) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (193454) WEBSOCKET: Connection ON[0m
+[0;32mI (193454) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (195464) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (195464) WEBSOCKET: Connection ON[0m
+[0;32mI (195464) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (197474) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (197474) WEBSOCKET: Connection ON[0m
+[0;32mI (197474) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (199274) WEBSOCKET: Received=
+[0m
+[0;32mI (199484) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (199484) WEBSOCKET: Connection ON[0m
+[0;32mI (199484) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (201494) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (201494) WEBSOCKET: Connection ON[0m
+[0;32mI (201494) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (203504) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (203504) WEBSOCKET: Connection ON[0m
+[0;32mI (203504) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (205514) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (205514) WEBSOCKET: Connection ON[0m
+[0;32mI (205514) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (207524) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (207524) WEBSOCKET: Connection ON[0m
+[0;32mI (207524) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (209374) WEBSOCKET: Received=
+[0m
+[0;32mI (209534) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (209534) WEBSOCKET: Connection ON[0m
+[0;32mI (209534) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (211544) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (211544) WEBSOCKET: Connection ON[0m
+[0;32mI (211544) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (213554) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (213554) WEBSOCKET: Connection ON[0m
+[0;32mI (213554) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (215564) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (215564) WEBSOCKET: Connection ON[0m
+[0;32mI (215564) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (217574) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (217574) WEBSOCKET: Connection ON[0m
+[0;32mI (217574) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (219494) WEBSOCKET: Received=
+[0m
+[0;32mI (219584) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (219584) WEBSOCKET: Connection ON[0m
+[0;32mI (219584) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (221594) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (221594) WEBSOCKET: Connection ON[0m
+[0;32mI (221594) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (223604) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (223604) WEBSOCKET: Connection ON[0m
+[0;32mI (223604) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (225614) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (225614) WEBSOCKET: Connection ON[0m
+[0;32mI (225614) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (227624) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (227624) WEBSOCKET: Connection ON[0m
+[0;32mI (227624) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (229634) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (229634) WEBSOCKET: Connection ON[0m
+[0;32mI (229634) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (229704) WEBSOCKET: Received=
+[0m
+[0;32mI (231644) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (231644) WEBSOCKET: Connection ON[0m
+[0;32mI (231644) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (233654) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (233654) WEBSOCKET: Connection ON[0m
+[0;32mI (233654) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (235664) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (235664) WEBSOCKET: Connection ON[0m
+[0;32mI (235664) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (237674) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (237674) WEBSOCKET: Connection ON[0m
+[0;32mI (237674) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (239684) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (239684) WEBSOCKET: Connection ON[0m
+[0;32mI (239684) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (239804) WEBSOCKET: Received=
+[0m
+[0;32mI (241694) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (241694) WEBSOCKET: Connection ON[0m
+[0;32mI (241694) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (243704) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (243704) WEBSOCKET: Connection ON[0m
+[0;32mI (243704) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (245714) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (245714) WEBSOCKET: Connection ON[0m
+[0;32mI (245714) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (247724) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (247724) WEBSOCKET: Connection ON[0m
+[0;32mI (247724) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (249734) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (249734) WEBSOCKET: Connection ON[0m
+[0;32mI (249734) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (249924) WEBSOCKET: Received=
+[0m
+[0;32mI (251744) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (251744) WEBSOCKET: Connection ON[0m
+[0;32mI (251744) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (253754) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (253754) WEBSOCKET: Connection ON[0m
+[0;32mI (253754) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (255764) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (255764) WEBSOCKET: Connection ON[0m
+[0;32mI (255764) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (257774) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (257774) WEBSOCKET: Connection ON[0m
+[0;32mI (257774) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (259784) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (259784) WEBSOCKET: Connection ON[0m
+[0;32mI (259784) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (260034) WEBSOCKET: Received=
+[0m
+[0;32mI (261794) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (261794) WEBSOCKET: Connection ON[0m
+[0;32mI (261794) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (263804) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (263804) WEBSOCKET: Connection ON[0m
+[0;32mI (263804) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (265814) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (265814) WEBSOCKET: Connection ON[0m
+[0;32mI (265814) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (267824) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (267824) WEBSOCKET: Connection ON[0m
+[0;32mI (267824) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (269834) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (269834) WEBSOCKET: Connection ON[0m
+[0;32mI (269834) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (270144) WEBSOCKET: Received=
+[0m
+[0;32mI (271844) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (271844) WEBSOCKET: Connection ON[0m
+[0;32mI (271844) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (273854) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (273854) WEBSOCKET: Connection ON[0m
+[0;32mI (273854) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (275864) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (275864) WEBSOCKET: Connection ON[0m
+[0;32mI (275864) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (277874) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (277874) WEBSOCKET: Connection ON[0m
+[0;32mI (277874) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (279884) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (279884) WEBSOCKET: Connection ON[0m
+[0;32mI (279884) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (280274) WEBSOCKET: Received=
+[0m
+[0;32mI (281894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (281894) WEBSOCKET: Connection ON[0m
+[0;32mI (281894) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (283904) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (283904) WEBSOCKET: Connection ON[0m
+[0;32mI (283904) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (285914) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (285914) WEBSOCKET: Connection ON[0m
+[0;32mI (285914) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (287924) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (287924) WEBSOCKET: Connection ON[0m
+[0;32mI (287924) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (289934) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (289934) WEBSOCKET: Connection ON[0m
+[0;32mI (289934) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (290384) WEBSOCKET: Received=
+[0m
+[0;32mI (291944) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (291944) WEBSOCKET: Connection ON[0m
+[0;32mI (291944) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (293954) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (293954) WEBSOCKET: Connection ON[0m
+[0;32mI (293954) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (295964) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (295964) WEBSOCKET: Connection ON[0m
+[0;32mI (295964) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (297974) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (297974) WEBSOCKET: Connection ON[0m
+[0;32mI (297974) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (299984) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (299984) WEBSOCKET: Connection ON[0m
+[0;32mI (299984) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (300494) WEBSOCKET: Received=
+[0m
+[0;32mI (301994) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (301994) WEBSOCKET: Connection ON[0m
+[0;32mI (301994) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (304004) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (304004) WEBSOCKET: Connection ON[0m
+[0;32mI (304004) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (306014) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (306014) WEBSOCKET: Connection ON[0m
+[0;32mI (306014) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (308024) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (308024) WEBSOCKET: Connection ON[0m
+[0;32mI (308024) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (310034) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (310034) WEBSOCKET: Connection ON[0m
+[0;32mI (310034) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (310604) WEBSOCKET: Received=
+[0m
+[0;32mI (312044) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (312044) WEBSOCKET: Connection ON[0m
+[0;32mI (312044) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (314054) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (314054) WEBSOCKET: Connection ON[0m
+[0;32mI (314054) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (316064) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (316064) WEBSOCKET: Connection ON[0m
+[0;32mI (316064) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (318074) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (318074) WEBSOCKET: Connection ON[0m
+[0;32mI (318074) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (320084) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (320084) WEBSOCKET: Connection ON[0m
+[0;32mI (320084) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (320714) WEBSOCKET: Received=
+[0m
+[0;32mI (322094) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (322094) WEBSOCKET: Connection ON[0m
+[0;32mI (322094) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (324104) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (324104) WEBSOCKET: Connection ON[0m
+[0;32mI (324104) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (326114) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (326114) WEBSOCKET: Connection ON[0m
+[0;32mI (326114) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (328124) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (328124) WEBSOCKET: Connection ON[0m
+[0;32mI (328124) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (330134) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (330134) WEBSOCKET: Connection ON[0m
+[0;32mI (330134) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (330824) WEBSOCKET: Received=
+[0m
+[0;32mI (332144) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (332144) WEBSOCKET: Connection ON[0m
+[0;32mI (332144) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (334154) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (334154) WEBSOCKET: Connection ON[0m
+[0;32mI (334154) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (336164) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (336164) WEBSOCKET: Connection ON[0m
+[0;32mI (336164) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (338174) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (338174) WEBSOCKET: Connection ON[0m
+[0;32mI (338174) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (340184) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (340184) WEBSOCKET: Connection ON[0m
+[0;32mI (340184) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (342054) WEBSOCKET: Received=
+[0m
+[0;32mI (342194) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (342194) WEBSOCKET: Connection ON[0m
+[0;32mI (342194) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (344204) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (344204) WEBSOCKET: Connection ON[0m
+[0;32mI (344204) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (346214) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (346214) WEBSOCKET: Connection ON[0m
+[0;32mI (346214) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (348224) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (348224) WEBSOCKET: Connection ON[0m
+[0;32mI (348224) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (350234) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (350234) WEBSOCKET: Connection ON[0m
+[0;32mI (350234) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (352164) WEBSOCKET: Received=
+[0m
+[0;32mI (352244) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (352244) WEBSOCKET: Connection ON[0m
+[0;32mI (352244) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (354254) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (354254) WEBSOCKET: Connection ON[0m
+[0;32mI (354254) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (356264) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (356264) WEBSOCKET: Connection ON[0m
+[0;32mI (356264) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (358274) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (358274) WEBSOCKET: Connection ON[0m
+[0;32mI (358274) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (360284) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (360284) WEBSOCKET: Connection ON[0m
+[0;32mI (360284) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (362274) WEBSOCKET: Received=
+[0m
+[0;32mI (362294) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (362294) WEBSOCKET: Connection ON[0m
+[0;32mI (362294) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (364304) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (364304) WEBSOCKET: Connection ON[0m
+[0;32mI (364304) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (366314) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (366314) WEBSOCKET: Connection ON[0m
+[0;32mI (366314) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (368324) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (368324) WEBSOCKET: Connection ON[0m
+[0;32mI (368324) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (370334) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (370334) WEBSOCKET: Connection ON[0m
+[0;32mI (370334) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (372344) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (372344) WEBSOCKET: Connection ON[0m
+[0;32mI (372344) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (372374) WEBSOCKET: Received=
+[0m
+[0;32mI (374354) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (374354) WEBSOCKET: Connection ON[0m
+[0;32mI (374354) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (376364) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (376364) WEBSOCKET: Connection ON[0m
+[0;32mI (376364) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (378374) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (378374) WEBSOCKET: Connection ON[0m
+[0;32mI (378374) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (380384) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (380384) WEBSOCKET: Connection ON[0m
+[0;32mI (380384) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (382394) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (382394) WEBSOCKET: Connection ON[0m
+[0;32mI (382394) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (382594) WEBSOCKET: Received=
+[0m
+[0;32mI (384404) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (384404) WEBSOCKET: Connection ON[0m
+[0;32mI (384404) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (386414) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (386414) WEBSOCKET: Connection ON[0m
+[0;32mI (386414) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (388424) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (388424) WEBSOCKET: Connection ON[0m
+[0;32mI (388424) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (390434) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (390434) WEBSOCKET: Connection ON[0m
+[0;32mI (390434) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (392444) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (392444) WEBSOCKET: Connection ON[0m
+[0;32mI (392444) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (392714) WEBSOCKET: Received=
+[0m
+[0;32mI (394454) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (394454) WEBSOCKET: Connection ON[0m
+[0;32mI (394454) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (396464) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (396464) WEBSOCKET: Connection ON[0m
+[0;32mI (396464) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (398474) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (398474) WEBSOCKET: Connection ON[0m
+[0;32mI (398474) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (400484) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (400484) WEBSOCKET: Connection ON[0m
+[0;32mI (400484) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (402494) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (402494) WEBSOCKET: Connection ON[0m
+[0;32mI (402494) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (402824) WEBSOCKET: Received=
+[0m
+[0;32mI (404504) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (404504) WEBSOCKET: Connection ON[0m
+[0;32mI (404504) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (406514) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (406514) WEBSOCKET: Connection ON[0m
+[0;32mI (406514) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (408524) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (408524) WEBSOCKET: Connection ON[0m
+[0;32mI (408524) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (410534) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (410534) WEBSOCKET: Connection ON[0m
+[0;32mI (410534) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (412544) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (412544) WEBSOCKET: Connection ON[0m
+[0;32mI (412544) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (412934) WEBSOCKET: Received=
+[0m
+[0;32mI (414554) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (414554) WEBSOCKET: Connection ON[0m
+[0;32mI (414554) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (416564) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (416564) WEBSOCKET: Connection ON[0m
+[0;32mI (416564) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (418574) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (418574) WEBSOCKET: Connection ON[0m
+[0;32mI (418574) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (420584) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (420584) WEBSOCKET: Connection ON[0m
+[0;32mI (420584) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (422594) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (422594) WEBSOCKET: Connection ON[0m
+[0;32mI (422594) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (423044) WEBSOCKET: Received=
+[0m
+[0;32mI (424604) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (424604) WEBSOCKET: Connection ON[0m
+[0;32mI (424604) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (426614) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (426614) WEBSOCKET: Connection ON[0m
+[0;32mI (426614) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (428624) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (428624) WEBSOCKET: Connection ON[0m
+[0;32mI (428624) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (430634) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (430634) WEBSOCKET: Connection ON[0m
+[0;32mI (430634) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (432644) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (432644) WEBSOCKET: Connection ON[0m
+[0;32mI (432644) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (434654) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (434654) WEBSOCKET: Connection ON[0m
+[0;32mI (434654) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (436554) WEBSOCKET: Received=
+[0m
+[0;32mI (436664) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (436664) WEBSOCKET: Connection ON[0m
+[0;32mI (436664) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (438674) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (438674) WEBSOCKET: Connection ON[0m
+[0;32mI (438674) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (440684) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (440684) WEBSOCKET: Connection ON[0m
+[0;32mI (440684) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (442694) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (442694) WEBSOCKET: Connection ON[0m
+[0;32mI (442694) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (444704) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (444704) WEBSOCKET: Connection ON[0m
+[0;32mI (444704) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (446664) WEBSOCKET: Received=
+[0m
+[0;32mI (446714) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (446714) WEBSOCKET: Connection ON[0m
+[0;32mI (446714) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (448724) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (448724) WEBSOCKET: Connection ON[0m
+[0;32mI (448724) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (450734) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (450734) WEBSOCKET: Connection ON[0m
+[0;32mI (450734) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (452744) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (452744) WEBSOCKET: Connection ON[0m
+[0;32mI (452744) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (454754) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (454754) WEBSOCKET: Connection ON[0m
+[0;32mI (454754) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (456764) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (456764) WEBSOCKET: Connection ON[0m
+[0;32mI (456764) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (456774) WEBSOCKET: Received=
+[0m
+[0;32mI (458784) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (458784) WEBSOCKET: Connection ON[0m
+[0;32mI (458784) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (460794) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (460794) WEBSOCKET: Connection ON[0m
+[0;32mI (460794) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (462804) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (462804) WEBSOCKET: Connection ON[0m
+[0;32mI (462804) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (464814) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (464814) WEBSOCKET: Connection ON[0m
+[0;32mI (464814) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (466824) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (466824) WEBSOCKET: Connection ON[0m
+[0;32mI (466824) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (466894) WEBSOCKET: Received=
+[0m
+[0;32mI (468834) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (468834) WEBSOCKET: Connection ON[0m
+[0;32mI (468834) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (470844) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (470844) WEBSOCKET: Connection ON[0m
+[0;32mI (470844) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (472854) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (472854) WEBSOCKET: Connection ON[0m
+[0;32mI (472854) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (474864) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (474864) WEBSOCKET: Connection ON[0m
+[0;32mI (474864) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (476874) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (476874) WEBSOCKET: Connection ON[0m
+[0;32mI (476874) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (477024) WEBSOCKET: Received=
+[0m
+[0;32mI (478884) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (478884) WEBSOCKET: Connection ON[0m
+[0;32mI (478884) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (480894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (480894) WEBSOCKET: Connection ON[0m
+[0;32mI (480894) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (482904) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (482904) WEBSOCKET: Connection ON[0m
+[0;32mI (482904) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (484914) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (484914) WEBSOCKET: Connection ON[0m
+[0;32mI (484914) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (486924) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (486924) WEBSOCKET: Connection ON[0m
+[0;32mI (486924) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (487124) WEBSOCKET: Received=
+[0m
+[0;32mI (488934) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (488934) WEBSOCKET: Connection ON[0m
+[0;32mI (488934) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (490944) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (490944) WEBSOCKET: Connection ON[0m
+[0;32mI (490944) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (492954) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (492954) WEBSOCKET: Connection ON[0m
+[0;32mI (492954) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (494964) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (494964) WEBSOCKET: Connection ON[0m
+[0;32mI (494964) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (496974) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (496974) WEBSOCKET: Connection ON[0m
+[0;32mI (496974) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (497244) WEBSOCKET: Received=
+[0m
+[0;32mI (498984) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (498984) WEBSOCKET: Connection ON[0m
+[0;32mI (498984) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (500994) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (500994) WEBSOCKET: Connection ON[0m
+[0;32mI (500994) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (503004) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (503004) WEBSOCKET: Connection ON[0m
+[0;32mI (503004) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (505014) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (505014) WEBSOCKET: Connection ON[0m
+[0;32mI (505014) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (507024) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (507024) WEBSOCKET: Connection ON[0m
+[0;32mI (507024) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (507354) WEBSOCKET: Received=
+[0m
+[0;32mI (509034) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (509034) WEBSOCKET: Connection ON[0m
+[0;32mI (509034) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (511044) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (511044) WEBSOCKET: Connection ON[0m
+[0;32mI (511044) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (513054) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (513054) WEBSOCKET: Connection ON[0m
+[0;32mI (513054) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (515064) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (515064) WEBSOCKET: Connection ON[0m
+[0;32mI (515064) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (517074) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (517074) WEBSOCKET: Connection ON[0m
+[0;32mI (517074) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (517474) WEBSOCKET: Received=
+[0m
+[0;32mI (519084) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (519084) WEBSOCKET: Connection ON[0m
+[0;32mI (519084) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (521094) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (521094) WEBSOCKET: Connection ON[0m
+[0;32mI (521094) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (523104) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (523104) WEBSOCKET: Connection ON[0m
+[0;32mI (523104) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (525114) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (525114) WEBSOCKET: Connection ON[0m
+[0;32mI (525114) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (527124) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (527124) WEBSOCKET: Connection ON[0m
+[0;32mI (527124) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (527584) WEBSOCKET: Received=
+[0m
+[0;32mI (529134) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (529134) WEBSOCKET: Connection ON[0m
+[0;32mI (529134) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (531144) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (531144) WEBSOCKET: Connection ON[0m
+[0;32mI (531144) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (533154) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (533154) WEBSOCKET: Connection ON[0m
+[0;32mI (533154) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (535164) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (535164) WEBSOCKET: Connection ON[0m
+[0;32mI (535164) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (537174) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (537174) WEBSOCKET: Connection ON[0m
+[0;32mI (537174) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (537694) WEBSOCKET: Received=
+[0m
+[0;32mI (539184) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (539184) WEBSOCKET: Connection ON[0m
+[0;32mI (539184) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (541194) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (541194) WEBSOCKET: Connection ON[0m
+[0;32mI (541194) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (543204) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (543204) WEBSOCKET: Connection ON[0m
+[0;32mI (543204) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (545214) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (545214) WEBSOCKET: Connection ON[0m
+[0;32mI (545214) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (547224) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (547224) WEBSOCKET: Connection ON[0m
+[0;32mI (547224) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (547814) WEBSOCKET: Received=
+[0m
+[0;32mI (549234) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (549234) WEBSOCKET: Connection ON[0m
+[0;32mI (549234) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (551244) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (551244) WEBSOCKET: Connection ON[0m
+[0;32mI (551244) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (553254) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (553254) WEBSOCKET: Connection ON[0m
+[0;32mI (553254) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (555264) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (555264) WEBSOCKET: Connection ON[0m
+[0;32mI (555264) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (557274) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (557274) WEBSOCKET: Connection ON[0m
+[0;32mI (557274) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (557934) WEBSOCKET: Received=
+[0m
+[0;32mI (559284) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (559284) WEBSOCKET: Connection ON[0m
+[0;32mI (559284) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (561294) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (561294) WEBSOCKET: Connection ON[0m
+[0;32mI (561294) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (563304) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (563304) WEBSOCKET: Connection ON[0m
+[0;32mI (563304) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (565314) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (565314) WEBSOCKET: Connection ON[0m
+[0;32mI (565314) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (567324) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (567324) WEBSOCKET: Connection ON[0m
+[0;32mI (567324) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (568054) WEBSOCKET: Received=
+[0m
+[0;32mI (569334) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (569334) WEBSOCKET: Connection ON[0m
+[0;32mI (569334) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (571344) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (571344) WEBSOCKET: Connection ON[0m
+[0;32mI (571344) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (573354) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (573354) WEBSOCKET: Connection ON[0m
+[0;32mI (573354) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (575364) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (575364) WEBSOCKET: Connection ON[0m
+[0;32mI (575364) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (577374) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (577374) WEBSOCKET: Connection ON[0m
+[0;32mI (577374) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (578164) WEBSOCKET: Received=
+[0m
+[0;32mI (579384) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (579384) WEBSOCKET: Connection ON[0m
+[0;32mI (579384) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (581394) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (581394) WEBSOCKET: Connection ON[0m
+[0;32mI (581394) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (583404) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (583404) WEBSOCKET: Connection ON[0m
+[0;32mI (583404) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (585414) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (585414) WEBSOCKET: Connection ON[0m
+[0;32mI (585414) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (587424) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (587424) WEBSOCKET: Connection ON[0m
+[0;32mI (587424) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (588274) WEBSOCKET: Received=
+[0m
+[0;32mI (589434) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (589434) WEBSOCKET: Connection ON[0m
+[0;32mI (589434) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (591444) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (591444) WEBSOCKET: Connection ON[0m
+[0;32mI (591444) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (593454) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (593454) WEBSOCKET: Connection ON[0m
+[0;32mI (593454) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (595464) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (595464) WEBSOCKET: Connection ON[0m
+[0;32mI (595464) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (597474) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (597474) WEBSOCKET: Connection ON[0m
+[0;32mI (597474) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (598374) WEBSOCKET: Received=
+[0m
+[0;32mI (599484) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (599484) WEBSOCKET: Connection ON[0m
+[0;32mI (599484) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (601494) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (601494) WEBSOCKET: Connection ON[0m
+[0;32mI (601494) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (603504) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (603504) WEBSOCKET: Connection ON[0m
+[0;32mI (603504) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (605514) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (605514) WEBSOCKET: Connection ON[0m
+[0;32mI (605514) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (607524) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (607524) WEBSOCKET: Connection ON[0m
+[0;32mI (607524) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (608504) WEBSOCKET: Received=
+[0m
+[0;32mI (609534) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (609534) WEBSOCKET: Connection ON[0m
+[0;32mI (609534) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (611544) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (611544) WEBSOCKET: Connection ON[0m
+[0;32mI (611544) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (613554) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (613554) WEBSOCKET: Connection ON[0m
+[0;32mI (613554) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (615564) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (615564) WEBSOCKET: Connection ON[0m
+[0;32mI (615564) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (617574) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (617574) WEBSOCKET: Connection ON[0m
+[0;32mI (617574) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (618604) WEBSOCKET: Received=
+[0m
+[0;32mI (619584) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (619584) WEBSOCKET: Connection ON[0m
+[0;32mI (619584) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (621594) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (621594) WEBSOCKET: Connection ON[0m
+[0;32mI (621594) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (623604) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (623604) WEBSOCKET: Connection ON[0m
+[0;32mI (623604) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (625614) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (625614) WEBSOCKET: Connection ON[0m
+[0;32mI (625614) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;31mE (626884) transport_base: poll_read select error 104, errno = Connection reset by peer, fd = 54[0m
+[0;31mE (626884) WEBSOCKET_CLIENT: Network error: esp_transport_poll_read() returned -1, errno=119[0m
+[0;32mI (626894) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (627624) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (629624) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (631624) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (633624) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (635624) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (637624) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (639624) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (641624) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (641964) WEBSOCKET: WEBSOCKET_EVENT_CONNECTED[0m
+[0;33mW (642984) WEBSOCKET: Received=
+[0m
+[0;32mI (643624) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (643624) WEBSOCKET: Connection ON[0m
+[0;32mI (643624) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (645634) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (645634) WEBSOCKET: Connection ON[0m
+[0;32mI (645634) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (647644) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (647644) WEBSOCKET: Connection ON[0m
+[0;32mI (647644) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (649654) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (649654) WEBSOCKET: Connection ON[0m
+[0;32mI (649654) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (651664) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (651664) WEBSOCKET: Connection ON[0m
+[0;32mI (651664) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (653094) WEBSOCKET: Received=
+[0m
+[0;32mI (653674) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (653674) WEBSOCKET: Connection ON[0m
+[0;32mI (653674) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (655684) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (655684) WEBSOCKET: Connection ON[0m
+[0;32mI (655684) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (657694) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (657694) WEBSOCKET: Connection ON[0m
+[0;32mI (657694) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (659704) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (659704) WEBSOCKET: Connection ON[0m
+[0;32mI (659704) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (661714) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (661714) WEBSOCKET: Connection ON[0m
+[0;32mI (661714) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (663204) WEBSOCKET: Received=
+[0m
+[0;32mI (663724) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (663724) WEBSOCKET: Connection ON[0m
+[0;32mI (663724) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (665734) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (665734) WEBSOCKET: Connection ON[0m
+[0;32mI (665734) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (667744) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (667744) WEBSOCKET: Connection ON[0m
+[0;32mI (667744) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (669754) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (669754) WEBSOCKET: Connection ON[0m
+[0;32mI (669754) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (671764) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (671764) WEBSOCKET: Connection ON[0m
+[0;32mI (671764) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (673314) WEBSOCKET: Received=
+[0m
+[0;32mI (673774) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (673774) WEBSOCKET: Connection ON[0m
+[0;32mI (673774) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (675784) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (675784) WEBSOCKET: Connection ON[0m
+[0;32mI (675784) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (677794) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (677794) WEBSOCKET: Connection ON[0m
+[0;32mI (677794) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (679804) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (679804) WEBSOCKET: Connection ON[0m
+[0;32mI (679804) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (681814) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (681814) WEBSOCKET: Connection ON[0m
+[0;32mI (681814) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (683424) WEBSOCKET: Received=
+[0m
+[0;32mI (683824) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (683824) WEBSOCKET: Connection ON[0m
+[0;32mI (683824) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (685834) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (685834) WEBSOCKET: Connection ON[0m
+[0;32mI (685834) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (687844) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (687844) WEBSOCKET: Connection ON[0m
+[0;32mI (687844) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (689854) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (689854) WEBSOCKET: Connection ON[0m
+[0;32mI (689854) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (691864) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (691864) WEBSOCKET: Connection ON[0m
+[0;32mI (691864) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (693534) WEBSOCKET: Received=
+[0m
+[0;32mI (693874) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (693874) WEBSOCKET: Connection ON[0m
+[0;32mI (693874) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (695884) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (695884) WEBSOCKET: Connection ON[0m
+[0;32mI (695884) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (697894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (697894) WEBSOCKET: Connection ON[0m
+[0;32mI (697894) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (699904) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (699904) WEBSOCKET: Connection ON[0m
+[0;32mI (699904) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (701914) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (701914) WEBSOCKET: Connection ON[0m
+[0;32mI (701914) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (703644) WEBSOCKET: Received=
+[0m
+[0;32mI (703924) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (703924) WEBSOCKET: Connection ON[0m
+[0;32mI (703924) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (705934) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (705934) WEBSOCKET: Connection ON[0m
+[0;32mI (705934) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (707944) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (707944) WEBSOCKET: Connection ON[0m
+[0;32mI (707944) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (709954) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (709954) WEBSOCKET: Connection ON[0m
+[0;32mI (709954) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (711964) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (711964) WEBSOCKET: Connection ON[0m
+[0;32mI (711964) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (713754) WEBSOCKET: Received=
+[0m
+[0;32mI (713974) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (713974) WEBSOCKET: Connection ON[0m
+[0;32mI (713974) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (715984) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (715984) WEBSOCKET: Connection ON[0m
+[0;32mI (715984) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (717994) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (717994) WEBSOCKET: Connection ON[0m
+[0;32mI (717994) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (720004) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (720004) WEBSOCKET: Connection ON[0m
+[0;32mI (720004) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (722014) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (722014) WEBSOCKET: Connection ON[0m
+[0;32mI (722014) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (723864) WEBSOCKET: Received=
+[0m
+[0;32mI (724024) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (724024) WEBSOCKET: Connection ON[0m
+[0;32mI (724024) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (726034) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (726034) WEBSOCKET: Connection ON[0m
+[0;32mI (726034) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (728044) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (728044) WEBSOCKET: Connection ON[0m
+[0;32mI (728044) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (730054) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (730054) WEBSOCKET: Connection ON[0m
+[0;32mI (730054) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (732064) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (732064) WEBSOCKET: Connection ON[0m
+[0;32mI (732064) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (733984) WEBSOCKET: Received=
+[0m
+[0;32mI (734074) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (734074) WEBSOCKET: Connection ON[0m
+[0;32mI (734074) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (736084) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (736084) WEBSOCKET: Connection ON[0m
+[0;32mI (736084) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (738094) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (738094) WEBSOCKET: Connection ON[0m
+[0;32mI (738094) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (740104) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (740104) WEBSOCKET: Connection ON[0m
+[0;32mI (740104) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (742114) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (742114) WEBSOCKET: Connection ON[0m
+[0;32mI (742114) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (744094) WEBSOCKET: Received=
+[0m
+[0;32mI (744124) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (744124) WEBSOCKET: Connection ON[0m
+[0;32mI (744124) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (746134) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (746134) WEBSOCKET: Connection ON[0m
+[0;32mI (746134) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (748144) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (748144) WEBSOCKET: Connection ON[0m
+[0;32mI (748144) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (750154) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (750154) WEBSOCKET: Connection ON[0m
+[0;32mI (750154) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (752164) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (752164) WEBSOCKET: Connection ON[0m
+[0;32mI (752164) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (754174) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (754174) WEBSOCKET: Connection ON[0m
+[0;32mI (754174) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (754214) WEBSOCKET: Received=
+[0m
+[0;32mI (756184) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (756184) WEBSOCKET: Connection ON[0m
+[0;32mI (756184) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (758194) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (758194) WEBSOCKET: Connection ON[0m
+[0;32mI (758194) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (760204) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (760204) WEBSOCKET: Connection ON[0m
+[0;32mI (760204) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (762214) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (762214) WEBSOCKET: Connection ON[0m
+[0;32mI (762214) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (764224) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (764224) WEBSOCKET: Connection ON[0m
+[0;32mI (764224) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (764324) WEBSOCKET: Received=
+[0m
+[0;32mI (766234) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (766234) WEBSOCKET: Connection ON[0m
+[0;32mI (766234) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (768244) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (768244) WEBSOCKET: Connection ON[0m
+[0;32mI (768244) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (770254) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (770254) WEBSOCKET: Connection ON[0m
+[0;32mI (770254) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (772264) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (772264) WEBSOCKET: Connection ON[0m
+[0;32mI (772264) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (774274) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (774274) WEBSOCKET: Connection ON[0m
+[0;32mI (774274) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (774454) WEBSOCKET: Received=
+[0m
+[0;32mI (776284) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (776284) WEBSOCKET: Connection ON[0m
+[0;32mI (776284) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (778294) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (778294) WEBSOCKET: Connection ON[0m
+[0;32mI (778294) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (780304) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (780304) WEBSOCKET: Connection ON[0m
+[0;32mI (780304) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (782314) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (782314) WEBSOCKET: Connection ON[0m
+[0;32mI (782314) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (784324) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (784324) WEBSOCKET: Connection ON[0m
+[0;32mI (784324) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (784564) WEBSOCKET: Received=
+[0m
+[0;32mI (786334) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (786334) WEBSOCKET: Connection ON[0m
+[0;32mI (786334) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (788344) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (788344) WEBSOCKET: Connection ON[0m
+[0;32mI (788344) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (790354) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (790354) WEBSOCKET: Connection ON[0m
+[0;32mI (790354) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (792364) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (792364) WEBSOCKET: Connection ON[0m
+[0;32mI (792364) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (794374) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (794374) WEBSOCKET: Connection ON[0m
+[0;32mI (794374) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (794674) WEBSOCKET: Received=
+[0m
+[0;32mI (796384) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (796384) WEBSOCKET: Connection ON[0m
+[0;32mI (796384) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (798394) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (798394) WEBSOCKET: Connection ON[0m
+[0;32mI (798394) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (800404) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (800404) WEBSOCKET: Connection ON[0m
+[0;32mI (800404) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (802414) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (802414) WEBSOCKET: Connection ON[0m
+[0;32mI (802414) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (804424) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (804424) WEBSOCKET: Connection ON[0m
+[0;32mI (804424) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (804784) WEBSOCKET: Received=
+[0m
+[0;32mI (806434) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (806434) WEBSOCKET: Connection ON[0m
+[0;32mI (806434) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (808444) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (808444) WEBSOCKET: Connection ON[0m
+[0;32mI (808444) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (810454) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (810454) WEBSOCKET: Connection ON[0m
+[0;32mI (810454) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (812464) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (812464) WEBSOCKET: Connection ON[0m
+[0;32mI (812464) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (814474) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (814474) WEBSOCKET: Connection ON[0m
+[0;32mI (814474) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (814894) WEBSOCKET: Received=
+[0m
+[0;32mI (816484) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (816484) WEBSOCKET: Connection ON[0m
+[0;32mI (816484) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (818494) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (818494) WEBSOCKET: Connection ON[0m
+[0;32mI (818494) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (820504) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (820504) WEBSOCKET: Connection ON[0m
+[0;32mI (820504) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (822514) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (822514) WEBSOCKET: Connection ON[0m
+[0;32mI (822514) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (824524) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (824524) WEBSOCKET: Connection ON[0m
+[0;32mI (824524) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (825004) WEBSOCKET: Received=
+[0m
+[0;32mI (826534) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (826534) WEBSOCKET: Connection ON[0m
+[0;32mI (826534) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (828544) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (828544) WEBSOCKET: Connection ON[0m
+[0;32mI (828544) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (830554) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (830554) WEBSOCKET: Connection ON[0m
+[0;32mI (830554) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (832564) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (832564) WEBSOCKET: Connection ON[0m
+[0;32mI (832564) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (834574) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (834574) WEBSOCKET: Connection ON[0m
+[0;32mI (834574) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (835114) WEBSOCKET: Received=
+[0m
+[0;32mI (836584) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (836584) WEBSOCKET: Connection ON[0m
+[0;32mI (836584) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (838594) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (838594) WEBSOCKET: Connection ON[0m
+[0;32mI (838594) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (840604) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (840604) WEBSOCKET: Connection ON[0m
+[0;32mI (840604) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (842614) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (842614) WEBSOCKET: Connection ON[0m
+[0;32mI (842614) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (844624) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (844624) WEBSOCKET: Connection ON[0m
+[0;32mI (844624) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (845224) WEBSOCKET: Received=
+[0m
+[0;32mI (846634) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (846634) WEBSOCKET: Connection ON[0m
+[0;32mI (846634) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (848644) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (848644) WEBSOCKET: Connection ON[0m
+[0;32mI (848644) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (850654) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (850654) WEBSOCKET: Connection ON[0m
+[0;32mI (850654) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (852664) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (852664) WEBSOCKET: Connection ON[0m
+[0;32mI (852664) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (854674) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (854674) WEBSOCKET: Connection ON[0m
+[0;32mI (854674) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (855334) WEBSOCKET: Received=
+[0m
+[0;32mI (856684) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (856684) WEBSOCKET: Connection ON[0m
+[0;32mI (856684) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (858694) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (858694) WEBSOCKET: Connection ON[0m
+[0;32mI (858694) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (860704) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (860704) WEBSOCKET: Connection ON[0m
+[0;32mI (860704) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (862714) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (862714) WEBSOCKET: Connection ON[0m
+[0;32mI (862714) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (864724) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (864724) WEBSOCKET: Connection ON[0m
+[0;32mI (864724) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (865524) WEBSOCKET: Received=
+[0m
+[0;32mI (866734) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (866734) WEBSOCKET: Connection ON[0m
+[0;32mI (866734) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (868744) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (868744) WEBSOCKET: Connection ON[0m
+[0;32mI (868744) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (870754) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (870754) WEBSOCKET: Connection ON[0m
+[0;32mI (870754) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;31mE (872454) transport_base: poll_read select error 104, errno = Connection reset by peer, fd = 54[0m
+[0;31mE (872464) WEBSOCKET_CLIENT: Network error: esp_transport_poll_read() returned -1, errno=119[0m
+[0;32mI (872464) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (872764) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (874764) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (876764) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (878764) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (880764) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;31mE (882534) esp-tls: [sock=54] delayed connect error: Connection reset by peer[0m
+[0;31mE (882544) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (882544) transport_ws: Error connecting to host 172.30.2.140:8080[0m
+[0;31mE (882554) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (882554) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (882764) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (884764) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (886764) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (888764) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (890764) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (892634) WEBSOCKET: WEBSOCKET_EVENT_CONNECTED[0m
+[0;32mI (892764) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (892764) WEBSOCKET: Connection ON[0m
+[0;32mI (892764) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (892784) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;33mW (892794) WEBSOCKET: Received=
+[0m
+[0;32mI (894774) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (894774) WEBSOCKET: Connection ON[0m
+[0;32mI (894774) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (894794) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (896784) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (896784) WEBSOCKET: Connection ON[0m
+[0;32mI (896784) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (896814) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (898794) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (898794) WEBSOCKET: Connection ON[0m
+[0;32mI (898794) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (898854) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (900804) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (900804) WEBSOCKET: Connection ON[0m
+[0;32mI (900804) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (900924) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (902814) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (902814) WEBSOCKET: Connection ON[0m
+[0;32mI (902814) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (902874) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (904824) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (904824) WEBSOCKET: Connection ON[0m
+[0;32mI (904824) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (904904) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (906834) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (906834) WEBSOCKET: Connection ON[0m
+[0;32mI (906834) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (906904) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (908844) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (908844) WEBSOCKET: Connection ON[0m
+[0;32mI (908844) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (908904) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (910854) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (910854) WEBSOCKET: Connection ON[0m
+[0;32mI (910854) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (910994) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (912864) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (912864) WEBSOCKET: Connection ON[0m
+[0;32mI (912864) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (912904) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (914874) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (914874) WEBSOCKET: Connection ON[0m
+[0;32mI (914874) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (914904) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (916884) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (916884) WEBSOCKET: Connection ON[0m
+[0;32mI (916884) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (916914) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (918894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (918894) WEBSOCKET: Connection ON[0m
+[0;32mI (918894) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (918954) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (920904) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (920904) WEBSOCKET: Connection ON[0m
+[0;32mI (920904) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (920964) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (922914) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (922914) WEBSOCKET: Connection ON[0m
+[0;32mI (922914) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (922974) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (924924) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (924924) WEBSOCKET: Connection ON[0m
+[0;32mI (924924) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (924954) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (926934) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (926934) WEBSOCKET: Connection ON[0m
+[0;32mI (926934) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (926954) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (928944) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (928944) WEBSOCKET: Connection ON[0m
+[0;32mI (928944) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (928994) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (930954) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (930954) WEBSOCKET: Connection ON[0m
+[0;32mI (930954) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (931044) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (932964) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (932964) WEBSOCKET: Connection ON[0m
+[0;32mI (932964) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (932984) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (934974) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (934974) WEBSOCKET: Connection ON[0m
+[0;32mI (934974) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (934994) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (936984) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (936984) WEBSOCKET: Connection ON[0m
+[0;32mI (936984) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (937024) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (938994) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (938994) WEBSOCKET: Connection ON[0m
+[0;32mI (938994) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (939014) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (941004) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (941004) WEBSOCKET: Connection ON[0m
+[0;32mI (941004) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (941044) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (943014) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (943014) WEBSOCKET: Connection ON[0m
+[0;32mI (943014) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (943034) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (945024) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (945024) WEBSOCKET: Connection ON[0m
+[0;32mI (945024) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (945044) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (947034) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (947034) WEBSOCKET: Connection ON[0m
+[0;32mI (947034) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (947074) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (949044) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (949044) WEBSOCKET: Connection ON[0m
+[0;32mI (949044) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (949064) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (951054) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (951054) WEBSOCKET: Connection ON[0m
+[0;32mI (951054) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (951074) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (953064) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (953064) WEBSOCKET: Connection ON[0m
+[0;32mI (953064) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (953084) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (955074) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (955074) WEBSOCKET: Connection ON[0m
+[0;32mI (955074) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (955094) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (957084) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (957084) WEBSOCKET: Connection ON[0m
+[0;32mI (957084) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (957104) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (959094) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (959094) WEBSOCKET: Connection ON[0m
+[0;32mI (959094) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (959114) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (961104) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (961104) WEBSOCKET: Connection ON[0m
+[0;32mI (961104) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (961124) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (963114) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (963114) WEBSOCKET: Connection ON[0m
+[0;32mI (963114) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (963134) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (965124) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (965124) WEBSOCKET: Connection ON[0m
+[0;32mI (965124) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (965144) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (967134) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (967134) WEBSOCKET: Connection ON[0m
+[0;32mI (967134) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (967164) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (969144) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (969144) WEBSOCKET: Connection ON[0m
+[0;32mI (969144) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (969164) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (971154) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (971154) WEBSOCKET: Connection ON[0m
+[0;32mI (971154) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (971184) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (973164) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (973164) WEBSOCKET: Connection ON[0m
+[0;32mI (973164) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (973184) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (975174) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (975174) WEBSOCKET: Connection ON[0m
+[0;32mI (975174) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (975194) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (977184) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (977184) WEBSOCKET: Connection ON[0m
+[0;32mI (977184) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (977214) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (979194) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (979194) WEBSOCKET: Connection ON[0m
+[0;32mI (979194) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (979214) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (981204) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (981204) WEBSOCKET: Connection ON[0m
+[0;32mI (981204) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (981254) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (983214) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (983214) WEBSOCKET: Connection ON[0m
+[0;32mI (983214) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (983234) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (985224) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (985224) WEBSOCKET: Connection ON[0m
+[0;32mI (985224) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (985244) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (987234) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (987234) WEBSOCKET: Connection ON[0m
+[0;32mI (987234) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (987254) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (989244) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (989244) WEBSOCKET: Connection ON[0m
+[0;32mI (989244) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (989274) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (991254) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (991254) WEBSOCKET: Connection ON[0m
+[0;32mI (991254) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (991274) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (993264) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (993264) WEBSOCKET: Connection ON[0m
+[0;32mI (993264) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (993284) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (995274) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (995274) WEBSOCKET: Connection ON[0m
+[0;32mI (995274) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (995294) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (997284) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (997284) WEBSOCKET: Connection ON[0m
+[0;32mI (997284) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (997324) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (999294) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (999294) WEBSOCKET: Connection ON[0m
+[0;32mI (999294) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (999314) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (1001304) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1001304) WEBSOCKET: Connection ON[0m
+[0;32mI (1001304) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (1001344) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (1003314) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1003314) WEBSOCKET: Connection ON[0m
+[0;32mI (1003314) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (1003334) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (1005324) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1005324) WEBSOCKET: Connection ON[0m
+[0;32mI (1005324) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (1005344) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (1007334) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1007334) WEBSOCKET: Connection ON[0m
+[0;32mI (1007334) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (1007354) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (1009344) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1009344) WEBSOCKET: Connection ON[0m
+[0;32mI (1009344) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (1009364) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (1011354) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1011354) WEBSOCKET: Connection ON[0m
+[0;32mI (1011354) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (1011374) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (1013364) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1013364) WEBSOCKET: Connection ON[0m
+[0;32mI (1013364) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (1013394) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (1015374) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1015374) WEBSOCKET: Connection ON[0m
+[0;32mI (1015374) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (1015394) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;31mE (1015564) transport_base: poll_read select error 104, errno = Connection reset by peer, fd = 54[0m
+[0;31mE (1015564) WEBSOCKET_CLIENT: Network error: esp_transport_poll_read() returned -1, errno=119[0m
+[0;32mI (1015574) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (1017384) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1019384) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1021384) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1023384) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1025384) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1027384) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1029384) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1030604) WEBSOCKET: WEBSOCKET_EVENT_CONNECTED[0m
+[0;32mI (1031384) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1031384) WEBSOCKET: Connection ON[0m
+[0;32mI (1031384) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (1031414) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;33mW (1031414) WEBSOCKET: Received=
+[0m
+[0;32mI (1033394) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1033394) WEBSOCKET: Connection ON[0m
+[0;32mI (1033394) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (1033424) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (1035404) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1035404) WEBSOCKET: Connection ON[0m
+[0;32mI (1035404) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (1035424) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (1037414) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1037414) WEBSOCKET: Connection ON[0m
+[0;32mI (1037414) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (1037434) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (1039424) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1039424) WEBSOCKET: Connection ON[0m
+[0;32mI (1039424) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (1039444) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (1041434) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1041434) WEBSOCKET: Connection ON[0m
+[0;32mI (1041434) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (1041454) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (1043444) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1043444) WEBSOCKET: Connection ON[0m
+[0;32mI (1043444) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (1043474) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (1045454) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1045454) WEBSOCKET: Connection ON[0m
+[0;32mI (1045454) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (1045474) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (1047464) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1047464) WEBSOCKET: Connection ON[0m
+[0;32mI (1047464) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (1047514) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (1049474) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1049474) WEBSOCKET: Connection ON[0m
+[0;32mI (1049474) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (1049524) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (1051484) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1051484) WEBSOCKET: Connection ON[0m
+[0;32mI (1051484) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (1051524) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (1053494) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1053494) WEBSOCKET: Connection ON[0m
+[0;32mI (1053494) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (1053534) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (1055504) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1055504) WEBSOCKET: Connection ON[0m
+[0;32mI (1055504) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (1055524) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (1057514) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1057514) WEBSOCKET: Connection ON[0m
+[0;32mI (1057514) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (1057554) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (1059524) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1059524) WEBSOCKET: Connection ON[0m
+[0;32mI (1059524) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (1059574) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (1061534) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1061534) WEBSOCKET: Connection ON[0m
+[0;32mI (1061534) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (1061554) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (1063544) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1063544) WEBSOCKET: Connection ON[0m
+[0;32mI (1063544) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (1063564) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (1065554) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1065554) WEBSOCKET: Connection ON[0m
+[0;32mI (1065554) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (1065574) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (1067564) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1067564) WEBSOCKET: Connection ON[0m
+[0;32mI (1067564) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (1067604) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (1069574) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1069574) WEBSOCKET: Connection ON[0m
+[0;32mI (1069574) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (1069594) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (1071584) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1071584) WEBSOCKET: Connection ON[0m
+[0;32mI (1071584) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (1071624) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (1073594) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1073594) WEBSOCKET: Connection ON[0m
+[0;32mI (1073594) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (1073614) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (1075604) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1075604) WEBSOCKET: Connection ON[0m
+[0;32mI (1075604) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (1075624) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (1077614) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1077614) WEBSOCKET: Connection ON[0m
+[0;32mI (1077614) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (1077634) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (1079624) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1079624) WEBSOCKET: Connection ON[0m
+[0;32mI (1079624) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (1079654) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (1081634) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1081634) WEBSOCKET: Connection ON[0m
+[0;32mI (1081634) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (1081654) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (1083644) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1083644) WEBSOCKET: Connection ON[0m
+[0;32mI (1083644) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (1083664) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (1085654) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1085654) WEBSOCKET: Connection ON[0m
+[0;32mI (1085654) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (1085684) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (1087664) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1087664) WEBSOCKET: Connection ON[0m
+[0;32mI (1087664) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (1087714) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (1089674) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1089674) WEBSOCKET: Connection ON[0m
+[0;32mI (1089674) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (1089714) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (1091684) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1091684) WEBSOCKET: Connection ON[0m
+[0;32mI (1091684) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (1091704) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (1093694) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1093694) WEBSOCKET: Connection ON[0m
+[0;32mI (1093694) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (1093724) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (1095704) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1095704) WEBSOCKET: Connection ON[0m
+[0;32mI (1095704) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (1095724) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (1097714) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1097714) WEBSOCKET: Connection ON[0m
+[0;32mI (1097714) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (1097734) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (1099724) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1099724) WEBSOCKET: Connection ON[0m
+[0;32mI (1099724) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (1099764) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (1101734) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1101734) WEBSOCKET: Connection ON[0m
+[0;32mI (1101734) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (1101754) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (1103744) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1103744) WEBSOCKET: Connection ON[0m
+[0;32mI (1103744) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (1103764) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (1105754) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1105754) WEBSOCKET: Connection ON[0m
+[0;32mI (1105754) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (1105774) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (1107764) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1107764) WEBSOCKET: Connection ON[0m
+[0;32mI (1107764) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (1107784) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (1109774) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1109774) WEBSOCKET: Connection ON[0m
+[0;32mI (1109774) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (1109804) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (1111784) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1111784) WEBSOCKET: Connection ON[0m
+[0;32mI (1111784) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (1111804) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (1113794) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1113794) WEBSOCKET: Connection ON[0m
+[0;32mI (1113794) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (1113814) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (1115804) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1115804) WEBSOCKET: Connection ON[0m
+[0;32mI (1115804) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (1115824) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (1117814) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1117814) WEBSOCKET: Connection ON[0m
+[0;32mI (1117814) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (1117854) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (1119824) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1119824) WEBSOCKET: Connection ON[0m
+[0;32mI (1119824) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (1119864) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (1121834) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1121834) WEBSOCKET: Connection ON[0m
+[0;32mI (1121834) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (1121884) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (1123844) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1123844) WEBSOCKET: Connection ON[0m
+[0;32mI (1123844) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (1123864) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (1125854) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1125854) WEBSOCKET: Connection ON[0m
+[0;32mI (1125854) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (1125884) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (1127864) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1127864) WEBSOCKET: Connection ON[0m
+[0;32mI (1127864) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (1127884) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (1129874) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1129874) WEBSOCKET: Connection ON[0m
+[0;32mI (1129874) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (1129894) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;32mI (1131884) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1131884) WEBSOCKET: Connection ON[0m
+[0;32mI (1131884) WEBSOCKET: Sending {"source": "esp32","message": "HOLA"}[0m
+[0;33mW (1131904) WEBSOCKET: Received=Servidor: Recibí tu mensaje - {"source": "esp32","message": "HOLA"}
+[0m
+[0;31mE (1133164) transport_base: poll_read select error 104, errno = Connection reset by peer, fd = 54[0m
+[0;31mE (1133164) WEBSOCKET_CLIENT: Network error: esp_transport_poll_read() returned -1, errno=119[0m
+[0;32mI (1133174) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (1133894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1135894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1137894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1139894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1141894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1143894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1145894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1147894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;31mE (1148244) transport_ws: Sec-WebSocket-Accept not found[0m
+[0;31mE (1148244) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (1148244) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (1149894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1151894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1153894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1155894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1157894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;31mE (1158284) transport_ws: Sec-WebSocket-Accept not found[0m
+[0;31mE (1158284) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (1158284) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (1159894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1161894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1163894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1165894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1167894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1169894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1171894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;31mE (1173334) transport_ws: Sec-WebSocket-Accept not found[0m
+[0;31mE (1173334) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (1173344) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (1173894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1175894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1177894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1179894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1181894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1183894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1185894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1187894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;31mE (1188364) transport_ws: Sec-WebSocket-Accept not found[0m
+[0;31mE (1188364) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (1188364) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (1189894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1191894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1193894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1195894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1197894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1199894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1201894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;31mE (1203384) transport_ws: Sec-WebSocket-Accept not found[0m
+[0;31mE (1203384) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (1203394) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (1203894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1205894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1207894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1209894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1211894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1213894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1215894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1217894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;31mE (1218414) transport_ws: Sec-WebSocket-Accept not found[0m
+[0;31mE (1218414) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (1218414) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (1219894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1221894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1223894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1225894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1227894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1229894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1231894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;31mE (1233434) transport_ws: Sec-WebSocket-Accept not found[0m
+[0;31mE (1233434) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (1233434) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (1233894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1235894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1237894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1239894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1241894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1243894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1245894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1247894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;31mE (1248464) transport_ws: Sec-WebSocket-Accept not found[0m
+[0;31mE (1248464) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (1248464) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (1249894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1251894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1253894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1255894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1257894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;31mE (1258484) transport_ws: Sec-WebSocket-Accept not found[0m
+[0;31mE (1258494) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (1258494) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (1259894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1261894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1263894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1265894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1267894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1269894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1271894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;31mE (1273544) transport_ws: Sec-WebSocket-Accept not found[0m
+[0;31mE (1273544) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (1273544) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (1273894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1275894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1277894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1279894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1281894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;31mE (1283584) transport_ws: Sec-WebSocket-Accept not found[0m
+[0;31mE (1283584) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (1283594) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (1283894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1285894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1287894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1289894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1291894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1293894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1295894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;32mI (1297894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m
+[0;31mE (1298614) transport_ws: Sec-WebSocket-Accept not found[0m
+[0;31mE (1298614) WEBSOCKET_CLIENT: Error transport connect[0m
+[0;32mI (1298614) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (1299894) WEBSOCKET: JSON DATA : {"source": "esp32","message": "HOLA"}[0m

@@ -1,0 +1,358 @@
+ets Jun  8 2016 00:22:57
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7080
+load:0x40078000,len:15584
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3876
+entry 0x4008064c
+[0;32mI (31) boot: ESP-IDF v5.1.1 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Mar  8 2024 12:14:19[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v1.0[0m
+[0;32mI (39) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (43) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (52) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (61) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (76) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (91) boot: End of partition table[0m
+[0;32mI (95) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=25150h (151888) map[0m
+[0;32mI (159) esp_image: segment 1: paddr=00035178 vaddr=3ffb0000 size=03738h ( 14136) load[0m
+[0;32mI (164) esp_image: segment 2: paddr=000388b8 vaddr=40080000 size=07760h ( 30560) load[0m
+[0;32mI (177) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=9b824h (636964) map[0m
+[0;32mI (407) esp_image: segment 4: paddr=000db84c vaddr=40087760 size=0df80h ( 57216) load[0m
+[0;32mI (442) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (442) boot: Disabling RNG early entropy source...[0m
+[0;32mI (454) cpu_start: Multicore app[0m
+[0;32mI (454) cpu_start: Pro cpu up.[0m
+[0;32mI (454) cpu_start: Starting app cpu, entry point is 0x4008137c[0m
+[0;32mI (0) cpu_start: App cpu up.[0m
+[0;32mI (472) cpu_start: Pro cpu start user code[0m
+[0;32mI (472) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (472) cpu_start: Application information:[0m
+[0;32mI (477) cpu_start: Project name:     MQTT_example[0m
+[0;32mI (482) cpu_start: App version:      1[0m
+[0;32mI (487) cpu_start: Compile time:     Mar  8 2024 12:14:08[0m
+[0;32mI (493) cpu_start: ELF file SHA256:  7af8c1c3d609982d...[0m
+[0;32mI (499) cpu_start: ESP-IDF:          v5.1.1[0m
+[0;32mI (504) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (508) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (513) cpu_start: Chip rev:         v1.0[0m
+[0;32mI (518) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (525) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (531) heap_init: At 3FFB7DF8 len 00028208 (160 KiB): DRAM[0m
+[0;32mI (537) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (544) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (550) heap_init: At 400956E0 len 0000A920 (42 KiB): IRAM[0m
+[0;32mI (558) spi_flash: detected chip: generic[0m
+[0;32mI (561) spi_flash: flash io: dio[0m
+[0;33mW (565) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (579) app_start: Starting scheduler on CPU0[0m
+[0;32mI (583) app_start: Starting scheduler on CPU1[0m
+[0;32mI (583) main_task: Started on CPU0[0m
+[0;32mI (593) main_task: Calling app_main()[0m
+[0;32mI (593) WEBSOCKET: [APP] Startup..[0m
+[0;32mI (593) WEBSOCKET: [APP] Free memory: 279384 bytes[0m
+[0;32mI (603) WEBSOCKET: [APP] IDF version: v5.1.1[0m
+[0;32mI (643) example_connect: Start example_connect.[0m
+I (653) wifi:wifi driver task: 3ffbfa30, prio:23, stack:6656, core=0
+I (663) wifi:wifi firmware version: ce9244d
+I (663) wifi:wifi certification version: v7.0
+I (663) wifi:config NVS flash: enabled
+I (663) wifi:config nano formating: disabled
+I (673) wifi:Init data frame dynamic rx buffer num: 32
+I (673) wifi:Init management frame dynamic rx buffer num: 32
+I (683) wifi:Init management short buffer num: 32
+I (683) wifi:Init dynamic tx buffer num: 32
+I (693) wifi:Init static rx buffer size: 1600
+I (693) wifi:Init static rx buffer num: 10
+I (703) wifi:Init dynamic rx buffer num: 32
+[0;32mI (703) wifi_init: rx ba win: 6[0m
+[0;32mI (703) wifi_init: tcpip mbox: 32[0m
+[0;32mI (713) wifi_init: udp mbox: 6[0m
+[0;32mI (713) wifi_init: tcp mbox: 6[0m
+[0;32mI (713) wifi_init: tcp tx win: 5744[0m
+[0;32mI (723) wifi_init: tcp rx win: 5744[0m
+[0;32mI (723) wifi_init: tcp mss: 1440[0m
+[0;32mI (733) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (733) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (743) phy_init: phy_version 4670,719f9f6,Feb 18 2021,17:07:07[0m
+I (843) wifi:mode : sta (ec:94:cb:6a:fb:58)
+I (843) wifi:enable tsf
+[0;32mI (853) example_connect: Connecting to WIFI1...[0m
+[0;32mI (853) example_connect: Waiting for IP(s)[0m
+I (3263) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1
+I (4613) wifi:state: init -> auth (b0)
+I (4643) wifi:state: auth -> assoc (0)
+I (4643) wifi:state: assoc -> run (10)
+I (4683) wifi:connected with WIFI1, aid = 3, channel 11, BW20, bssid = 82:e9:3a:ed:b8:55
+I (4683) wifi:security: WPA2-PSK, phy: bgn, rssi: -58
+I (4683) wifi:pm start, type: 1
+
+I (4703) wifi:AP's beacon interval = 102400 us, DTIM period = 1
+[0;32mI (5693) esp_netif_handlers: example_netif_sta ip: 192.168.137.214, mask: 255.255.255.0, gw: 192.168.137.1[0m
+[0;32mI (5693) example_connect: Got IPv4 event: Interface "example_netif_sta" address: 192.168.137.214[0m
+[0;32mI (6633) example_connect: Got IPv6 event: Interface "example_netif_sta" address: fe80:0000:0000:0000:ee94:cbff:fe6a:fb58, type: ESP_IP6_ADDR_IS_LINK_LOCAL[0m
+[0;32mI (6633) example_common: Connected to example_netif_sta[0m
+[0;32mI (6643) example_common: - IPv4 address: 192.168.137.214,[0m
+[0;32mI (6643) example_common: - IPv6 address: fe80:0000:0000:0000:ee94:cbff:fe6a:fb58, type: ESP_IP6_ADDR_IS_LINK_LOCAL[0m
+[0;32mI (6663) WEBSOCKET: Connecting to ws://172.30.2.140:8080 ...[0m
+I (6683) wifi:<ba-add>idx:0 (ifx:0, 82:e9:3a:ed:b8:55), tid:0, ssn:4, winSize:64
+[0;32mI (6703) WEBSOCKET: WEBSOCKET_EVENT_CONNECTED[0m
+[0;32mI (7673) WEBSOCKET: Connection established[0m
+[0;32mI (8673) WEBSOCKET: 0[0m
+[0;32mI (14673) WEBSOCKET: 1[0m
+[0;32mI (20673) WEBSOCKET: 2[0m
+[0;32mI (26683) WEBSOCKET: 3[0m
+[0;32mI (32683) WEBSOCKET: 4[0m
+[0;32mI (38683) WEBSOCKET: 5[0m
+[0;32mI (44683) WEBSOCKET: 6[0m
+[0;32mI (50683) WEBSOCKET: 7[0m
+[0;32mI (56683) WEBSOCKET: 8[0m
+[0;32mI (62683) WEBSOCKET: 9[0m
+[0;32mI (68683) WEBSOCKET: 10[0m
+[0;32mI (74683) WEBSOCKET: 11[0m
+[0;32mI (80683) WEBSOCKET: 12[0m
+[0;32mI (86683) WEBSOCKET: 13[0m
+[0;32mI (92683) WEBSOCKET: 14[0m
+[0;32mI (98683) WEBSOCKET: 0[0m
+[0;32mI (104683) WEBSOCKET: 1[0m
+[0;32mI (110683) WEBSOCKET: 2[0m
+[0;33mW (112983) WEBSOCKET: Received={"src":"html","id":"esp32_test1","message":true}
+[0m
+[0;32mI (112983) WEBSOCKET: received_src: html, received_id: esp32_test1, received_message_str: [0m
+[0;32mI (112993) WEBSOCKET: str_to_bool : [0m
+El switch del ESP32 está apagado.
+[0;32mI (116683) WEBSOCKET: 3[0m
+[0;32mI (122683) WEBSOCKET: 4[0m
+[0;32mI (128683) WEBSOCKET: 5[0m
+[0;32mI (134683) WEBSOCKET: 6[0m
+[0;32mI (140683) WEBSOCKET: 7[0m
+[0;32mI (146683) WEBSOCKET: 8[0m
+[0;32mI (152683) WEBSOCKET: 9[0m
+[0;32mI (158683) WEBSOCKET: 10[0m
+[0;32mI (164683) WEBSOCKET: 11[0m
+[0;31mE (169993) transport_base: poll_read select error 104, errno = Connection reset by peer, fd = 54[0m
+[0;31mE (169993) WEBSOCKET_CLIENT: Network error: esp_transport_poll_read() returned -1, errno=119[0m
+[0;32mI (170003) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (170683) WEBSOCKET: 12[0m
+[0;32mI (176683) WEBSOCKET: 13[0m
+[0;32mI (182683) WEBSOCKET: 14[0m
+[0;32mI (185013) WEBSOCKET: WEBSOCKET_EVENT_CONNECTED[0m
+[0;32mI (188683) WEBSOCKET: 0[0m
+[0;33mW (192313) WEBSOCKET: Received={"src":"html","id":"esp32_test1","message":"true"}
+[0m
+[0;32mI (192313) WEBSOCKET: received_src: html, received_id: esp32_test1, received_message_str: true[0m
+[0;32mI (192313) WEBSOCKET: str_to_bool : true[0m
+El switch del ESP32 está encendido.
+[0;32mI (194683) WEBSOCKET: 1[0m
+[0;33mW (198453) WEBSOCKET: Received={"src":"html","id":"esp32_test1","message":"false"}
+[0m
+[0;32mI (198453) WEBSOCKET: received_src: html, received_id: esp32_test1, received_message_str: false[0m
+[0;32mI (198463) WEBSOCKET: str_to_bool : false[0m
+El switch del ESP32 está apagado.
+[0;32mI (200683) WEBSOCKET: 2[0m
+[0;32mI (206683) WEBSOCKET: 3[0m
+[0;32mI (212683) WEBSOCKET: 4[0m
+[0;32mI (218693) WEBSOCKET: 5[0m
+[0;32mI (224703) WEBSOCKET: 6[0m
+[0;32mI (230703) WEBSOCKET: 7[0m
+[0;32mI (236703) WEBSOCKET: 8[0m
+[0;32mI (242703) WEBSOCKET: 9[0m
+[0;32mI (248703) WEBSOCKET: 10[0m
+[0;32mI (254703) WEBSOCKET: 11[0m
+[0;32mI (260703) WEBSOCKET: 12[0m
+[0;32mI (266703) WEBSOCKET: 13[0m
+[0;32mI (272703) WEBSOCKET: 14[0m
+[0;32mI (278703) WEBSOCKET: 0[0m
+[0;32mI (284703) WEBSOCKET: 1[0m
+[0;32mI (290703) WEBSOCKET: 2[0m
+[0;32mI (296713) WEBSOCKET: 3[0m
+[0;32mI (302713) WEBSOCKET: 4[0m
+[0;32mI (308713) WEBSOCKET: 5[0m
+[0;32mI (314713) WEBSOCKET: 6[0m
+[0;32mI (320713) WEBSOCKET: 7[0m
+[0;32mI (326713) WEBSOCKET: 8[0m
+[0;32mI (332713) WEBSOCKET: 9[0m
+[0;32mI (338713) WEBSOCKET: 10[0m
+[0;32mI (344713) WEBSOCKET: 11[0m
+[0;32mI (350713) WEBSOCKET: 12[0m
+[0;32mI (356713) WEBSOCKET: 13[0m
+[0;32mI (362713) WEBSOCKET: 14[0m
+[0;32mI (368713) WEBSOCKET: 0[0m
+[0;32mI (374713) WEBSOCKET: 1[0m
+[0;32mI (380713) WEBSOCKET: 2[0m
+[0;32mI (386713) WEBSOCKET: 3[0m
+[0;32mI (392713) WEBSOCKET: 4[0m
+[0;32mI (398713) WEBSOCKET: 5[0m
+[0;32mI (404713) WEBSOCKET: 6[0m
+[0;32mI (410713) WEBSOCKET: 7[0m
+[0;32mI (416723) WEBSOCKET: 8[0m
+[0;32mI (422723) WEBSOCKET: 9[0m
+[0;32mI (428723) WEBSOCKET: 10[0m
+[0;32mI (434733) WEBSOCKET: 11[0m
+[0;32mI (440733) WEBSOCKET: 12[0m
+[0;32mI (446733) WEBSOCKET: 13[0m
+[0;32mI (452733) WEBSOCKET: 14[0m
+[0;32mI (458733) WEBSOCKET: 0[0m
+[0;32mI (464733) WEBSOCKET: 1[0m
+[0;32mI (470733) WEBSOCKET: 2[0m
+[0;32mI (476743) WEBSOCKET: 3[0m
+[0;32mI (482743) WEBSOCKET: 4[0m
+[0;32mI (488743) WEBSOCKET: 5[0m
+[0;32mI (494743) WEBSOCKET: 6[0m
+[0;32mI (500743) WEBSOCKET: 7[0m
+[0;32mI (506743) WEBSOCKET: 8[0m
+[0;32mI (512743) WEBSOCKET: 9[0m
+[0;32mI (518743) WEBSOCKET: 10[0m
+[0;32mI (524743) WEBSOCKET: 11[0m
+[0;32mI (530743) WEBSOCKET: 12[0m
+[0;32mI (536753) WEBSOCKET: 13[0m
+[0;32mI (542763) WEBSOCKET: 14[0m
+[0;32mI (548763) WEBSOCKET: 0[0m
+[0;32mI (554763) WEBSOCKET: 1[0m
+[0;32mI (560763) WEBSOCKET: 2[0m
+[0;32mI (566763) WEBSOCKET: 3[0m
+[0;32mI (572763) WEBSOCKET: 4[0m
+[0;32mI (578763) WEBSOCKET: 5[0m
+[0;32mI (584763) WEBSOCKET: 6[0m
+[0;32mI (590773) WEBSOCKET: 7[0m
+[0;32mI (596773) WEBSOCKET: 8[0m
+[0;32mI (602773) WEBSOCKET: 9[0m
+[0;32mI (608773) WEBSOCKET: 10[0m
+[0;32mI (614773) WEBSOCKET: 11[0m
+[0;32mI (620783) WEBSOCKET: 12[0m
+[0;32mI (626783) WEBSOCKET: 13[0m
+[0;32mI (632783) WEBSOCKET: 14[0m
+[0;32mI (638783) WEBSOCKET: 0[0m
+[0;32mI (644783) WEBSOCKET: 1[0m
+[0;32mI (650783) WEBSOCKET: 2[0m
+[0;32mI (656793) WEBSOCKET: 3[0m
+[0;32mI (662793) WEBSOCKET: 4[0m
+[0;32mI (668793) WEBSOCKET: 5[0m
+[0;32mI (674793) WEBSOCKET: 6[0m
+[0;32mI (680793) WEBSOCKET: 7[0m
+[0;32mI (686793) WEBSOCKET: 8[0m
+[0;32mI (692793) WEBSOCKET: 9[0m
+[0;32mI (698793) WEBSOCKET: 10[0m
+[0;32mI (704793) WEBSOCKET: 11[0m
+[0;32mI (710793) WEBSOCKET: 12[0m
+[0;32mI (716793) WEBSOCKET: 13[0m
+[0;32mI (722793) WEBSOCKET: 14[0m
+[0;32mI (728793) WEBSOCKET: 0[0m
+[0;32mI (734793) WEBSOCKET: 1[0m
+[0;32mI (740793) WEBSOCKET: 2[0m
+[0;32mI (746793) WEBSOCKET: 3[0m
+[0;32mI (752793) WEBSOCKET: 4[0m
+[0;32mI (758793) WEBSOCKET: 5[0m
+[0;32mI (764793) WEBSOCKET: 6[0m
+[0;32mI (770793) WEBSOCKET: 7[0m
+[0;32mI (776793) WEBSOCKET: 8[0m
+[0;32mI (782793) WEBSOCKET: 9[0m
+[0;32mI (788793) WEBSOCKET: 10[0m
+[0;32mI (794793) WEBSOCKET: 11[0m
+[0;32mI (800803) WEBSOCKET: 12[0m
+[0;32mI (806803) WEBSOCKET: 13[0m
+[0;32mI (812813) WEBSOCKET: 14[0m
+[0;32mI (818813) WEBSOCKET: 0[0m
+[0;32mI (824813) WEBSOCKET: 1[0m
+[0;32mI (830813) WEBSOCKET: 2[0m
+[0;32mI (836823) WEBSOCKET: 3[0m
+[0;32mI (842823) WEBSOCKET: 4[0m
+[0;32mI (848823) WEBSOCKET: 5[0m
+[0;32mI (854823) WEBSOCKET: 6[0m
+[0;32mI (860823) WEBSOCKET: 7[0m
+[0;32mI (866823) WEBSOCKET: 8[0m
+[0;32mI (872823) WEBSOCKET: 9[0m
+[0;32mI (878823) WEBSOCKET: 10[0m
+[0;32mI (884833) WEBSOCKET: 11[0m
+[0;32mI (890833) WEBSOCKET: 12[0m
+[0;32mI (896843) WEBSOCKET: 13[0m
+[0;32mI (902843) WEBSOCKET: 14[0m
+[0;32mI (908843) WEBSOCKET: 0[0m
+[0;32mI (914843) WEBSOCKET: 1[0m
+[0;32mI (920853) WEBSOCKET: 2[0m
+[0;32mI (926853) WEBSOCKET: 3[0m
+[0;32mI (932853) WEBSOCKET: 4[0m
+[0;32mI (938853) WEBSOCKET: 5[0m
+[0;32mI (944853) WEBSOCKET: 6[0m
+[0;32mI (950853) WEBSOCKET: 7[0m
+[0;32mI (956853) WEBSOCKET: 8[0m
+[0;32mI (962853) WEBSOCKET: 9[0m
+[0;32mI (968853) WEBSOCKET: 10[0m
+[0;32mI (974853) WEBSOCKET: 11[0m
+[0;32mI (980853) WEBSOCKET: 12[0m
+[0;32mI (986853) WEBSOCKET: 13[0m
+[0;32mI (992853) WEBSOCKET: 14[0m
+[0;32mI (998853) WEBSOCKET: 0[0m
+[0;32mI (1004853) WEBSOCKET: 1[0m
+[0;32mI (1010853) WEBSOCKET: 2[0m
+[0;32mI (1016853) WEBSOCKET: 3[0m
+[0;32mI (1022863) WEBSOCKET: 4[0m
+[0;32mI (1028863) WEBSOCKET: 5[0m
+[0;32mI (1034863) WEBSOCKET: 6[0m
+[0;32mI (1040863) WEBSOCKET: 7[0m
+[0;32mI (1046863) WEBSOCKET: 8[0m
+[0;32mI (1052863) WEBSOCKET: 9[0m
+[0;32mI (1058863) WEBSOCKET: 10[0m
+[0;32mI (1064863) WEBSOCKET: 11[0m
+[0;32mI (1070863) WEBSOCKET: 12[0m
+[0;32mI (1076863) WEBSOCKET: 13[0m
+[0;32mI (1082873) WEBSOCKET: 14[0m
+[0;32mI (1088873) WEBSOCKET: 0[0m
+[0;32mI (1094873) WEBSOCKET: 1[0m
+[0;32mI (1100873) WEBSOCKET: 2[0m
+[0;32mI (1106873) WEBSOCKET: 3[0m
+[0;32mI (1112873) WEBSOCKET: 4[0m
+[0;32mI (1118873) WEBSOCKET: 5[0m
+[0;32mI (1124873) WEBSOCKET: 6[0m
+[0;32mI (1130873) WEBSOCKET: 7[0m
+[0;32mI (1136873) WEBSOCKET: 8[0m
+[0;32mI (1142873) WEBSOCKET: 9[0m
+[0;32mI (1148873) WEBSOCKET: 10[0m
+[0;32mI (1154873) WEBSOCKET: 11[0m
+[0;32mI (1160873) WEBSOCKET: 12[0m
+[0;32mI (1166873) WEBSOCKET: 13[0m
+[0;32mI (1172873) WEBSOCKET: 14[0m
+[0;32mI (1178873) WEBSOCKET: 0[0m
+[0;32mI (1184873) WEBSOCKET: 1[0m
+[0;32mI (1190873) WEBSOCKET: 2[0m
+[0;32mI (1196873) WEBSOCKET: 3[0m
+[0;32mI (1202873) WEBSOCKET: 4[0m
+[0;32mI (1208873) WEBSOCKET: 5[0m
+[0;32mI (1214873) WEBSOCKET: 6[0m
+[0;32mI (1220873) WEBSOCKET: 7[0m
+[0;32mI (1226883) WEBSOCKET: 8[0m
+[0;32mI (1232893) WEBSOCKET: 9[0m
+[0;32mI (1238893) WEBSOCKET: 10[0m
+[0;32mI (1244893) WEBSOCKET: 11[0m
+[0;32mI (1250893) WEBSOCKET: 12[0m
+[0;32mI (1256893) WEBSOCKET: 13[0m
+[0;32mI (1262893) WEBSOCKET: 14[0m
+[0;32mI (1268893) WEBSOCKET: 0[0m
+[0;32mI (1274893) WEBSOCKET: 1[0m
+[0;32mI (1280893) WEBSOCKET: 2[0m
+[0;32mI (1286893) WEBSOCKET: 3[0m
+[0;32mI (1292903) WEBSOCKET: 4[0m
+[0;32mI (1298903) WEBSOCKET: 5[0m
+[0;32mI (1304903) WEBSOCKET: 6[0m
+[0;32mI (1310903) WEBSOCKET: 7[0m
+[0;32mI (1316903) WEBSOCKET: 8[0m
+[0;32mI (1322913) WEBSOCKET: 9[0m
+[0;32mI (1328923) WEBSOCKET: 10[0m
+[0;32mI (1334923) WEBSOCKET: 11[0m
+[0;32mI (1340923) WEBSOCKET: 12[0m
+[0;32mI (1346923) WEBSOCKET: 13[0m
+[0;32mI (1352923) WEBSOCKET: 14[0m
+[0;32mI (1358923) WEBSOCKET: 0[0m
+[0;32mI (1364923) WEBSOCKET: 1[0m
+[0;32mI (1370923) WEBSOCKET: 2[0m
+[0;32mI (1376923) WEBSOCKET: 3[0m

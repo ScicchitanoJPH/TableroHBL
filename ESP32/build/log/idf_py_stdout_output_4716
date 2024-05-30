@@ -1,0 +1,502 @@
+ets Jun  8 2016 00:22:57
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7080
+load:0x40078000,len:15584
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3876
+entry 0x4008064c
+[0;32mI (31) boot: ESP-IDF v5.1.1 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Mar  8 2024 12:14:19[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v1.0[0m
+[0;32mI (39) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (43) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (52) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (61) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (76) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (91) boot: End of partition table[0m
+[0;32mI (95) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=24bcch (150476) map[0m
+[0;32mI (158) esp_image: segment 1: paddr=00034bf4 vaddr=3ffb0000 size=03738h ( 14136) load[0m
+[0;32mI (164) esp_image: segment 2: paddr=00038334 vaddr=40080000 size=07ce4h ( 31972) load[0m
+[0;32mI (177) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=95588h (611720) map[0m
+[0;32mI (398) esp_image: segment 4: paddr=000d55b0 vaddr=40087ce4 size=0d9fch ( 55804) load[0m
+[0;32mI (433) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (433) boot: Disabling RNG early entropy source...[0m
+[0;32mI (444) cpu_start: Multicore app[0m
+[0;32mI (445) cpu_start: Pro cpu up.[0m
+[0;32mI (445) cpu_start: Starting app cpu, entry point is 0x4008137c[0m
+[0;32mI (0) cpu_start: App cpu up.[0m
+[0;32mI (463) cpu_start: Pro cpu start user code[0m
+[0;32mI (463) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (463) cpu_start: Application information:[0m
+[0;32mI (467) cpu_start: Project name:     MQTT_example[0m
+[0;32mI (473) cpu_start: App version:      1[0m
+[0;32mI (477) cpu_start: Compile time:     Mar  8 2024 12:14:08[0m
+[0;32mI (483) cpu_start: ELF file SHA256:  3b4d006d9525f378...[0m
+[0;32mI (489) cpu_start: ESP-IDF:          v5.1.1[0m
+[0;32mI (494) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (499) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (504) cpu_start: Chip rev:         v1.0[0m
+[0;32mI (509) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (516) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (522) heap_init: At 3FFB7DF8 len 00028208 (160 KiB): DRAM[0m
+[0;32mI (528) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (534) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (541) heap_init: At 400956E0 len 0000A920 (42 KiB): IRAM[0m
+[0;32mI (548) spi_flash: detected chip: generic[0m
+[0;32mI (551) spi_flash: flash io: dio[0m
+[0;33mW (555) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (569) app_start: Starting scheduler on CPU0[0m
+[0;32mI (574) app_start: Starting scheduler on CPU1[0m
+[0;32mI (574) main_task: Started on CPU0[0m
+[0;32mI (584) main_task: Calling app_main()[0m
+[0;32mI (584) WEBSOCKET: [APP] Startup..[0m
+[0;32mI (584) WEBSOCKET: [APP] Free memory: 279384 bytes[0m
+[0;32mI (594) WEBSOCKET: [APP] IDF version: v5.1.1[0m
+[0;32mI (634) example_connect: Start example_connect.[0m
+I (644) wifi:wifi driver task: 3ffbfa30, prio:23, stack:6656, core=0
+I (654) wifi:wifi firmware version: ce9244d
+I (664) wifi:wifi certification version: v7.0
+I (664) wifi:config NVS flash: enabled
+I (664) wifi:config nano formating: disabled
+I (664) wifi:Init data frame dynamic rx buffer num: 32
+I (664) wifi:Init management frame dynamic rx buffer num: 32
+I (674) wifi:Init management short buffer num: 32
+I (674) wifi:Init dynamic tx buffer num: 32
+I (684) wifi:Init static rx buffer size: 1600
+I (684) wifi:Init static rx buffer num: 10
+I (694) wifi:Init dynamic rx buffer num: 32
+[0;32mI (694) wifi_init: rx ba win: 6[0m
+[0;32mI (694) wifi_init: tcpip mbox: 32[0m
+[0;32mI (704) wifi_init: udp mbox: 6[0m
+[0;32mI (704) wifi_init: tcp mbox: 6[0m
+[0;32mI (714) wifi_init: tcp tx win: 5744[0m
+[0;32mI (714) wifi_init: tcp rx win: 5744[0m
+[0;32mI (714) wifi_init: tcp mss: 1440[0m
+[0;32mI (724) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (724) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (734) phy_init: phy_version 4670,719f9f6,Feb 18 2021,17:07:07[0m
+I (844) wifi:mode : sta (ec:94:cb:6a:fb:58)
+I (844) wifi:enable tsf
+[0;32mI (844) example_connect: Connecting to WIFI1...[0m
+[0;32mI (844) example_connect: Waiting for IP(s)[0m
+[0;32mI (3254) example_connect: Wi-Fi disconnected, trying to reconnect...[0m
+I (5674) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1
+I (6824) wifi:state: init -> auth (b0)
+I (6834) wifi:state: auth -> assoc (0)
+I (6834) wifi:state: assoc -> run (10)
+I (6924) wifi:connected with WIFI1, aid = 1, channel 11, BW20, bssid = 82:e9:3a:ed:b8:55
+I (6924) wifi:security: WPA2-PSK, phy: bgn, rssi: -40
+I (6924) wifi:pm start, type: 1
+
+I (6954) wifi:AP's beacon interval = 102400 us, DTIM period = 1
+[0;32mI (7934) esp_netif_handlers: example_netif_sta ip: 192.168.137.55, mask: 255.255.255.0, gw: 192.168.137.1[0m
+[0;32mI (7934) example_connect: Got IPv4 event: Interface "example_netif_sta" address: 192.168.137.55[0m
+[0;32mI (8624) example_connect: Got IPv6 event: Interface "example_netif_sta" address: fe80:0000:0000:0000:ee94:cbff:fe6a:fb58, type: ESP_IP6_ADDR_IS_LINK_LOCAL[0m
+[0;32mI (8624) example_common: Connected to example_netif_sta[0m
+[0;32mI (8634) example_common: - IPv4 address: 192.168.137.55,[0m
+[0;32mI (8634) example_common: - IPv6 address: fe80:0000:0000:0000:ee94:cbff:fe6a:fb58, type: ESP_IP6_ADDR_IS_LINK_LOCAL[0m
+[0;32mI (8644) WEBSOCKET: Connecting to ws://172.30.2.140:8080 ...[0m
+I (8664) wifi:<ba-add>idx:0 (ifx:0, 82:e9:3a:ed:b8:55), tid:0, ssn:4, winSize:64
+[0;32mI (8694) WEBSOCKET: WEBSOCKET_EVENT_CONNECTED[0m
+[0;32mI (9664) WEBSOCKET: Sending Hello 0000[0m
+[0;33mW (9684) WEBSOCKET: Received=Hello 0000
+[0m
+[0;32mI (10664) WEBSOCKET: Connection established[0m
+[0;33mW (19794) WEBSOCKET: Received=
+[0m
+[0;33mW (29904) WEBSOCKET: Received=
+[0m
+[0;33mW (40014) WEBSOCKET: Received=
+[0m
+[0;33mW (50124) WEBSOCKET: Received=
+[0m
+[0;33mW (60224) WEBSOCKET: Received=
+[0m
+[0;33mW (70344) WEBSOCKET: Received=
+[0m
+[0;33mW (80444) WEBSOCKET: Received=
+[0m
+[0;33mW (90564) WEBSOCKET: Received=
+[0m
+[0;33mW (100674) WEBSOCKET: Received=
+[0m
+[0;33mW (110784) WEBSOCKET: Received=
+[0m
+[0;33mW (120894) WEBSOCKET: Received=
+[0m
+[0;33mW (131004) WEBSOCKET: Received=
+[0m
+[0;33mW (141114) WEBSOCKET: Received=
+[0m
+[0;33mW (151224) WEBSOCKET: Received=
+[0m
+[0;33mW (161334) WEBSOCKET: Received=
+[0m
+[0;33mW (171444) WEBSOCKET: Received=
+[0m
+[0;33mW (181554) WEBSOCKET: Received=
+[0m
+[0;33mW (191674) WEBSOCKET: Received=
+[0m
+[0;33mW (201804) WEBSOCKET: Received=
+[0m
+[0;33mW (211904) WEBSOCKET: Received=
+[0m
+[0;33mW (222024) WEBSOCKET: Received=
+[0m
+[0;33mW (232204) WEBSOCKET: Received=
+[0m
+[0;33mW (242314) WEBSOCKET: Received=
+[0m
+[0;33mW (252434) WEBSOCKET: Received=
+[0m
+[0;33mW (262554) WEBSOCKET: Received=
+[0m
+[0;33mW (272664) WEBSOCKET: Received=
+[0m
+[0;33mW (282774) WEBSOCKET: Received=
+[0m
+[0;33mW (292884) WEBSOCKET: Received=
+[0m
+[0;33mW (302994) WEBSOCKET: Received=
+[0m
+[0;33mW (313094) WEBSOCKET: Received=
+[0m
+[0;33mW (323214) WEBSOCKET: Received=
+[0m
+[0;31mE (330654) transport_base: poll_read select error 104, errno = Connection reset by peer, fd = 54[0m
+[0;31mE (330664) WEBSOCKET_CLIENT: Network error: esp_transport_poll_read() returned -1, errno=119[0m
+[0;32mI (330664) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (340694) WEBSOCKET: WEBSOCKET_EVENT_CONNECTED[0m
+[0;33mW (341724) WEBSOCKET: Received=
+[0m
+[0;33mW (351834) WEBSOCKET: Received=
+[0m
+[0;33mW (361934) WEBSOCKET: Received=
+[0m
+[0;33mW (372044) WEBSOCKET: Received=
+[0m
+[0;33mW (382184) WEBSOCKET: Received=
+[0m
+[0;33mW (392364) WEBSOCKET: Received=
+[0m
+[0;33mW (402474) WEBSOCKET: Received=
+[0m
+[0;33mW (412584) WEBSOCKET: Received=
+[0m
+[0;33mW (422684) WEBSOCKET: Received=
+[0m
+[0;33mW (432794) WEBSOCKET: Received=
+[0m
+[0;33mW (442904) WEBSOCKET: Received=
+[0m
+[0;33mW (453024) WEBSOCKET: Received=
+[0m
+[0;33mW (463124) WEBSOCKET: Received=
+[0m
+[0;33mW (473244) WEBSOCKET: Received=
+[0m
+[0;33mW (483364) WEBSOCKET: Received=
+[0m
+[0;33mW (493474) WEBSOCKET: Received=
+[0m
+[0;33mW (503604) WEBSOCKET: Received=
+[0m
+[0;33mW (513714) WEBSOCKET: Received=
+[0m
+[0;33mW (523854) WEBSOCKET: Received=
+[0m
+[0;33mW (533964) WEBSOCKET: Received=
+[0m
+[0;33mW (544074) WEBSOCKET: Received=
+[0m
+[0;33mW (554204) WEBSOCKET: Received=
+[0m
+[0;33mW (564304) WEBSOCKET: Received=
+[0m
+[0;33mW (574424) WEBSOCKET: Received=
+[0m
+[0;33mW (584534) WEBSOCKET: Received=
+[0m
+[0;33mW (594664) WEBSOCKET: Received=
+[0m
+[0;33mW (604764) WEBSOCKET: Received=
+[0m
+[0;33mW (614884) WEBSOCKET: Received=
+[0m
+[0;33mW (624994) WEBSOCKET: Received=
+[0m
+[0;33mW (635094) WEBSOCKET: Received=
+[0m
+[0;33mW (645204) WEBSOCKET: Received=
+[0m
+[0;33mW (655324) WEBSOCKET: Received=
+[0m
+[0;33mW (665434) WEBSOCKET: Received=
+[0m
+[0;33mW (675544) WEBSOCKET: Received=
+[0m
+[0;33mW (685714) WEBSOCKET: Received=
+[0m
+[0;33mW (695824) WEBSOCKET: Received=
+[0m
+[0;33mW (705934) WEBSOCKET: Received=
+[0m
+[0;33mW (716044) WEBSOCKET: Received=
+[0m
+[0;33mW (726144) WEBSOCKET: Received=
+[0m
+[0;33mW (736264) WEBSOCKET: Received=
+[0m
+[0;33mW (746364) WEBSOCKET: Received=
+[0m
+[0;33mW (756484) WEBSOCKET: Received=
+[0m
+[0;33mW (766624) WEBSOCKET: Received=
+[0m
+[0;33mW (776734) WEBSOCKET: Received=
+[0m
+[0;33mW (786844) WEBSOCKET: Received=
+[0m
+[0;33mW (796954) WEBSOCKET: Received=
+[0m
+[0;33mW (807074) WEBSOCKET: Received=
+[0m
+[0;33mW (817184) WEBSOCKET: Received=
+[0m
+[0;33mW (827314) WEBSOCKET: Received=
+[0m
+[0;33mW (837424) WEBSOCKET: Received=
+[0m
+[0;33mW (847544) WEBSOCKET: Received=
+[0m
+[0;33mW (857654) WEBSOCKET: Received=
+[0m
+[0;33mW (867764) WEBSOCKET: Received=
+[0m
+[0;33mW (877874) WEBSOCKET: Received=
+[0m
+[0;33mW (887984) WEBSOCKET: Received=
+[0m
+[0;33mW (898104) WEBSOCKET: Received=
+[0m
+[0;33mW (908234) WEBSOCKET: Received=
+[0m
+[0;33mW (918344) WEBSOCKET: Received=
+[0m
+[0;33mW (928454) WEBSOCKET: Received=
+[0m
+[0;33mW (938554) WEBSOCKET: Received=
+[0m
+[0;33mW (948674) WEBSOCKET: Received=
+[0m
+[0;33mW (958774) WEBSOCKET: Received=
+[0m
+[0;33mW (968894) WEBSOCKET: Received=
+[0m
+[0;33mW (978994) WEBSOCKET: Received=
+[0m
+[0;33mW (989124) WEBSOCKET: Received=
+[0m
+[0;33mW (999234) WEBSOCKET: Received=
+[0m
+[0;33mW (1009344) WEBSOCKET: Received=
+[0m
+[0;33mW (1019454) WEBSOCKET: Received=
+[0m
+[0;33mW (1029564) WEBSOCKET: Received=
+[0m
+[0;33mW (1039694) WEBSOCKET: Received=
+[0m
+[0;33mW (1049794) WEBSOCKET: Received=
+[0m
+[0;33mW (1059914) WEBSOCKET: Received=
+[0m
+[0;33mW (1070024) WEBSOCKET: Received=
+[0m
+[0;33mW (1080154) WEBSOCKET: Received=
+[0m
+[0;33mW (1090264) WEBSOCKET: Received=
+[0m
+[0;33mW (1100374) WEBSOCKET: Received=
+[0m
+[0;33mW (1110504) WEBSOCKET: Received=
+[0m
+[0;33mW (1120614) WEBSOCKET: Received=
+[0m
+[0;33mW (1130724) WEBSOCKET: Received=
+[0m
+[0;33mW (1140834) WEBSOCKET: Received=
+[0m
+[0;33mW (1150944) WEBSOCKET: Received=
+[0m
+[0;33mW (1161054) WEBSOCKET: Received=
+[0m
+[0;33mW (1171164) WEBSOCKET: Received=
+[0m
+[0;33mW (1181284) WEBSOCKET: Received=
+[0m
+[0;33mW (1191394) WEBSOCKET: Received=
+[0m
+[0;33mW (1201504) WEBSOCKET: Received=
+[0m
+[0;33mW (1211614) WEBSOCKET: Received=
+[0m
+[0;33mW (1221734) WEBSOCKET: Received=
+[0m
+[0;33mW (1231834) WEBSOCKET: Received=
+[0m
+[0;33mW (1241954) WEBSOCKET: Received=
+[0m
+[0;33mW (1252054) WEBSOCKET: Received=
+[0m
+[0;33mW (1262184) WEBSOCKET: Received=
+[0m
+[0;33mW (1272324) WEBSOCKET: Received=
+[0m
+[0;33mW (1282424) WEBSOCKET: Received=
+[0m
+[0;33mW (1292534) WEBSOCKET: Received=
+[0m
+[0;33mW (1302644) WEBSOCKET: Received=
+[0m
+[0;33mW (1312794) WEBSOCKET: Received=
+[0m
+[0;33mW (1322904) WEBSOCKET: Received=
+[0m
+[0;33mW (1333034) WEBSOCKET: Received=
+[0m
+[0;33mW (1343144) WEBSOCKET: Received=
+[0m
+[0;33mW (1353414) WEBSOCKET: Received=
+[0m
+[0;33mW (1363524) WEBSOCKET: Received=
+[0m
+[0;33mW (1373634) WEBSOCKET: Received=
+[0m
+[0;33mW (1383764) WEBSOCKET: Received=
+[0m
+[0;33mW (1393874) WEBSOCKET: Received=
+[0m
+[0;33mW (1403984) WEBSOCKET: Received=
+[0m
+[0;33mW (1414094) WEBSOCKET: Received=
+[0m
+[0;33mW (1424204) WEBSOCKET: Received=
+[0m
+[0;33mW (1434404) WEBSOCKET: Received=
+[0m
+[0;33mW (1444504) WEBSOCKET: Received=
+[0m
+[0;33mW (1454614) WEBSOCKET: Received=
+[0m
+[0;33mW (1464734) WEBSOCKET: Received=
+[0m
+[0;33mW (1474854) WEBSOCKET: Received=
+[0m
+[0;33mW (1484964) WEBSOCKET: Received=
+[0m
+[0;33mW (1495074) WEBSOCKET: Received=
+[0m
+[0;33mW (1505174) WEBSOCKET: Received=
+[0m
+[0;31mE (1509614) transport_base: poll_read select error 104, errno = Connection reset by peer, fd = 54[0m
+[0;31mE (1509624) WEBSOCKET_CLIENT: Network error: esp_transport_poll_read() returned -1, errno=119[0m
+[0;32mI (1509624) WEBSOCKET_CLIENT: Reconnect after 10000 ms[0m
+[0;32mI (1519644) WEBSOCKET: WEBSOCKET_EVENT_CONNECTED[0m
+[0;33mW (1520674) WEBSOCKET: Received=
+[0m
+[0;33mW (1530784) WEBSOCKET: Received=
+[0m
+[0;33mW (1540894) WEBSOCKET: Received=
+[0m
+[0;33mW (1551044) WEBSOCKET: Received=
+[0m
+[0;33mW (1561154) WEBSOCKET: Received=
+[0m
+[0;33mW (1571264) WEBSOCKET: Received=
+[0m
+[0;33mW (1581374) WEBSOCKET: Received=
+[0m
+[0;33mW (1591484) WEBSOCKET: Received=
+[0m
+[0;33mW (1601594) WEBSOCKET: Received=
+[0m
+[0;33mW (1611704) WEBSOCKET: Received=
+[0m
+[0;33mW (1621804) WEBSOCKET: Received=
+[0m
+[0;33mW (1631924) WEBSOCKET: Received=
+[0m
+[0;33mW (1642034) WEBSOCKET: Received=
+[0m
+[0;33mW (1652174) WEBSOCKET: Received=
+[0m
+[0;33mW (1662294) WEBSOCKET: Received=
+[0m
+[0;33mW (1672404) WEBSOCKET: Received=
+[0m
+[0;33mW (1682514) WEBSOCKET: Received=
+[0m
+[0;33mW (1692624) WEBSOCKET: Received=
+[0m
+[0;33mW (1702734) WEBSOCKET: Received=
+[0m
+[0;33mW (1712864) WEBSOCKET: Received=
+[0m
+[0;33mW (1722974) WEBSOCKET: Received=
+[0m
+[0;33mW (1733084) WEBSOCKET: Received=
+[0m
+[0;33mW (1743194) WEBSOCKET: Received=
+[0m
+[0;33mW (1753344) WEBSOCKET: Received=
+[0m
+[0;33mW (1763444) WEBSOCKET: Received=
+[0m
+[0;33mW (1773574) WEBSOCKET: Received=
+[0m
+[0;33mW (1783704) WEBSOCKET: Received=
+[0m
+[0;33mW (1793804) WEBSOCKET: Received=
+[0m
+[0;33mW (1803914) WEBSOCKET: Received=
+[0m
+[0;33mW (1814024) WEBSOCKET: Received=
+[0m
+[0;33mW (1824144) WEBSOCKET: Received=
+[0m
+[0;33mW (1834254) WEBSOCKET: Received=
+[0m
+[0;33mW (1844354) WEBSOCKET: Received=
+[0m
+[0;33mW (1854474) WEBSOCKET: Received=
+[0m
+[0;33mW (1864584) WEBSOCKET: Received=
+[0m
+[0;33mW (1874704) WEBSOCKET: Received=
+[0m
+[0;33mW (1884804) WEBSOCKET: Received=
+[0m
+[0;33mW (1894924) WEBSOCKET: Received=
+[0m
+[0;33mW (1905044) WEBSOCKET: Received=
+[0m
+[0;33mW (1915154) WEBSOCKET: Received=
+[0m
+[0;33mW (1925264) WEBSOCKET: Received=
+[0m
+[0;33mW (1935364) WEBSOCKET: Received=
+[0m
+[0;33mW (1945484) WEBSOCKET: Received=
+[0m

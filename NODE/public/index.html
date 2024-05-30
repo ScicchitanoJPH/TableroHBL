@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tablero HBL</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/index.css">
+  <style>
+    /* Estilos personalizados */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa; /* Color de fondo */
+      color: #343a40; /* Color del texto principal */
+      padding: 20px;
+    }
+
+    .card {
+      background-color: #fff; /* Color de fondo de las tarjetas */
+      border: 1px solid rgba(0,0,0,.125);
+      border-radius: .25rem;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,.1);
+    }
+
+    .switch-label {
+      margin-bottom: 10px;
+    }
+
+    .response-container {
+      margin-top: 10px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      max-height: 200px;
+      overflow-y: auto;
+      background-color: #f1f1f1; /* Color de fondo del contenedor de respuesta */
+    }
+
+    .history-button {
+      background-color: #007bff; /* Color de fondo del botón */
+      color: #fff; /* Color del texto del botón */
+      border: none;
+      padding: 8px 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .history-button:hover {
+      background-color: #0056b3; /* Color de fondo del botón al pasar el mouse */
+    }
+
+    .form-check-input[type="checkbox"] {
+      width: 40px;
+      height: 20px;
+      background-color: #adb5bd; /* Color de fondo del switch */
+      border: none;
+      border-radius: 20px;
+      position: relative;
+    }
+
+    .form-check-input[type="checkbox"]:before {
+      content: '';
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      background-color: #fff; /* Color del punto del switch */
+      border-radius: 50%;
+      top: 50%;
+      left: 4px;
+      transform: translateY(-50%);
+      transition: all 0.3s;
+    }
+
+    .form-check-input:checked[type="checkbox"]:before {
+      left: calc(100% - 20px);
+    }
+
+    .form-check-input:focus {
+      box-shadow: none;
+    }
+
+    .form-check-input:checked[type="checkbox"] {
+      background-color: #28a745; /* Color de fondo del switch cuando está activo */
+    }
+
+    /* Asegurar que todas las tarjetas tengan el mismo ancho */
+    #cards-container .card {
+      width: calc(100% / 2 - 40px); /* Calcula el ancho para que haya 3 tarjetas por fila */
+      margin-right: 20px; /* Espacio entre las tarjetas */
+    }
+
+    @media (max-width: 992px) {
+      #cards-container .card {
+        width: calc(100% / 2 - 40px); /* Calcula el ancho para que haya 2 tarjetas por fila en pantallas medianas */
+      }
+    }
+
+    @media (max-width: 768px) {
+      #cards-container .card {
+        width: calc(100% - 40px); /* Tarjeta de ancho completo en pantallas pequeñas */
+        margin-right: 0;
+        margin-bottom: 20px; /* Espacio entre las tarjetas en pantallas pequeñas */
+      }
+    }
+  </style>
+</head>
+<body>
+
+  
+  <div class="container">
+    <h1 class="text-center mb-4">Tablero HBL</h1>
+    <div id="cards-container" class="row"></div>
+    <canvas id="myChart"></canvas>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
+    <script>
+    // Agrega un event listener para manejar los mensajes recibidos
+      const socket = new WebSocket('ws://172.30.2.140:8080');
+      socket.addEventListener('message', handleMessage);
+      // Objeto para almacenar los mensajes recibidos por cada ID de ESP32
+      let lenByEsp32Id = {};
+
+
+      let myChart;
+
+      // Función para inicializar el gráfico
+      function initChart() {
+        const ctx = document.getElementById('myChart').getContext('2d');
+        myChart = new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: [], // Etiquetas de los IDs de ESP32
+            datasets: [{
+              label: 'Cantidad de mensajes recibidos',
+              data: [], // Cantidad de mensajes recibidos para cada ID de ESP32
+              backgroundColor: 'rgba(255, 99, 132, 0.2)', // Color de fondo de las barras
+              borderColor: 'rgba(255, 99, 132, 1)', // Color del borde de las barras
+              borderWidth: 1
+            }]
+          },
+          options: {
+            scales: {
+              yAxes: [{
+                ticks: {
+                  beginAtZero: false
+                }
+              }]
+            }
+          }
+        });
+      }
+
+      // Función para actualizar el gráfico con nuevos datos
+      function updateChart(id) {
+        console.log("id: " + id);
+        console.log("lenByEsp32Id[id].length : " + lenByEsp32Id[id]);
+        // Obtén las etiquetas de los IDs de ESP32 y la cantidad de mensajes recibidos para cada uno
+        const esp32Ids = Object.keys(lenByEsp32Id);
+
+        console.log("esp32Ids: " + esp32Ids);
+        const messageCounts = esp32Ids.map(id => lenByEsp32Id[id]);
+
+        // Actualiza los datos del gráfico
+        myChart.data.labels = esp32Ids;
+        myChart.data.datasets[0].data = messageCounts;
+
+        // Actualiza el gráfico
+        myChart.update();
+      }
+
+      // Llama a la función de inicialización del gráfico al cargar la página
+      initChart();
+
+
+      function initCards() {
+        var requestOptions = {
+          method: 'GET',
+          redirect: 'follow'
+        };
+
+        fetch("http://localhost:8080/api/devices", requestOptions)
+          .then(response => response.text())
+          .then(result => {
+            const devices = JSON.parse(result); // Parse the JSON response
+
+            devices.forEach(device => {
+              addCardToHTML(device.hbl_id, device.mode);
+              lenByEsp32Id[device.hbl_id] = [];
+            });
+          })
+          .catch(error => console.log('error', error));
+      }
+
+
+      initCards()
+
+
+      function handleSwitchChange(id, message) {
+        console.log(`Switch ${id} : ${message}`);
+        result = message ? message == "true" : "false";
+        socket.send(JSON.stringify({
+          from: "html",
+          to: id,
+          message: result
+        }));
+      }
+
+      let historyVisible = false;
+
+      function fetchHistorial(esp32Id) {
+        const responseContainer = document.querySelector(`#card-${esp32Id} .response-container`);
+
+        if (historyVisible) {
+          responseContainer.innerHTML = '';
+          historyVisible = false;
+          return;
+        }
+
+        fetch(`http://172.30.2.140:8080/api/events/${esp32Id}`)
+          .then(response => response.json())
+          .then(result => {
+            responseContainer.innerHTML = '';
+            lenByEsp32Id[esp32Id] = 0;
+            console.log("result: " + result)
+            result.forEach(item => {
+              const eventDiv = document.createElement('div');
+              eventDiv.classList.add('event-item');
+              const messagePara = document.createElement('p');
+              messagePara.textContent = `Message: ${item.message}`;
+              eventDiv.appendChild(messagePara);
+              responseContainer.appendChild(eventDiv);
+              lenByEsp32Id[esp32Id] += 1; 
+            });
+            responseContainer.scrollTop = responseContainer.scrollHeight;
+            historyVisible = true;
+          })
+          .catch(error => console.log('error', error));
+      }
+
+      function addCardToHTML(esp32Id, mode) {
+        const cardDiv = document.createElement('div');
+        cardDiv.id = `card-${esp32Id}`;
+        cardDiv.classList.add('card');
+
+        const titleHeader = document.createElement('h2');
+        titleHeader.textContent = `ID: ${esp32Id}`;
+        cardDiv.appendChild(titleHeader);
+
+        const switchInput = document.createElement('input');
+        switchInput.type = 'checkbox';
+        switchInput.id = `switch-${esp32Id}`;
+        switchInput.classList.add('switch');
+        switchInput.style.width = '40px';
+        switchInput.style.height = '20px';
+        switchInput.style.backgroundColor = '#adb5bd';
+        switchInput.onchange = function () {
+          handleSwitchChange(esp32Id, switchInput.checked.toString());
+        };
+        cardDiv.appendChild(switchInput);
+        cardDiv.appendChild(document.createElement('br'));
+        const sliderSpan = document.createElement('span');
+        sliderSpan.classList.add('slider', 'round');
+        cardDiv.appendChild(sliderSpan);
+
+        const modeSpan = document.createElement('span');
+        modeSpan.textContent = `Mode: ${mode}`;
+        cardDiv.appendChild(modeSpan);
+
+        const historyButton = document.createElement('button');
+        historyButton.textContent = 'Ver historial';
+        historyButton.onclick = function () {
+          fetchHistorial(esp32Id);
+        };
+        cardDiv.appendChild(historyButton);
+
+        const responseContainer = document.createElement('div');
+        responseContainer.classList.add('response-container');
+        cardDiv.appendChild(responseContainer);
+
+        const container = document.getElementById('cards-container');
+        container.appendChild(cardDiv);
+      }
+
+      // Función para mostrar el mensaje dentro de la card correspondiente
+      function showMessageInCard(esp32Id, message) {
+        // Obtén la card correspondiente al ID del ESP32
+        const cardDiv = document.getElementById(`card-${esp32Id}`);
+
+        // Verifica si la card existe
+        if (cardDiv) {
+          // Busca el elemento p que contiene el mensaje
+          let messagePara = cardDiv.querySelector('p');
+
+          // Si ya existe un mensaje en la tarjeta, actualízalo
+          if (messagePara) {
+            messagePara.textContent = message;
+          } else {
+            // Si no existe un mensaje, crea un nuevo elemento p y agrega el mensaje
+            messagePara = document.createElement('p');
+            messagePara.textContent = message;
+            cardDiv.appendChild(messagePara);
+          }
+        } else {
+          console.error(`Card with ID ${esp32Id} not found.`);
+        }
+      }
+
+      // Función para procesar los mensajes recibidos
+      function handleMessage(event) {
+        // Parsea el mensaje JSON
+        const data = JSON.parse(event.data);
+        const esp32Id = data.from;
+        const message = data.message;
+
+        // Verifica si el ID del ESP32 ya está registrado
+        console.log("Nuevo message : " + message);
+        if (!lenByEsp32Id.hasOwnProperty(esp32Id)) {
+          console.log("Nuevo esp32Id : " + esp32Id);
+          // Si es un nuevo ID, agrega una nueva card al HTML
+          addCardToHTML(esp32Id, data.mode);
+          // Registra el nuevo ID
+          lenByEsp32Id[esp32Id] = [];
+        }
+
+        // Muestra el mensaje dentro de la card correspondiente
+        showMessageInCard(esp32Id, message);
+        // fetchHistorial(esp32Id)
+        updateChart(esp32Id);
+      }
+        
+    </script>
+  </body>
+</html>
