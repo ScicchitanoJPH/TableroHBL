@@ -16,7 +16,10 @@ const { program } = require("./enviroment/commander")
 const { mode } = program.opts()
 
 
-
+/*dotenv.config({
+    
+    path: mode === 'development' ? __dirname + './enviroment/.env.development' : './enviroment/.env.production'
+})*/
 dotenv.config({
     path: mode === 'development' ? path.resolve(__dirname, './enviroment/.env.development') : path.resolve(__dirname, './enviroment/.env.production')
     
@@ -80,7 +83,7 @@ async function saveDB(eventData) {
     redirect: 'follow'
     };
 
-    fetch(`http://172.30.6.3:${exports.configObject.port}/api/events/`, requestOptions)
+    fetch(`http://localhost:${exports.configObject.port}/api/events/`, requestOptions)
     .then(response => response.text())
     .then(result => console.log(result))
     .catch(error => console.log('error', error));
@@ -95,7 +98,7 @@ wss.on('connection', (ws) => {
 
     // Agregar la conexión del cliente al conjunto
     clients.add(ws);
-
+    
     // Manejar mensajes del cliente
     ws.on('message', (message) => {
         console.log(`Mensaje recibido: ${message}`);
@@ -110,7 +113,7 @@ wss.on('connection', (ws) => {
     // Manejar cierre de conexión
     ws.on('close', () => {
         console.log('Cliente desconectado');
-
+        
         // Eliminar la conexión del cliente del conjunto al cerrar la conexión
         clients.delete(ws);
     });
@@ -126,5 +129,5 @@ function broadcast(message, sender) {
 }
 const port = exports.configObject.port || 8080
 server.listen(port, () => {
-    console.log(`Servidor escuchando en http://172.30.6.3:${port}`);
+    console.log(`Servidor escuchando en http://localhost:${port}`);
 });

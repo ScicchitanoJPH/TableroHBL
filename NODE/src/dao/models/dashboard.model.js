@@ -10,20 +10,22 @@ const boardsCollection = 'boards';
 
 
 const boardsSchema = new mongoose.Schema({
-    products: [
+    name : String,
+    devices: {
 
-        hbl_id: { 
-            type: String,
-            required: true,
-            unique: true
-        }
-    ],
-    
-    ip: String,
-    mask: String,
-    dns: String,
-    last_connection: String,
-    mode: String,
+        type: [{ 
+            device: {
+                type: mongoose.Types.ObjectId, ref : 'devices',
+                unique:true
+            }
+        }]
+    },
+    users : {
+        type : [{
+                user :  {type :mongoose.Types.ObjectId,ref : 'users'}
+                }]
+        
+    },
     createdAt: {
         type: Date,
         default: Date.now // Esta propiedad establece automáticamente la fecha y hora actual cuando se crea un nuevo documento
