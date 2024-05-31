@@ -9,6 +9,7 @@ const registerRouter = require('./register.routes.js');
 
 const deviceRouter = require('./device.router.js');
 const eventsRouter = require('./event.router.js');
+const boardsRouter = require('./board.routes.js');
 
 const router = Router();
 
@@ -19,6 +20,8 @@ router.use("/register",registerRouter)
 router.use("/devices",deviceRouter)
 
 router.use("/events",eventsRouter)
+
+router.use("/boards",boardsRouter)
 
 
 module.exports = router
