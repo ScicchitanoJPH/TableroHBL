@@ -3,6 +3,7 @@ const { configObject, connectDB } = require("../../configDB/connectDB");
 
 let EventDao
 let DeviceDao
+let BoardDao
 
 
 const EventDaoMongo = require("./Mongo/eventsDao.mongo")
@@ -11,10 +12,14 @@ EventDao = EventDaoMongo
 const DeviceDaoMongo = require("./Mongo/devicesDao.mongo")
 DeviceDao = DeviceDaoMongo
 
+const BoardDaoMongo = require("./Mongo/boardsDao.mongo")
+BoardDao = BoardDaoMongo
+
 
 module.exports = {
     EventDao,
-    DeviceDao
+    DeviceDao,
+    BoardDao
 }
 
 // let UserDao
