@@ -7,8 +7,8 @@ const registerRouter = require('./register.routes.js');
 // Assuming auth.controller.js is in the same directory:
 // const { userLogin, signUp, showLogin, showRegister } = require('../controllers/auth.controller.js');
 
-const deviceRouter = require('./device.router.js');
-const eventsRouter = require('./event.router.js');
+const deviceRouter = require('./device.routes.js');
+const eventsRouter = require('./event.routes.js');
 const boardsRouter = require('./board.routes.js');
 
 const router = Router();

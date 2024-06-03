@@ -1,19 +1,16 @@
-import jwt from 'jsonwebtoken';
-import path from 'path';
-import { fileURLToPath } from 'url';
-import dotenv from 'dotenv';
+const jwt = require('jsonwebtoken');
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-dotenv.config({path:`${__dirname}/.env`});
+
+
+
+
 
 function authenticateUser (req,res,next) {
     try {
-        console.log(__dirname)
-        console.log("cookies",req.cookies)
+        
         const token = req.cookies.token;
-        console.log(token)
-        const decodedToken = jwt.verify(token,'secretkey');
+        
+        const decodedToken = jwt.verify(token,process.env.JWT_SECRET);
 
         req.userId = decodedToken.userId; 
 
@@ -24,4 +21,4 @@ function authenticateUser (req,res,next) {
     }
 } 
 
-export default authenticateUser;
+module.exports = { authenticateUser};
