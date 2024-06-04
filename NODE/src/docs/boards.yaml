@@ -5,7 +5,7 @@ info:
 tags:
   - name: Boards
 paths:
-  /boards:
+  /api/boards:
     get:
       summary: Get all boards
       tags:
@@ -108,7 +108,7 @@ paths:
                   message:
                     type: string
                     description: Error message
-  /boards/{name}:
+  /api/boards/{name}:
     get:
       summary: Get a board by name
       tags:

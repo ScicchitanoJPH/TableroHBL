@@ -5,7 +5,7 @@ info:
 tags:
   - name: Devices
 paths:
-  /devices:
+  /api/devices:
     get:
       summary: Get all devices
       tags:
@@ -118,7 +118,7 @@ paths:
                   message:
                     type: string
                     description: Error message
-  /devices/{id}:
+  /api/devices/{id}:
     get:
       summary: Get a device by ID
       tags:
