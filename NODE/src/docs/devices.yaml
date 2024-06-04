@@ -1,7 +1,7 @@
 openapi: '3.0.1'
 info:
   title: 'Devices API Documentation'
-  description: 'API for managing devices'
+  description: 'API for managing devices and their associated details'
 tags:
   - name: Devices
 paths:
@@ -45,22 +45,23 @@ paths:
               properties:
                 hbl_id:
                   type: string
-                  description: ID of the HBL (required)
+                  description: HBL ID of the device
                 ip:
                   type: string
-                  description: IP address of the device (optional)
+                  description: IP address of the device
                 mask:
                   type: string
-                  description: Subnet mask of the device (optional)
+                  description: Subnet mask of the device
                 dns:
                   type: string
-                  description: DNS server address of the device (optional)
+                  description: DNS of the device
                 last_connection:
                   type: string
-                  description: Last connection time of the device (optional)
+                  format: date-time
+                  description: Last connection time of the device
                 mode:
                   type: string
-                  description: Mode of the device (optional)
+                  description: Operating mode of the device
       responses:
         '200':
           description: Device created successfully
@@ -91,7 +92,7 @@ paths:
                     type: string
                     description: Error message
         '409':
-          description: Device with the same hbl_id already exists (during update)
+          description: Device with the same HBL ID already exists
           content:
             application/json:
               schema:
@@ -116,13 +117,57 @@ paths:
                   message:
                     type: string
                     description: Error message
-  /api/devices/{id}:
+  /api/devices/byhbl_id/{hbl_id}:
     get:
-      summary: Get a device by ID
+      summary: Get a device by HBL ID
       tags:
         - Devices
       parameters:
-        - name: id
+        - name: hbl_id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Device details
+          content:
+            application/json:
+              schema:
+                type: object
+        '404':
+          description: Device not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: Error status
+                  message:
+                    type: string
+                    description: Error message
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: Error status
+                  message:
+                    type: string
+                    description: Error message
+  /api/devices/{uid}:
+    get:
+      summary: Get a device by UID
+      tags:
+        - Devices
+      parameters:
+        - name: uid
           in: path
           required: true
           schema:
@@ -165,7 +210,7 @@ paths:
       tags:
         - Devices
       parameters:
-        - name: id
+        - name: uid
           in: path
           required: true
           schema:
@@ -174,3 +219,123 @@ paths:
         required: true
         content:
           application/json:
+            schema:
+              type: object
+              properties:
+                hbl_id:
+                  type: string
+                  description: HBL ID of the device
+                ip:
+                  type: string
+                  description: IP address of the device
+                mask:
+                  type: string
+                  description: Subnet mask of the device
+                dns:
+                  type: string
+                  description: DNS of the device
+                last_connection:
+                  type: string
+                  format: date-time
+                  description: Last connection time of the device
+                mode:
+                  type: string
+                  description: Operating mode of the device
+      responses:
+        '200':
+          description: Device updated successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: Status of the operation
+                  message:
+                    type: string
+                    description: Message describing the outcome
+                  device:
+                    type: object
+        '400':
+          description: Required field(s) missing or invalid
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: Error status
+                  message:
+                    type: string
+                    description: Error message
+        '404':
+          description: Device not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: Error status
+                  message:
+                    type: string
+                    description: Error message
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: Error status
+                  message:
+                    type: string
+                    description: Error message
+    delete:
+      summary: Delete a device
+      tags:
+        - Devices
+      parameters:
+        - name: uid
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Device deleted successfully
+          content:
+            application/json:
+              schema:
+                type: object
+        '404':
+          description: Device not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: Error status
+                  message:
+                    type: string
+                    description: Error message
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: Error status
+                  message:
+                    type: string
+                    description: Error message

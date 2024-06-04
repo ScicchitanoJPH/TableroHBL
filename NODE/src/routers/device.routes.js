@@ -13,7 +13,7 @@ const {
 } = new DeviceController()
 
 router.get('/',        getDevices )
-router.get('/:id',        getDevicesbyDevice )
+router.get('/byhbl_id/:hbl_id',        getDevicesbyDevice )
 router.get('/:uid',    getDevice) 
 router.post('/',       createDevice) 
 router.put('/:uid',    updateDevice) 
