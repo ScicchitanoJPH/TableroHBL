@@ -14,8 +14,8 @@ class EventRepository {
         return await this.dao.create(newEventDto)
     
     }
-    updateEvent = async (uid, eventToUpdate) => await this.dao.update(uid, eventToUpdate)
-    deleteEvent = async (uid) => await this.dao.delete({_id: uid})
+    updateEvent = async (uid, eventToUpdate) => await this.dao.findByIdAndUpdate(uid, eventToUpdate)
+    deleteEvent = async (uid) => await this.dao.findByIdAndDelete({_id: uid})
 
 }
 

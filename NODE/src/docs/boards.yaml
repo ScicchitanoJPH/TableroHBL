@@ -19,7 +19,6 @@ paths:
                 type: array
                 items:
                   type: object
-                  $ref: '#/components/schemas/Board'
         '500':
           description: Internal server error
           content:
@@ -68,7 +67,6 @@ paths:
                     description: Message describing the outcome
                   board:
                     type: object
-                    $ref: '#/components/schemas/Board'
         '400':
           description: Required field(s) missing or invalid
           content:
@@ -126,7 +124,6 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: '#/components/schemas/Board'
         '404':
           description: Board not found
           content:

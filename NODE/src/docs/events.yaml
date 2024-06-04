@@ -275,7 +275,7 @@ paths:
                   message:
                     type: string
                     description: Error message
-  /api/events/device/{device}:
+  /api/events/byDevice/{device}:
     get:
       summary: Get events by device ID
       tags:

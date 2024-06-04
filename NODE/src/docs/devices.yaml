@@ -19,7 +19,6 @@ paths:
                 type: array
                 items:
                   type: object
-                  $ref: '#/components/schemas/Device'
         '500':
           description: Internal server error
           content:
@@ -78,7 +77,6 @@ paths:
                     description: Message describing the outcome
                   device:
                     type: object
-                    $ref: '#/components/schemas/Device'
         '400':
           description: Required field(s) missing or invalid
           content:
@@ -136,7 +134,6 @@ paths:
             application/json:
               schema:
                 type: object
-                $ref: '#/components/schemas/Device'
         '404':
           description: Device not found
           content:
