@@ -6,6 +6,9 @@ const router = require('./routers/index.js');
 
 const cookieParser = require('cookie-parser'); // Importa el middleware cookie-parser
 
+const swaggerJsDocs = require('swagger-jsdoc')
+const swaggerUiExpress = require('swagger-ui-express')
+
 const cors = require('cors');
 const  {engine}  = require('express-handlebars'); // Destructuring for brevity
 
@@ -14,6 +17,9 @@ const dotenv = require('dotenv')
 const { program } = require("./enviroment/commander")
 
 const { mode } = program.opts()
+
+
+
 
 
 /*dotenv.config({
@@ -44,10 +50,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser())
 
 app.use(function(req, res, next) {
-
+    
     res.locals.success = req.app.get('success');
     res.locals.error = req.app.get("error");
-
+    
     req.app.set('success',undefined)
     req.app.set('error',undefined)
     next();
@@ -63,14 +69,31 @@ app.set('views', __dirname + '/views');
 
 app.use("/api",router);
 
+// sweagger config -> documentación
+const swaggerOptions = {
+    definition: {
+        openapi: '3.0.1',
+        info: {
+            title: 'Documentación de Tablero HBL',
+            description: 'Descripción de nuestro proyecto'
+        }
+    },
+    apis: [`${__dirname}/docs/**/*.yaml`]
+} 
+
+const specs = swaggerJsDocs(swaggerOptions)
+app.use('/apidocs', swaggerUiExpress.serve, swaggerUiExpress.setup(specs))
+
+
+
 connectDB();
 
 async function saveDB(eventData) {
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
-
+    
     var raw = JSON.stringify({
-    "from": eventData.from,
+        "from": eventData.from,
     "to": eventData.to,
     "mode": eventData.mode,
     "message": eventData.message

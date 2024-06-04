@@ -1,0 +1,179 @@
+openapi: '3.0.1'
+info:
+  title: 'Devices API Documentation'
+  description: 'API for managing devices'
+tags:
+  - name: Devices
+paths:
+  /devices:
+    get:
+      summary: Get all devices
+      tags:
+        - Devices
+      responses:
+        '200':
+          description: List of all devices
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  $ref: '#/components/schemas/Device'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: Error status
+                  message:
+                    type: string
+                    description: Error message
+    post:
+      summary: Create a new device
+      tags:
+        - Devices
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                hbl_id:
+                  type: string
+                  description: ID of the HBL (required)
+                ip:
+                  type: string
+                  description: IP address of the device (optional)
+                mask:
+                  type: string
+                  description: Subnet mask of the device (optional)
+                dns:
+                  type: string
+                  description: DNS server address of the device (optional)
+                last_connection:
+                  type: string
+                  description: Last connection time of the device (optional)
+                mode:
+                  type: string
+                  description: Mode of the device (optional)
+      responses:
+        '200':
+          description: Device created successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: Status of the operation
+                  message:
+                    type: string
+                    description: Message describing the outcome
+                  device:
+                    type: object
+                    $ref: '#/components/schemas/Device'
+        '400':
+          description: Required field(s) missing or invalid
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: Error status
+                  message:
+                    type: string
+                    description: Error message
+        '409':
+          description: Device with the same hbl_id already exists (during update)
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: Error status
+                  message:
+                    type: string
+                    description: Error message
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: Error status
+                  message:
+                    type: string
+                    description: Error message
+  /devices/{id}:
+    get:
+      summary: Get a device by ID
+      tags:
+        - Devices
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Device details
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: '#/components/schemas/Device'
+        '404':
+          description: Device not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: Error status
+                  message:
+                    type: string
+                    description: Error message
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: Error status
+                  message:
+                    type: string
+                    description: Error message
+    put:
+      summary: Update a device
+      tags:
+        - Devices
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:

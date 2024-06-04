@@ -1,0 +1,181 @@
+openapi: '3.0.1'
+info:
+  title: 'Boards API Documentation'
+  description: 'API for managing boards and their associated devices'
+tags:
+  - name: Boards
+paths:
+  /boards:
+    get:
+      summary: Get all boards
+      tags:
+        - Boards
+      responses:
+        '200':
+          description: List of all boards
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  $ref: '#/components/schemas/Board'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: Error status
+                  message:
+                    type: string
+                    description: Error message
+    post:
+      summary: Create a new board
+      tags:
+        - Boards
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: Name of the board
+                devices:
+                  type: array
+                  description: Array of device IDs (optional)
+                  items:
+                    type: string
+      responses:
+        '200':
+          description: Board created successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: Status of the operation
+                  message:
+                    type: string
+                    description: Message describing the outcome
+                  board:
+                    type: object
+                    $ref: '#/components/schemas/Board'
+        '400':
+          description: Required field(s) missing or invalid
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: Error status
+                  message:
+                    type: string
+                    description: Error message
+        '409':
+          description: Board with the same name already exists (during update)
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: Error status
+                  message:
+                    type: string
+                    description: Error message
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: Error status
+                  message:
+                    type: string
+                    description: Error message
+  /boards/{name}:
+    get:
+      summary: Get a board by name
+      tags:
+        - Boards
+      parameters:
+        - name: name
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Board details
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: '#/components/schemas/Board'
+        '404':
+          description: Board not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: Error status
+                  message:
+                    type: string
+                    description: Error message
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: Error status
+                  message:
+                    type: string
+                    description: Error message
+    put:
+      summary: Update a board
+      tags:
+        - Boards
+      parameters:
+        - name: name
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              # Replace with actual properties for board update
+              # properties:
+              #   name:
+              #     type: string
+              #     description: Updated name of the board (optional)
+              #   devices:
+              #     type: array
+              #     description: Updated array of device IDs (optional)
+              #     items:
+              #       type: string
