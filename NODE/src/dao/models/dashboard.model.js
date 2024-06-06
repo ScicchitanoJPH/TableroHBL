@@ -38,3 +38,4 @@ const boardModel = mongoose.model(boardsCollection, boardsSchema);
 module.exports = {
     boardModel
 };
+

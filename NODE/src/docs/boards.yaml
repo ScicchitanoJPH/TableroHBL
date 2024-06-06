@@ -1,0 +1,423 @@
+openapi: '3.0.1'
+info:
+  title: 'Boards API Documentation'
+  description: 'API for managing boards and their associated devices'
+tags:
+  - name: Boards
+paths:
+  /api/boards:
+    get:
+      summary: Get all boards
+      tags:
+        - Boards
+      responses:
+        '200':
+          description: List of all boards
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    name:
+                      type: string
+                      description: Name of the board
+                    devices:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          hbl_id:
+                            type: string
+                            description: Device ID
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: Error status
+                  message:
+                    type: string
+                    description: Error message
+    post:
+      summary: Create a new board
+      tags:
+        - Boards
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: Name of the board
+                  example: "New Board"
+                devices:
+                  type: array
+                  description: Array of device IDs
+                  items:
+                    type: object
+                    properties:
+                      hbl_id:
+                        type: string
+                        description: Device ID
+                        example: "device123"
+      responses:
+        '200':
+          description: Board created successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: Status of the operation
+                  message:
+                    type: string
+                    description: Message describing the outcome
+                  board:
+                    type: object
+                    properties:
+                      name:
+                        type: string
+                        description: Name of the board
+                      devices:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            hbl_id:
+                              type: string
+                              description: Device ID
+        '400':
+          description: Required field(s) missing or invalid
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: Error status
+                  message:
+                    type: string
+                    description: Error message
+        '409':
+          description: Board with the same name already exists
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: Error status
+                  message:
+                    type: string
+                    description: Error message
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: Error status
+                  message:
+                    type: string
+                    description: Error message
+  /api/boards/{name}:
+    get:
+      summary: Get a board by name
+      tags:
+        - Boards
+      parameters:
+        - name: name
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Board details
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  name:
+                    type: string
+                    description: Name of the board
+                  devices:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        hbl_id:
+                          type: string
+                          description: Device ID
+        '404':
+          description: Board not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: Error status
+                  message:
+                    type: string
+                    description: Error message
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: Error status
+                  message:
+                    type: string
+                    description: Error message
+    put:
+      summary: Update a board
+      tags:
+        - Boards
+      parameters:
+        - name: name
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: Updated name of the board (optional)
+                devices:
+                  type: array
+                  description: Updated array of device IDs (optional)
+                  items:
+                    type: object
+                    properties:
+                      hbl_id:
+                        type: string
+                        description: Device ID
+      responses:
+        '200':
+          description: Board updated successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: Status of the operation
+                  message:
+                    type: string
+                    description: Message describing the outcome
+                  board:
+                    type: object
+                    properties:
+                      name:
+                        type: string
+                        description: Name of the board
+                      devices:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            hbl_id:
+                              type: string
+                              description: Device ID
+        '400':
+          description: Required field(s) missing or invalid
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: Error status
+                  message:
+                    type: string
+                    description: Error message
+        '404':
+          description: Board not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: Error status
+                  message:
+                    type: string
+                    description: Error message
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: Error status
+                  message:
+                    type: string
+                    description: Error message
+  /api/boards/{name}/add/{hbl_id}:
+    post:
+      summary: Add a new HBL to a board
+      tags:
+        - Boards
+      parameters:
+        - name: name
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: hbl_id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: HBL added successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: Status of the operation
+                  message:
+                    type: string
+                    description: Message describing the outcome
+        '400':
+          description: Required field(s) missing or invalid
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: Error status
+                  message:
+                    type: string
+                    description: Error message
+        '404':
+          description: Board not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: Error status
+                  message:
+                    type: string
+                    description: Error message
+        '409':
+          description: HBL ID already exists in the board
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: Error status
+                  message:
+                    type: string
+                    description: Error message
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: Error status
+                  message:
+                    type: string
+                    description: Error message
+  /api/boards/{uid}:
+    delete:
+      summary: Delete a board
+      tags:
+        - Boards
+      parameters:
+        - name: uid
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Board deleted successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: Status of the operation
+                  message:
+                    type: string
+                    description: Message describing the outcome
+        '404':
+          description: Board not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: Error status
+                  message:
+                    type: string
+                    description: Error message
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: Error status
+                  message:
+                    type: string
+                    description: Error message

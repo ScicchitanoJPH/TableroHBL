@@ -1,0 +1,323 @@
+openapi: '3.0.1'
+info:
+  title: 'Events API Documentation'
+  description: 'API for managing events and their associated devices'
+tags:
+  - name: Events
+paths:
+  /api/events:
+    get:
+      summary: Get all events
+      tags:
+        - Events
+      responses:
+        '200':
+          description: List of all events
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: Error status
+                  message:
+                    type: string
+                    description: Error message
+    post:
+      summary: Create a new event
+      tags:
+        - Events
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                from:
+                  type: string
+                  description: ID of the device the event is from
+                to:
+                  type: string
+                  description: ID of the device the event is to
+                mode:
+                  type: string
+                  description: Mode of the event
+                message:
+                  type: string
+                  description: Message of the event
+      responses:
+        '200':
+          description: Event created successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: Status of the operation
+                  message:
+                    type: string
+                    description: Message describing the outcome
+                  event:
+                    type: object
+        '400':
+          description: Required field(s) missing or invalid
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: Error status
+                  message:
+                    type: string
+                    description: Error message
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: Error status
+                  message:
+                    type: string
+                    description: Error message
+  /api/events/{uid}:
+    get:
+      summary: Get an event by UID
+      tags:
+        - Events
+      parameters:
+        - name: uid
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Event details
+          content:
+            application/json:
+              schema:
+                type: object
+        '404':
+          description: Event not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: Error status
+                  message:
+                    type: string
+                    description: Error message
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: Error status
+                  message:
+                    type: string
+                    description: Error message
+    put:
+      summary: Update an event
+      tags:
+        - Events
+      parameters:
+        - name: uid
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                from:
+                  type: string
+                  description: ID of the device the event is from (optional)
+                to:
+                  type: string
+                  description: ID of the device the event is to (optional)
+                mode:
+                  type: string
+                  description: Mode of the event (optional)
+                message:
+                  type: string
+                  description: Message of the event (optional)
+      responses:
+        '200':
+          description: Event updated successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: Status of the operation
+                  message:
+                    type: string
+                    description: Message describing the outcome
+                  event:
+                    type: object
+        '400':
+          description: Required field(s) missing or invalid
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: Error status
+                  message:
+                    type: string
+                    description: Error message
+        '404':
+          description: Event not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: Error status
+                  message:
+                    type: string
+                    description: Error message
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: Error status
+                  message:
+                    type: string
+                    description: Error message
+    delete:
+      summary: Delete an event
+      tags:
+        - Events
+      parameters:
+        - name: uid
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Event deleted successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: Status of the operation
+                  message:
+                    type: string
+                    description: Message describing the outcome
+        '404':
+          description: Event not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: Error status
+                  message:
+                    type: string
+                    description: Error message
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: Error status
+                  message:
+                    type: string
+                    description: Error message
+  /api/events/byDevice/{device}:
+    get:
+      summary: Get events by device ID
+      tags:
+        - Events
+      parameters:
+        - name: device
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Events for the specified device
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+        '404':
+          description: Events not found for the specified device
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: Error status
+                  message:
+                    type: string
+                    description: Error message
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: Error status
+                  message:
+                    type: string
+                    description: Error message

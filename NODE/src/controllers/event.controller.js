@@ -23,16 +23,17 @@ class EventController {
     getEventsbyDevice = async (req, res)=>{
         const { device } = req.params
         const event = await this.service.getEvent({from: device})
-    
+        
         // console.log(req.params)
-    
+        
         res.send(event)
     }
     
     getEvent = async (req, res)=>{
         const { uid } = req.params
         const event = await this.service.getEvent({_id: uid})
-    
+        
+        console.log(event)
         // console.log(req.params)
     
         res.send(event)
