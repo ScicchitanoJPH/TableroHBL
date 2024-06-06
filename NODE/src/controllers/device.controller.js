@@ -21,8 +21,8 @@ class DeviceController {
     
 
     getDevicesbyDevice = async (req, res)=>{
-        const { id } = req.params
-        const device = await this.service.getDevice({hbl_id: id})
+        const { hbl_id } = req.params
+        const device = await this.service.getDevice({hbl_id: hbl_id})
     
         // console.log(req.params)
     

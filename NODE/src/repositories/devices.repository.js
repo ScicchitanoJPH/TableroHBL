@@ -21,7 +21,7 @@ class DeviceRepository {
         await this.dao.updateOne({hbl_id:uid}, deviceToUpdate)
         
     }
-    deleteDevice = async (uid) => await this.dao.delete({_id: uid})
+    deleteDevice = async (uid) => await this.dao.findByIdAndDelete({_id: uid})
 
 }
 

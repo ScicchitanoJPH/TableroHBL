@@ -13,7 +13,7 @@ const {
 } = new EventController()
 
 router.get('/',        getEvents )
-router.get('/:device',        getEventsbyDevice )
+router.get('/byDevice/:device',        getEventsbyDevice )
 router.get('/:uid',    getEvent) 
 router.post('/',       createEvent) 
 router.put('/:uid',    updateEvent) 

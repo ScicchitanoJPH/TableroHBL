@@ -21,7 +21,7 @@ class BoardRepository {
         await this.dao.updateOne({hbl_id:uid}, boardToUpdate)
         
     }
-    deleteBoard = async (uid) => await this.dao.delete({_id: uid})
+    deleteBoard = async (uid) => await this.dao.findByIdAndDelete({_id: uid})
 
 }
 
