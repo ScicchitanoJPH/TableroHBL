@@ -1,0 +1,143 @@
+openapi: '3.0.1'
+info:
+  title: 'Auth API Documentation'
+  description: 'API for managing users and their associated devices'
+tags:
+  - name: Auth
+paths:
+  /api/login:
+    post:
+      summary: Logs in and returns the authentication  cookie
+      tags:
+        - Auth
+      requestBody:
+        
+        required: true
+        content:
+          application/json:
+            schema:
+              type : object
+              properties : 
+                email:
+                  type: string
+                  example: Ricardo@jphlions.com
+                password: 
+                  type : string
+                  example: 12345678
+              required:
+                - email
+                - password
+      responses:
+        '200':
+          description: >
+            Successfully authenticated.
+            The session ID is returned in a cookie named `token`. You need to include this cookie in subsequent requests.
+          headers: 
+            Set-Cookie:
+              schema: 
+                type: string
+                example: token=abcde12345; Path=/; HttpOnly
+          content:
+            application/json:
+              schema:
+                type: object
+                properties : 
+                  status : 
+                    type : string
+                  payload:
+                    type : object
+                    properties:
+                      id: 
+                        type : string
+                      name : 
+                        type : string
+                      role: 
+                        type : string
+
+                example:
+                    status: success
+                    id: asd231fvvase
+                    role: user
+                  
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: Error status
+                    example: Error
+                  message:
+                    type: string
+                    description: Error message  
+                    example: Internal error server 
+  
+  /api/register:
+    post:
+      summary: Register an user
+      
+      tags:
+        - Auth
+      requestBody:
+        
+        required: true
+        content:
+          application/json:
+            schema:
+              type : object
+              properties :
+                name:
+                  type: string
+                email:
+                  type: string
+                password: 
+                  type: string
+              required:
+                - name
+                - email
+                - password
+              example:
+                name: Ricardo Perez 
+                email: Ricardo@jphlions.com
+                password: "12345678"
+      responses:
+        '200':
+          description: Register 
+          content:
+            application/json:
+              schema:
+                type : object
+                properties:
+                  status:
+                    type: string
+                  msg:
+                    type: string
+                    
+                example:
+                  status: success
+                  msg: user registered successfully
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: Error status
+              
+                  message:
+                    type: string
+                    description: Error message  
+                    
+                example:
+                  status: success
+                  msg: Internal error server
+              
+    
+ 
+    

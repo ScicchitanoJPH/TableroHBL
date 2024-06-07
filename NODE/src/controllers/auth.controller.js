@@ -1,6 +1,8 @@
-const User = require('../dao/models/users.model.js');
+
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
+const UserRepository = require('../repositories/user.repository.js');
+const { UserDto } = require('../dto/userDto.js');
 
 
 
@@ -8,22 +10,24 @@ const bcrypt = require('bcrypt');
 // (Assuming your code defines these functions)
 class AuthController{
     constructor(){
+        this.service = new UserRepository(new UserDto())
     }
-    async userLogin(req,res){
+    userLogin= async(req,res) =>{
         const {email,password} = req.body;
-        console.log(email,password)
+        
         try{
-            let user = await User.findOne({email})
+            let user = await this.service.getUserBy({email: email})
+            
             if (!user){
-                res.status(400)/*.json({ error :" Invalid email or password"})*/
-                req.app.set('error','Invalid email or password')
-                return res.redirect('/api/login')
+                return res.status(400).json({ status : 'error', msg: " Invalid email or password"})
+                //req.app.set('error','Invalid email or password')
+                
             }
             // Validate the password
             let payload = {
-                email: User.email,
-                id   : User._id,
-                role : User.role,
+                email: user.email,
+                id   : user._id,
+                role : user.role,
             }
             
             if (await bcrypt.compare(password,user.password)) {
@@ -34,80 +38,83 @@ class AuthController{
                 user.token = token
                 user.password =undefined
                 user.email = undefined
+                user.createdAt = undefined
                 const options = {
                     expires : new Date( Date.now()+ 3*24*60*60*1000),
                     httpOnly: true
                 }
-                res.cookie("token",token,options).status(200)/*.json(
-                    {success : true,
-                    token,
-                    user,
-                    message : "Logged in successfully✅"                                               
-                });*/
-                req.app.set('success','Login Success..')
+                return res.cookie("token",token,options).status(200).json(
+                    {status : 'success',
+                    payload: {
+                        id: user._id,
+                        name: user.name,
+                        role : user.role
+                    }
+                                                                    
+                });
+                //req.app.set('success','Login Success..')
                 //req.flash('success', 'Login Success..');
-                return res.redirect('/api/dashboard')
-                
-                
+                //return res.redirect('/api/boards')
             }
             else{
                 //req.flash('error', 'Invalid email or password');
-                req.app.set('error','Invalid email or password')
-                res.status(401)/*.json({ error: 'Invalid email or password' });*/
+                //req.app.set('error','Invalid email or password')
+                res.status(401).json({ status : 'error', msg: 'Invalid email or password' });
                 
-                return res.redirect('/api/login')
+                //return res.redirect('/api/login')
                 
             }
             
         }
         catch(error){
             console.error("Error loggin in:",error);
-            return res.status(500).json({ error : 'An error occurred while loggin in'});
+            return res.status(500).json({ status : 'error', msg:  'An error occurred while loggin in'});
         }
     }
     showLogin(req,res){
         console.log(this)
         return res.render('login')
     }
-    async signUp(req,res){
+    signUp= async(req,res)=>{
       const {name, email, password,role} = req.body;
       if (!name || !email || !password ){
-          res.status(403)/*.send({ success : false, message : "All fields are required"})*/
+          return res.status(403).send({ success : 'error', message : "All fields are required"})
           req.app.set('error',"All fields are required")
           return res.redirect('/api/login')
       }
   
   
-      const existingUser = await User.findOne({email});
+      const existingUser = await this.service.getUserBy({email});
   
       if (existingUser){
           //console.log(existingUser)
-          res.status(400)/*.json({error : 'Email already registered'})*/
+          return res.status(400).json({status : 'error', msg: 'Email already registered'})
           //req.flash('error', `Email already registered`)
           req.app.set('error', `Email already registered`)
           return res.redirect('/api/register')
       }
-      console.log(this)
+      
       let hashedPassword = await this.hashPassword(password);
       
       
       try {
-          const newUser = new User({
+          const newUser = await this.service.createUser({
               name,
               email,
               password:hashedPassword,
               role
             })    
-          await newUser.save()
-          res.status(200)/*.json({message: `user registered successfully`})*/
+          
+          return res.status(200).json({status : 'success', msg: `user registered successfully`})
           //req.flash('success', `user registered successfully`)
           req.app.set('success',`user registered successfully`)
           return res.redirect('/api/login')
       } catch (error) {
-          res.status(500)/*.json({"error" : error.message})*/
-          //req.flash('error', `${error.message}`)
-          req.app.set('error',`${error.message}`)
-          return res.redirect('/api/login')
+            console.log(error)
+            return res.status(500).json({status : 'error', msg: 'An error occurred at register'})
+            //req.flash('error', `${error.message}`)
+            req.app.set('error',`${error.message}`)
+            return res.redirect('/api/login')
       }
     }
     async hashPassword(password){
@@ -128,6 +135,6 @@ class AuthController{
         return res.render('register')
     }
 }
-const controller = new AuthController()
+
 // Export the functions as an object (common approach with require)
-module.exports =   controller;
+module.exports =   AuthController;

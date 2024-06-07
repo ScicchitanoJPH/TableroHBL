@@ -10,10 +10,13 @@ const registerRouter = require('./register.routes.js');
 const deviceRouter = require('./device.routes.js');
 const eventsRouter = require('./event.routes.js');
 const boardsRouter = require('./board.routes.js');
+const { authenticateUser } = require('../middleware/checkAuth.middleware.js');
 
 const router = Router();
 
 router.use("/login",userRouter)
+
+router.use("/logout",userRouter)
 
 router.use("/register",registerRouter)
 
@@ -21,7 +24,7 @@ router.use("/devices",deviceRouter)
 
 router.use("/events",eventsRouter)
 
-router.use("/boards",boardsRouter)
+router.use("/boards",authenticateUser,boardsRouter)
 
 
 module.exports = router

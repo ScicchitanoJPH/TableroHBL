@@ -1,12 +1,12 @@
 const express = require('express');
 const Router = express.Router;  // Destructuring assignment for brevity
-const authController = require('../controllers/auth.controller')
+const AuthController = require('../controllers/auth.controller')
 
-//const controller = new authController()
+const controller = new AuthController()
 
 const router = Router()
-router.post("/", authController.signUp.bind(authController));
-router.get("/", authController.showRegister);
+router.post("/", controller.signUp);
+router.get("/", controller.showRegister);
 
 
 
