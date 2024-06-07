@@ -1,8 +1,8 @@
 const express = require('express');
 const Router = express.Router;  // Destructuring assignment for brevity
 
-const userRouter = require('./login.routes.js');
-const registerRouter = require('./register.routes.js');
+const authRouter = require('./auth.routes.js');
+
 
 // Assuming auth.controller.js is in the same directory:
 // const { userLogin, signUp, showLogin, showRegister } = require('../controllers/auth.controller.js');
@@ -14,11 +14,7 @@ const { authenticateUser } = require('../middleware/checkAuth.middleware.js');
 
 const router = Router();
 
-router.use("/login",userRouter)
-
-router.use("/logout",userRouter)
-
-router.use("/register",registerRouter)
+router.use("/auth",authRouter)
 
 router.use("/devices",deviceRouter)
 

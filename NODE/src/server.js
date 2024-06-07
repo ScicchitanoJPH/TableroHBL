@@ -1,31 +1,23 @@
 const express = require('express');
 const http = require('http');
 const WebSocket = require('ws');
-const { connectDB } = require('./configDB/connectDB.js');
-const router = require('./routers/index.js');
 
 const cookieParser = require('cookie-parser'); // Importa el middleware cookie-parser
-
+const path = require('path');
+const dotenv = require('dotenv')
+const cors = require('cors');
+const  {engine}  = require('express-handlebars'); // Destructuring for brevity
 const swaggerJsDocs = require('swagger-jsdoc')
 const swaggerUiExpress = require('swagger-ui-express')
 
-const cors = require('cors');
-const  {engine}  = require('express-handlebars'); // Destructuring for brevity
-
-const path = require('path');
-const dotenv = require('dotenv')
+const { connectDB } = require('./configDB/connectDB.js');
+const router = require('./routers/index.js');
 const { program } = require("./enviroment/commander")
-
 const { mode } = program.opts()
 
 
 
 
-
-/*dotenv.config({
-    
-    path: mode === 'development' ? __dirname + './enviroment/.env.development' : './enviroment/.env.production'
-})*/
 dotenv.config({
     path: mode === 'development' ? path.resolve(__dirname, './enviroment/.env.development') : path.resolve(__dirname, './enviroment/.env.production')
     
@@ -48,6 +40,8 @@ app.use(express.static(__dirname + '/public'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser())
+
+
 
 app.use(function(req, res, next) {
     
