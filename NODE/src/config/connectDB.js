@@ -1,6 +1,8 @@
 const mongoose = require("mongoose")
 const dotenv = require('dotenv')
 const { program } = require("../enviroment/commander")
+const { logger } = require("../utils/logger")
+const { error } = require("console")
 
 const { mode } = program.opts()
 
@@ -17,8 +19,10 @@ exports.connectDB = async () => {
     try {
         // await mongoose.connect(MONGO_URL)
         await mongoose.connect(exports.configObject.path)
-        console.log('Base de datos conectada')        
+        return {status :'success',message: 'Base de datos conectada' }       
     } catch (error) {
-        console.log(error)
+        
+        return {status :'error',message: error }     
+        
     }
 }

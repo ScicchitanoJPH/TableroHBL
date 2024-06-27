@@ -2,27 +2,34 @@ const express = require('express');
 const http = require('http');
 const WebSocket = require('ws');
 
+
 const cookieParser = require('cookie-parser'); // Importa el middleware cookie-parser
 const path = require('path');
-const dotenv = require('dotenv')
+//const dotenv = require('dotenv')
 const cors = require('cors');
 const  {engine}  = require('express-handlebars'); // Destructuring for brevity
 const swaggerJsDocs = require('swagger-jsdoc')
 const swaggerUiExpress = require('swagger-ui-express')
+const passport = require("passport")
+const session = require("express-session")
+const MongoStore = require("connect-mongo")
 
-const { connectDB } = require('./configDB/connectDB.js');
+const {initializePassport} = require("./config/configPassport/passport.config.js")
+const { connectDB } = require('./config/connectDB.js');
 const router = require('./routers/index.js');
-const { program } = require("./enviroment/commander")
+const { program } = require("./enviroment/commander");
+const { logger } = require('./utils/logger.js');
+const { error } = require('console');
 const { mode } = program.opts()
 
+const log = logger('server.log')
 
 
-
-dotenv.config({
-    path: mode === 'development' ? path.resolve(__dirname, './enviroment/.env.development') : path.resolve(__dirname, './enviroment/.env.production')
-    
-})
-
+//dotenv.config({
+//    path: mode === 'development' ? path.resolve(__dirname, './enviroment/.env.development') : path.resolve(__dirname, './enviroment/.env.production')
+//    
+//})
+console.log(process.env.MODO)
 exports.configObject = {
     port: process.env.PORT || 8080,
     url_mongo : process.env.MONGO_URL
@@ -59,7 +66,21 @@ app.engine('hbs', engine({defaultLayout:'index' ,extname:'.hbs'}));
 app.set('view engine', 'hbs');
 app.set('views', __dirname + '/views');
 
+//sesiones
+app.use(session({
+    store: MongoStore.create({
+        mongoUrl: process.env.MONGO_URL,
+        ttl : 15
+    }),
+    secret : process.env.SESSION_SECRET,
+    resave: true,
+    saveUninitialized: true
+}))
 
+//passport
+app.use(passport.initialize())
+app.use(passport.session())
+initializePassport()
 
 app.use("/api",router);
 
@@ -80,7 +101,12 @@ app.use('/apidocs', swaggerUiExpress.serve, swaggerUiExpress.setup(specs))
 
 
 
-connectDB();
+connectDB().then( (result) =>{
+    
+    if (result.status == 'success') log.info(result.message)
+    else log.error(result.message)
+    
+})
 
 async function saveDB(eventData) {
     var myHeaders = new Headers();
@@ -88,9 +114,9 @@ async function saveDB(eventData) {
     
     var raw = JSON.stringify({
         "from": eventData.from,
-    "to": eventData.to,
-    "mode": eventData.mode,
-    "message": eventData.message
+        "to": eventData.to,
+        "mode": eventData.mode,
+        "message": eventData.message
     });
 
     var requestOptions = {
@@ -146,5 +172,6 @@ function broadcast(message, sender) {
 }
 const port = exports.configObject.port || 8080
 server.listen(port, () => {
-    console.log(`Servidor escuchando en http://localhost:${port}`);
+    log.info(`Servidor escuchando en http://localhost:${port}`);
+    
 });

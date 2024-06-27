@@ -3,19 +3,46 @@
 
 const mongoose = require('mongoose');
 const validator = require('validator');
-
+const jwt = require('jsonwebtoken');
+const { type } = require('os');
  
-function isEmail(value){
-    return validator.isEmail(value)
-}
+
 
 const userSchema = new mongoose.Schema(
     {
-        name : { type : String, required : true},
-        email: { type: String, required : true, unique: true, validate: (value)=>{ return validator.isEmail(value)}},
-        password: {type: String, required : true,},
-        role : { type: String, enum: ['user','admin'],default: 'user'},
-        createdAt : {type : Date, default : Date.now},
+        name : { 
+            type : String, 
+            required : true,
+            max: 30
+        },
+        email: { 
+            type: String, 
+            required : true, 
+            unique: true,
+            lowercase: true,
+            trim: true, 
+            },
+        password: {
+            type: String, 
+            required : true,
+            select:false
+        },
+        role : { 
+            type: String, 
+            enum: ['user','admin'],
+            default: 'user'
+        },
+        createdAt : {
+            type : Date, 
+            default : Date.now
+        },
+        refreshTokens : [
+            {
+                token : String,
+                createdAt : Date,
+                expiry : Date
+            }
+        ]
     }
 );
 
