@@ -5,19 +5,23 @@ import requests
 import json
 
 MODE = 'ACCESS_CONTROL'
-URI = "ws://172.30.6.3:8080"
-ID_RPI = "RPI_BARRERA"
+URI = "ws://localhost:8080"
+ID_RPI = "RPI_BARRERA_EXAR"
 
 async def add_device2BBDD():
     url_addDevice = "http://localhost:8080/api/devices"
 
     payload = json.dumps({
     "hbl_id": ID_RPI,
+    "hbl_name": "Barrera ingreso 1",
+    "client" : "EXAR",
+    "mac_address" : "AB:AB:AB:AB:AB",
     "ip": "172.168.50.1",
     "mask": "255.255.255.0",
     "dns": "172.168.50.1",
     "last_connection": "20/05/2024",
-    "mode": MODE
+    "mode": MODE,
+    "ID_anydesk": "172 458 784"
     })
     headers = {
     'Content-Type': 'application/json'

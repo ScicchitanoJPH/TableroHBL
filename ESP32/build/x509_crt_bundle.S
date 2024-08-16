@@ -1,4 +1,4 @@
-/* * Data converted from C:/Users/diego.scicchitano/Documents/Proyectos/ESP_NODE_WS/ESP32/build/esp-idf/mbedtls/x509_crt_bundle
+/* * Data converted from C:/Users/diego.scicchitano/Documents/Proyectos/Tablero_HBL/ESP32/build/esp-idf/mbedtls/x509_crt_bundle
  */
 .data
 .section .rodata.embedded

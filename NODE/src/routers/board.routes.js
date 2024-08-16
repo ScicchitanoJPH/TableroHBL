@@ -23,3 +23,6 @@ router.delete('/:uid', deleteBoard)
 
 
 module.exports = router
+
+
+

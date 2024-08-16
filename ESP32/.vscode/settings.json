@@ -22,6 +22,8 @@
         "esp_event.h": "c",
         "protocol_examples_common.h": "c",
         "queue.h": "c",
-        "freertos.h": "c"
+        "freertos.h": "c",
+        "websocket_driver.h": "c",
+        "stdio.h": "c"
     }
 }
