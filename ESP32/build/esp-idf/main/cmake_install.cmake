@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/diego.scicchitano/Documents/Proyectos/ESP_NODE_WS/ESP32/main
+# Install script for directory: C:/Users/diego.scicchitano/Documents/Proyectos/Tablero_HBL/ESP32/main
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

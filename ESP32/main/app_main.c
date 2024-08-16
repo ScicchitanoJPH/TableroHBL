@@ -17,6 +17,8 @@
 #include "esp_log.h"
 #include "../components/websocket_driver/websocket_driver.h"
 #include "esp_event.h"
+#include "../components/LCD/lcd.h"
+
 
 #define ID_ESP32 "esp32_test1"
 #define MAX_DATA_STRING_LENGTH 80
@@ -115,7 +117,7 @@ static void websocket_app_start(void)
 {
     // Define the websocket connection
     esp_websocket_client_config_t websocket_cfg = {};
-    websocket_cfg.uri = "ws://172.30.6.3:8080";
+    websocket_cfg.uri = "ws://172.30.10.34:8080";
     ESP_LOGI(TAG, "Connecting to %s ...", websocket_cfg.uri);
 
     // Connect to Websocket Server
@@ -140,42 +142,51 @@ static void websocket_app_start(void)
 
 void app_main(void)
 {
-    ESP_LOGI(TAG, "[APP] Startup..");
-    ESP_LOGI(TAG, "[APP] Free memory: %" PRIu32 " bytes", esp_get_free_heap_size());
-    ESP_LOGI(TAG, "[APP] IDF version: %s", esp_get_idf_version());
+    lcd_init();
+    lcd_write_string("Hola, ESP32!", 0, 0);
+    lcd_write_string("LCD con I2C", 1, 0);
+    lcd_write_string("Line 3", 2, 0);
+    lcd_write_string("Line 4", 3, 0);
 
-    esp_log_level_set("*", ESP_LOG_INFO);
-    esp_log_level_set("transport_base", ESP_LOG_VERBOSE);
-    esp_log_level_set("esp-tls", ESP_LOG_VERBOSE);
-    esp_log_level_set("transport", ESP_LOG_VERBOSE);
-    esp_log_level_set("outbox", ESP_LOG_VERBOSE);
+    // ESP_LOGI(TAG, "[APP] Startup..");
+    // ESP_LOGI(TAG, "[APP] Free memory: %" PRIu32 " bytes", esp_get_free_heap_size());
+    // ESP_LOGI(TAG, "[APP] IDF version: %s", esp_get_idf_version());
 
-    ESP_ERROR_CHECK(nvs_flash_init());
-    ESP_ERROR_CHECK(esp_netif_init());
-    ESP_ERROR_CHECK(esp_event_loop_create_default());
+    // esp_log_level_set("*", ESP_LOG_INFO);
+    // esp_log_level_set("transport_base", ESP_LOG_VERBOSE);
+    // esp_log_level_set("esp-tls", ESP_LOG_VERBOSE);
+    // esp_log_level_set("transport", ESP_LOG_VERBOSE);
+    // esp_log_level_set("outbox", ESP_LOG_VERBOSE);
 
-    /* This helper function configures Wi-Fi or Ethernet, as selected in menuconfig.
-     * Read "Establishing Wi-Fi or Ethernet Connection" section in
-     * examples/protocols/README.md for more information about this function.
-     */
-    ESP_ERROR_CHECK(example_connect());
+    // ESP_ERROR_CHECK(nvs_flash_init());
+    // ESP_ERROR_CHECK(esp_netif_init());
+    // ESP_ERROR_CHECK(esp_event_loop_create_default());
+
+    // /* This helper function configures Wi-Fi or Ethernet, as selected in menuconfig.
+    //  * Read "Establishing Wi-Fi or Ethernet Connection" section in
+    //  * examples/protocols/README.md for more information about this function.
+    //  */
+    // ESP_ERROR_CHECK(example_connect());
 
 
-    websocket_app_start();
-    ESP_LOGI(TAG, "Connection established");
-    send_data_to_server("Hello");
+    // websocket_app_start();
+    // ESP_LOGI(TAG, "Connection established");
+    // send_data_to_server("Hello");
     while (true)
     {
+        // lcd_write_string("Hola, ESP32!", 0, 0);
+        // lcd_write_string("LCD con I2C", 1, 0);
+        vTaskDelay(5000 / portTICK_PERIOD_MS);
         /* code */
-        for (size_t i = 0; i < 15; i++)
-        {
-            /* code */
-            char msg[10];
-            sprintf(msg, "%d", i);   
-            ESP_LOGI(TAG, "%s", msg);
-            send_data_to_server(msg);
-            vTaskDelay(5000 / portTICK_PERIOD_MS);
-        }
+        // for (size_t i = 0; i < 15; i++)
+        // {
+        //     /* code */
+        //     char msg[10];
+        //     sprintf(msg, "%d", i);   
+        //     ESP_LOGI(TAG, "%s", msg);
+        //     send_data_to_server(msg);
+        //     vTaskDelay(5000 / portTICK_PERIOD_MS);
+        // }
         
         
     }

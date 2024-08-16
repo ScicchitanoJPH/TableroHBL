@@ -3,5 +3,5 @@ source "C:/Users/diego.scicchitano/esp/esp-idf/components/esp_app_format/Kconfig
 source "C:/Users/diego.scicchitano/esp/esp-idf/components/esp_rom/Kconfig.projbuild"
 source "C:/Users/diego.scicchitano/esp/esp-idf/components/esptool_py/Kconfig.projbuild"
 source "C:/Users/diego.scicchitano/esp/esp-idf/components/partition_table/Kconfig.projbuild"
-source "C:/Users/diego.scicchitano/Documents/Proyectos/ESP_NODE_WS/ESP32/main/Kconfig.projbuild"
+source "C:/Users/diego.scicchitano/Documents/Proyectos/Tablero_HBL/ESP32/main/Kconfig.projbuild"
 source "C:/Users/diego.scicchitano/esp/esp-idf/examples/common_components/protocol_examples_common/Kconfig.projbuild"

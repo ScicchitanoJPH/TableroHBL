@@ -11,6 +11,14 @@ const boardsSchema = new mongoose.Schema(
         hbl_id: {
           type: String,
           required: true,
+        },
+      },
+    ],
+    users: [
+      {
+        email: {
+          type: String,
+          required: true,
           unique: true,
         },
       },
@@ -18,6 +26,8 @@ const boardsSchema = new mongoose.Schema(
   },
   { timestamps: true }
 );
+
+
 
 boardsSchema.pre("find", function (next) {
   this.populate("devices.hbl_id");
@@ -31,6 +41,24 @@ boardsSchema.pre("findOne", function (next) {
 
 boardsSchema.pre("findOneAndUpdate", function (next) {
   this.populate("devices.hbl_id");
+  next();
+});
+
+
+
+
+boardsSchema.pre("find", function (next) {
+  this.populate("users");
+  next();
+});
+
+boardsSchema.pre("findOne", function (next) {
+  this.populate("users");
+  next();
+});
+
+boardsSchema.pre("findOneAndUpdate", function (next) {
+  this.populate("users");
   next();
 });
 

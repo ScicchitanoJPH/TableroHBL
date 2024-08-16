@@ -20,12 +20,6 @@ const { mode } = program.opts()
 
 
 
-
-
-/*dotenv.config({
-    
-    path: mode === 'development' ? __dirname + './enviroment/.env.development' : './enviroment/.env.production'
-})*/
 dotenv.config({
     path: mode === 'development' ? path.resolve(__dirname, './enviroment/.env.development') : path.resolve(__dirname, './enviroment/.env.production')
     
@@ -94,9 +88,9 @@ async function saveDB(eventData) {
     
     var raw = JSON.stringify({
         "from": eventData.from,
-    "to": eventData.to,
-    "mode": eventData.mode,
-    "message": eventData.message
+        "to": eventData.to,
+        "mode": eventData.mode,
+        "message": eventData.message
     });
 
     var requestOptions = {
@@ -129,7 +123,7 @@ wss.on('connection', (ws) => {
         //const response = { source: 'server', message: `Recibí tu mensaje - ${data.message}` };
         // Reenviar el mensaje a todos los clientes, excepto al que envió el mensaje original
         // console.log(`Mensaje a enviar: ${data.message}`)
-        broadcast(JSON.stringify(data), ws);
+        //broadcast(JSON.stringify(data), ws);
         saveDB(data)
     });
 
@@ -150,6 +144,8 @@ function broadcast(message, sender) {
         }
     });
 }
+
+
 const port = exports.configObject.port || 8080
 server.listen(port, () => {
     console.log(`Servidor escuchando en http://localhost:${port}`);

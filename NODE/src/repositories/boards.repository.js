@@ -11,6 +11,7 @@ class BoardRepository {
     getBoard =    async (filter) => await this.dao.find(filter)
     exists =   async (filter) => await this.dao.exists(filter)
     createBoard = async (newBoard) => {
+        console.log("createBoard", newBoard)
         const newBoardDto = new BoardDto(newBoard)
         return await this.dao.create(newBoardDto)
     

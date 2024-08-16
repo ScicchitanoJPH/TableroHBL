@@ -215,6 +215,7 @@
       let historyVisible = false;
 
       function fetchHistorial(esp32Id) {
+        console.log("Inicio fetching history")
         const responseContainer = document.querySelector(`#card-${esp32Id} .response-container`);
 
         if (historyVisible) {
@@ -223,7 +224,7 @@
           return;
         }
 
-        fetch(`http://172.30.6.3:8080/api/events/${esp32Id}`)
+        fetch(`http://172.30.6.3:8080/api/events/byDevice/${esp32Id}`)
           .then(response => response.json())
           .then(result => {
             responseContainer.innerHTML = '';

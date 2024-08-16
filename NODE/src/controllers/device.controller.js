@@ -41,15 +41,20 @@ class DeviceController {
     
     createDevice = async (req, res) => {
         console.log(req.body);
-        const { hbl_id, ip, mask, dns, last_connection, mode } = req.body;
+        const { hbl_id, hbl_name, client, version, mac_address, ip, mask, dns, last_connection, mode, ID_anydesk } = req.body;
     
         const newDevice = {
           hbl_id,
+          hbl_name,
+          client,
+          version,
+          mac_address,
           ip,
           mask,
           dns,
           last_connection,
-          mode
+          mode,
+          ID_anydesk
         };
         console.log("newDevice : " + newDevice);
         try {
