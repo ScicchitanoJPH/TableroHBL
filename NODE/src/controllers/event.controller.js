@@ -40,7 +40,7 @@ class EventController {
     }
     
     createEvent = async (req, res)=>{
-        console.log(req.body)
+        //console.log(req.body)
         const {from, to, mode, message } = req.body
        
         const newEvent = {
@@ -49,7 +49,7 @@ class EventController {
             mode,
             message
         }
-        console.log(newEvent)
+        //console.log(newEvent)
     
         const result = await this.service.createEvent(newEvent)
     
