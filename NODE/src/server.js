@@ -22,7 +22,7 @@ const { mode } = program.opts()
 
 dotenv.config({
     path: mode === 'development' ? path.resolve(__dirname, './enviroment/.env.development') : path.resolve(__dirname, './enviroment/.env.production')
-    
+
 })
 
 exports.configObject = {
@@ -44,10 +44,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser())
 
 app.use(function(req, res, next) {
-    
+
     res.locals.success = req.app.get('success');
     res.locals.error = req.app.get("error");
-    
+
     req.app.set('success',undefined)
     req.app.set('error',undefined)
     next();
@@ -73,7 +73,7 @@ const swaggerOptions = {
         }
     },
     apis: [`${__dirname}/docs/**/*.yaml`]
-} 
+}
 
 const specs = swaggerJsDocs(swaggerOptions)
 app.use('/apidocs', swaggerUiExpress.serve, swaggerUiExpress.setup(specs))
@@ -85,7 +85,7 @@ connectDB();
 async function saveDB(eventData) {
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
-    
+
     var raw = JSON.stringify({
         "from": eventData.from,
         "to": eventData.to,
@@ -107,32 +107,45 @@ async function saveDB(eventData) {
 }
 
 // Almacena todas las conexiones de clientes
-const clients = new Set();
+const clients = new Map();
 
 // Manejar conexiones WebSocket
 wss.on('connection', (ws) => {
     console.log('Cliente conectado');
 
     // Agregar la conexión del cliente al conjunto
-    clients.add(ws);
-    
+
     // Manejar mensajes del cliente
     ws.on('message', (message) => {
         console.log(`Mensaje recibido: ${message}`);
         const data = JSON.parse(message);
-        //const response = { source: 'server', message: `Recibí tu mensaje - ${data.message}` };
-        // Reenviar el mensaje a todos los clientes, excepto al que envió el mensaje original
-        // console.log(`Mensaje a enviar: ${data.message}`)
-        //broadcast(JSON.stringify(data), ws);
+        // Antes de agregar un websocket a la lista de clientes, se verifica que no exista. Esto evita que haya dos websocket con el mismo ID
+        if (!clients.get(data.from)) {
+            clients.set(data.from, ws);
+            console.log(`Nuevo cliente : ${data.from}`);
+        }else {
+            console.log("cliente ya conectado");
+        }
+        console.log("data: " + data.from);
+        const targetClient = clients.get(data.to);
+        if (targetClient && targetClient.readyState === WebSocket.OPEN) {
+            targetClient.send(JSON.stringify(data));
+        } else {
+            console.log(`Cliente ${data.to} no conectado o no disponible`);
+        }
+        // broadcast(JSON.stringify(data), ws);
         saveDB(data)
     });
 
     // Manejar cierre de conexión
     ws.on('close', () => {
         console.log('Cliente desconectado');
-        
+
+        const rpi2delete = getKeyByValue(clients, ws);
+
         // Eliminar la conexión del cliente del conjunto al cerrar la conexión
-        clients.delete(ws);
+        console.log('Client to remove: ' + rpi2delete);
+        console.log("clients.delete(ws) : " + clients.delete(rpi2delete));
     });
 });
 
@@ -145,6 +158,16 @@ function broadcast(message, sender) {
     });
 }
 
+
+// Función para obtener la clave desde el valor
+function getKeyByValue(map, value) {
+    for (let [key, val] of map.entries()) {
+        if (val === value) {
+            return key;
+        }
+    }
+    return null; // Retorna null si no se encuentra el valor
+}
 
 const port = exports.configObject.port || 8080
 server.listen(port, () => {
