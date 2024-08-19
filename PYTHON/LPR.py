@@ -34,14 +34,16 @@ async def add_device2BBDD():
 
 async def send_message(websocket):
     sever_id = "html"
-    for i in range(100, 999):  # Envía 15 mensajes
+    action = True
+    for i in range(100, 999):  # Envía mensajes con un rango de placas
         plate_msg = "AE " + str(i) + " EA"
         message = json.dumps({
             "from": ID_RPI,
             "to": sever_id,
             "mode": MODE,
-            "message": plate_msg
+            "message": f'{{ "data": "{plate_msg}", "action": {str(action).lower()} }}'
         })
+        action = not action
         await websocket.send(message)
         print("Mensaje enviado:", message)
         await asyncio.sleep(3)  # Espera 3 segundos entre cada mensaje

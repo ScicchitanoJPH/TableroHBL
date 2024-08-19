@@ -144,8 +144,8 @@ wss.on('connection', (ws) => {
         const rpi2delete = getKeyByValue(clients, ws);
 
         // Eliminar la conexión del cliente del conjunto al cerrar la conexión
-        console.log('Client to remove: ' + rpi2delete);
-        console.log("clients.delete(ws) : " + clients.delete(rpi2delete));
+        clients.delete(rpi2delete) ? console.log(`Client ${rpi2delete} removed`) : console.log('Error deleting client  ' + rpi2delete);
+        
     });
 });
 
