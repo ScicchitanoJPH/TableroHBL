@@ -7,114 +7,115 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="./css/index.css">
   <style>
-    /* Estilos personalizados */
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f8f9fa; /* Color de fondo */
-      color: #343a40; /* Color del texto principal */
+      font-family: 'Roboto', sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
       padding: 20px;
     }
 
     .card {
-      background-color: #fff; /* Color de fondo de las tarjetas */
-      border: 1px solid rgba(0,0,0,.125);
-      border-radius: .25rem;
+      background-color: #fff;
+      border: none;
+      border-radius: 12px;
       padding: 20px;
       margin-bottom: 20px;
-      box-shadow: 0 0 10px rgba(0,0,0,.1);
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
     }
 
-    .switch-label {
-      margin-bottom: 10px;
+    .card h2 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 15px;
+      color: #333;
     }
 
-    .response-container {
-      margin-top: 10px;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      max-height: 200px;
-      overflow-y: auto;
-      background-color: #f1f1f1; /* Color de fondo del contenedor de respuesta */
-    }
-
-    .history-button {
-      background-color: #007bff; /* Color de fondo del botón */
-      color: #fff; /* Color del texto del botón */
+    .card button {
+      background-color: #007bff;
+      color: white;
+      border-radius: 50px;
       border: none;
-      padding: 8px 16px;
-      border-radius: 5px;
+      padding: 10px 20px;
       cursor: pointer;
     }
 
-    .history-button:hover {
-      background-color: #0056b3; /* Color de fondo del botón al pasar el mouse */
+    .card button:hover {
+      background-color: #0056b3;
     }
 
     .form-check-input[type="checkbox"] {
       width: 40px;
       height: 20px;
-      background-color: #adb5bd; /* Color de fondo del switch */
-      border: none;
-      border-radius: 20px;
+      background-color: #ccc;
+      border-radius: 10px;
       position: relative;
+      transition: background-color 0.2s ease;
     }
 
     .form-check-input[type="checkbox"]:before {
       content: '';
       position: absolute;
-      width: 16px;
-      height: 16px;
-      background-color: #fff; /* Color del punto del switch */
+      width: 18px;
+      height: 18px;
+      background-color: white;
       border-radius: 50%;
-      top: 50%;
-      left: 4px;
-      transform: translateY(-50%);
-      transition: all 0.3s;
-    }
-
-    .form-check-input:checked[type="checkbox"]:before {
-      left: calc(100% - 20px);
-    }
-
-    .form-check-input:focus {
-      box-shadow: none;
+      top: 1px;
+      left: 1px;
+      transition: transform 0.2s ease;
     }
 
     .form-check-input:checked[type="checkbox"] {
-      background-color: #28a745; /* Color de fondo del switch cuando está activo */
+      background-color: #28a745;
     }
 
-    /* Asegurar que todas las tarjetas tengan el mismo ancho */
-    #cards-container .card {
-      width: calc(100% / 2 - 40px); /* Calcula el ancho para que haya 3 tarjetas por fila */
-      margin-right: 20px; /* Espacio entre las tarjetas */
+    .form-check-input:checked[type="checkbox"]:before {
+      transform: translateX(20px);
     }
 
-    @media (max-width: 992px) {
-      #cards-container .card {
-        width: calc(100% / 2 - 40px); /* Calcula el ancho para que haya 2 tarjetas por fila en pantallas medianas */
-      }
+    .response-container {
+      margin-top: 10px;
+      padding: 10px;
+      background-color: #e9ecef;
+      border-radius: 8px;
+      max-height: 200px;
+      overflow-y: auto;
     }
 
-    @media (max-width: 768px) {
-      #cards-container .card {
-        width: calc(100% - 40px); /* Tarjeta de ancho completo en pantallas pequeñas */
-        margin-right: 0;
-        margin-bottom: 20px; /* Espacio entre las tarjetas en pantallas pequeñas */
-      }
+    #cards-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .dashboard {
+      margin-top: 40px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .dashboard .chart-container {
+      flex: 1;
+      background-color: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
     }
   </style>
 </head>
 <body>
-
-  
   <div class="container">
     <h1 class="text-center mb-4">Tablero HBL</h1>
     <div id="cards-container" class="row"></div>
-    <canvas id="myChart"></canvas>
+    <div class="dashboard">
+      <div class="chart-container">
+        <canvas id="myChart"></canvas>
+      </div>
+      <!-- Puedes agregar más gráficos aquí -->
+    </div>
   </div>
 
+  <!-- Scripts -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -126,6 +127,15 @@
       socket.addEventListener('message', handleMessage);
       // Objeto para almacenar los mensajes recibidos por cada ID de ESP32
       let lenByEsp32Id = {};
+
+      socket.onopen = async function ( e ) {
+        await socket.send(JSON.stringify({
+          from: "html",
+          message: "Hi"
+        }));
+      };
+
+      
 
 
       let myChart;

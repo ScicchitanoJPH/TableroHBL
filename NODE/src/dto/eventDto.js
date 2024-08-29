@@ -1,18 +1,17 @@
 class EventDto {
     constructor(event) {
-        // Verifica si event no es undefined antes de acceder a sus propiedades
         if (event) {
             this.from = event.from;
             this.to = event.to;
             this.mode = event.mode;
             this.message = event.message;
+            this.createdAt = event.createdAt || Date.now();  // Asigna el valor proporcionado o la fecha actual si está vacío.
         } else {
-            // Si event es undefined, asigna valores predeterminados o maneja el error según sea necesario
-            this.full_name = "";
             this.from = "";
             this.to = "";
             this.mode = "";
             this.message = "";
+            this.createdAt = Date.now();  // Asigna la fecha actual si no se proporciona ningún evento.
         }
     }
 }
