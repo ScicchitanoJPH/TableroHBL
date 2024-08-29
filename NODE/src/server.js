@@ -86,18 +86,26 @@ async function saveDB(eventData) {
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
 
-    var raw = JSON.stringify({
+    // Crear el objeto que se enviará, incluyendo `createdAt` si está presente
+    var eventPayload = {
         "from": eventData.from,
         "to": eventData.to,
         "mode": eventData.mode,
         "message": eventData.message
-    });
+    };
+
+    // Agregar createdAt al payload solo si está presente en eventData
+    if (eventData.createdAt) {
+        eventPayload.createdAt = eventData.createdAt;
+    }
+
+    var raw = JSON.stringify(eventPayload);
 
     var requestOptions = {
-    method: 'POST',
-    headers: myHeaders,
-    body: raw,
-    redirect: 'follow'
+        method: 'POST',
+        headers: myHeaders,
+        body: raw,
+        redirect: 'follow'
     };
 
     fetch(`http://localhost:${exports.configObject.port}/api/events/`, requestOptions)
@@ -126,6 +134,7 @@ wss.on('connection', (ws) => {
         }else {
             console.log("cliente ya conectado");
         }
+        clients.set(data.from, ws);
         console.log("data: " + data.from);
         const targetClient = clients.get(data.to);
         if (targetClient && targetClient.readyState === WebSocket.OPEN) {

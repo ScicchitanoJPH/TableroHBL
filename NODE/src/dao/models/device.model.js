@@ -19,7 +19,7 @@ const devicesSchema = new mongoose.Schema({
     last_connection: String,
     mode: String,
     ID_anydesk: String,
-    createdAt: {
+    time: {
         type: Date,
         default: Date.now // Esta propiedad establece automáticamente la fecha y hora actual cuando se crea un nuevo documento
     }

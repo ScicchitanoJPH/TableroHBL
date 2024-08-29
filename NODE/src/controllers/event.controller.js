@@ -39,24 +39,39 @@ class EventController {
         res.send(event)
     }
     
-    createEvent = async (req, res)=>{
-        //console.log(req.body)
-        const {from, to, mode, message } = req.body
-       
-        const newEvent = {
-            from,
-            to,
-            mode,
-            message
+    createEvent = async (req, res) => {
+        try {
+            const { from, to, mode, message, createdAt } = req.body;
+
+            //Esto asegura que si createdAt es proporcionado en req.body, 
+            // se usará tal cual; de lo contrario, se utilizará la marca 
+            // de tiempo actual generada por Date.now().
+            let fecha_hora = createdAt || Date.now()
+            
+            console.log("fecha_hora : ", fecha_hora)
+            // Convertir a objeto Date
+            const date = new Date(fecha_hora);
+            console.log("date : ", date)
+            // Convertir a string en formato ISO 8601
+            const isoString = date.toISOString();
+
+            const newEvent = {
+                from,
+                to,
+                mode,
+                message,
+                createdAt: isoString 
+            };
+    
+            const result = await this.service.createEvent(newEvent);
+    
+            res.status(201).send({
+                status: 'success',
+                eventsCreate: result
+            });
+        } catch (error) {
+            res.status(500).send({ status: 'error', message: error.message });
         }
-        //console.log(newEvent)
-    
-        const result = await this.service.createEvent(newEvent)
-    
-        res.status(200).send({
-            status: 'success',
-            eventsCreate: result
-        })
     }
     
     updateEvent =  async (req, res)=>{

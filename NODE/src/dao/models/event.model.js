@@ -8,10 +8,10 @@ const eventsSchema = new mongoose.Schema({
     to: String,
     mode: String,
     message: String,
-    createdAt: {
-        type: Date,
-        default: Date.now // Esta propiedad establece automáticamente la fecha y hora actual cuando se crea un nuevo documento
-    }
+    // La opción set de createdAt se asegura de que si se proporciona un valor,
+    // este se utiliza; de lo contrario, se utiliza la fecha y hora 
+    // actuales (Date.now()).
+    createdAt: String
 });
 eventsSchema.plugin(mongoosePaginate);
 
