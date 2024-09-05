@@ -38,6 +38,8 @@ class EventController {
     
         res.send(event)
     }
+
+    
     
     createEvent = async (req, res) => {
         try {
@@ -48,10 +50,8 @@ class EventController {
             // de tiempo actual generada por Date.now().
             let fecha_hora = createdAt || Date.now()
             
-            console.log("fecha_hora : ", fecha_hora)
             // Convertir a objeto Date
             const date = new Date(fecha_hora);
-            console.log("date : ", date)
             // Convertir a string en formato ISO 8601
             const isoString = date.toISOString();
 
@@ -62,6 +62,8 @@ class EventController {
                 message,
                 createdAt: isoString 
             };
+
+
     
             const result = await this.service.createEvent(newEvent);
     

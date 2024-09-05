@@ -14,6 +14,7 @@ const  {engine}  = require('express-handlebars'); // Destructuring for brevity
 
 const path = require('path');
 const dotenv = require('dotenv')
+const { eventManagement } = require("./services/eventManagement.js")
 const { program } = require("./enviroment/commander")
 
 const { mode } = program.opts()
@@ -82,38 +83,6 @@ app.use('/apidocs', swaggerUiExpress.serve, swaggerUiExpress.setup(specs))
 
 connectDB();
 
-async function saveDB(eventData) {
-    var myHeaders = new Headers();
-    myHeaders.append("Content-Type", "application/json");
-
-    // Crear el objeto que se enviará, incluyendo `createdAt` si está presente
-    var eventPayload = {
-        "from": eventData.from,
-        "to": eventData.to,
-        "mode": eventData.mode,
-        "message": eventData.message
-    };
-
-    // Agregar createdAt al payload solo si está presente en eventData
-    if (eventData.createdAt) {
-        eventPayload.createdAt = eventData.createdAt;
-    }
-
-    var raw = JSON.stringify(eventPayload);
-
-    var requestOptions = {
-        method: 'POST',
-        headers: myHeaders,
-        body: raw,
-        redirect: 'follow'
-    };
-
-    fetch(`http://localhost:${exports.configObject.port}/api/events/`, requestOptions)
-    .then(response => response.text())
-    .then(result => console.log(result))
-    .catch(error => console.log('error', error));
-}
-
 // Almacena todas las conexiones de clientes
 const clients = new Map();
 
@@ -143,7 +112,7 @@ wss.on('connection', (ws) => {
             console.log(`Cliente ${data.to} no conectado o no disponible`);
         }
         // broadcast(JSON.stringify(data), ws);
-        saveDB(data)
+        eventManagement(data)
     });
 
     // Manejar cierre de conexión
