@@ -3,6 +3,7 @@ const dotenv = require('dotenv')
 const { program } = require("../enviroment/commander")
 const { mode } = program.opts()
 const fs = require('fs');
+const WebSocket = require('ws');
 
 dotenv.config({
     path: mode === 'development' ? path.resolve(__dirname, './enviroment/.env.development') : path.resolve(__dirname, './enviroment/.env.production')
@@ -63,7 +64,7 @@ async function saveDB(eventData) {
         redirect: 'follow'
     };
 
-    fetch(`http://localhost:${exports.configObject.port}/api/events/`, requestOptions)
+    fetch(`http://172.30.2.34:${exports.configObject.port}/api/events/`, requestOptions)
     .then(response => response.text())
     .then(result => console.log(result))
     .catch(error => console.log('error', error));
@@ -71,20 +72,49 @@ async function saveDB(eventData) {
 
 
 
-exports.eventManagement = async (event)=>{
+
+
+// Función para retransmitir un mensaje a todos los clientes, excepto al cliente que envió el mensaje original
+function broadcast(message, sender, clients) {
+    clients.forEach((client) => {
+        if (client !== sender && client.readyState === WebSocket.OPEN) {
+            object = {"message": message}
+            client.send(JSON.stringify(object));
+        }
+    });
+}
+
+
+
+exports.eventManagement = async (target, event, clients)=>{
 
 
     if(event.message === "Hi") return null;
 
     if(event.mode == "People Counter"){
         let peopleAmount = getPeopleAmount()
-        if(event.message == "IN"){
+        console.log("event.message.evento : " + event.message.event)
+        
+        if(event.message.evento == "IN"){
             peopleAmount++;
         }else{
-            peopleAmount--;
+            if(peopleAmount>0){
+                peopleAmount--;
+            }else{
+                peopleAmount = 0;
+            }
         }
         savePeopleAmount(peopleAmount)
+        
         event.message = event.message + " : " + String(peopleAmount);
+
+        broadcast(peopleAmount, "server", clients);
+    }
+    
+    if (target && target.readyState === WebSocket.OPEN) {
+        target.send(JSON.stringify(event));
+    } else {
+        console.log(`Cliente ${event.to} no conectado o no disponible`);
     }
 
 

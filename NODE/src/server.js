@@ -106,13 +106,7 @@ wss.on('connection', (ws) => {
         clients.set(data.from, ws);
         console.log("data: " + data.from);
         const targetClient = clients.get(data.to);
-        if (targetClient && targetClient.readyState === WebSocket.OPEN) {
-            targetClient.send(JSON.stringify(data));
-        } else {
-            console.log(`Cliente ${data.to} no conectado o no disponible`);
-        }
-        // broadcast(JSON.stringify(data), ws);
-        eventManagement(data)
+        eventManagement(targetClient, data, clients)
     });
 
     // Manejar cierre de conexión
@@ -127,14 +121,6 @@ wss.on('connection', (ws) => {
     });
 });
 
-// Función para retransmitir un mensaje a todos los clientes, excepto al cliente que envió el mensaje original
-function broadcast(message, sender) {
-    clients.forEach((client) => {
-        if (client !== sender && client.readyState === WebSocket.OPEN) {
-            client.send(message);
-        }
-    });
-}
 
 
 // Función para obtener la clave desde el valor
@@ -149,5 +135,5 @@ function getKeyByValue(map, value) {
 
 const port = exports.configObject.port || 8080
 server.listen(port, () => {
-    console.log(`Servidor escuchando en http://localhost:${port}`);
+    console.log(`Servidor escuchando en http://172.30.2.34:${port}`);
 });
