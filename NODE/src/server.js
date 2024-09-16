@@ -135,5 +135,5 @@ function getKeyByValue(map, value) {
 
 const port = exports.configObject.port || 8080
 server.listen(port, () => {
-    console.log(`Servidor escuchando en http://172.30.2.34:${port}`);
+    console.log(`Servidor escuchando en http://localhost:${port}`);
 });

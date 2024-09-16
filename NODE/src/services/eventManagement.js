@@ -64,7 +64,7 @@ async function saveDB(eventData) {
         redirect: 'follow'
     };
 
-    fetch(`http://172.30.2.34:${exports.configObject.port}/api/events/`, requestOptions)
+    fetch(`http://localhost:${exports.configObject.port}/api/events/`, requestOptions)
     .then(response => response.text())
     .then(result => console.log(result))
     .catch(error => console.log('error', error));
@@ -93,9 +93,10 @@ exports.eventManagement = async (target, event, clients)=>{
 
     if(event.mode == "People Counter"){
         let peopleAmount = getPeopleAmount()
-        console.log("event.message.evento : " + event.message.event)
-        
-        if(event.message.evento == "IN"){
+        const message = event.message
+        //console.log("message.evento : " + message.event)
+        //console.log(message.evento)
+        if(message.evento == "IN"){
             peopleAmount++;
         }else{
             if(peopleAmount>0){
@@ -106,9 +107,12 @@ exports.eventManagement = async (target, event, clients)=>{
         }
         savePeopleAmount(peopleAmount)
         
-        event.message = event.message + " : " + String(peopleAmount);
-
-        broadcast(peopleAmount, "server", clients);
+        //event.message = event.message + " : " + String(peopleAmount)
+        const response = {
+            "evento" : "actualizacionCuenta",
+            "personasDentro" : peopleAmount
+        } 
+        broadcast(response, "server", clients);
     }
     
     if (target && target.readyState === WebSocket.OPEN) {

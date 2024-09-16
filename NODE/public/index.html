@@ -123,7 +123,7 @@
   
     <script>
     // Agrega un event listener para manejar los mensajes recibidos
-      const socket = new WebSocket('ws://172.30.2.34:8080');
+      const socket = new WebSocket('ws://localhost:8080');
       socket.addEventListener('message', handleMessage);
       // Objeto para almacenar los mensajes recibidos por cada ID de ESP32
       let lenByEsp32Id = {};
@@ -195,7 +195,7 @@
           redirect: 'follow'
         };
 
-        fetch("http://172.30.2.34:8080/api/devices", requestOptions)
+        fetch("http://localhost:8080/api/devices", requestOptions)
           .then(response => response.text())
           .then(result => {
             const devices = JSON.parse(result); // Parse the JSON response
@@ -234,7 +234,7 @@
           return;
         }
 
-        fetch(`http://172.30.2.34:8080/api/events/byDevice/${esp32Id}`)
+        fetch(`http://localhost:8080/api/events/byDevice/${esp32Id}`)
           .then(response => response.json())
           .then(result => {
             responseContainer.innerHTML = '';
